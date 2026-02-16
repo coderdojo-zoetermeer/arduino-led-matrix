@@ -70,4 +70,3 @@ function generate() {
 // };
 
 vfs.src(["src/**/*.md"]).pipe(generate());
-vfs.src(["src/images/**"]).pipe(vfs.dest("output/images"));
