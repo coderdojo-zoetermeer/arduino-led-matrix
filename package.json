@@ -1,7 +1,7 @@
 {
-  "name": "led_matrix",
+  "name": "cdz-assignment-generator",
   "version": "1.0.0",
-  "description": "",
+  "description": "Generates HTML files for coderdojo Zoetermeer assignments based on markdown files.",
   "homepage": "https://github.com/coderdojo-zoetermeer/arduino-led-matrix#readme",
   "bugs": {
     "url": "https://github.com/coderdojo-zoetermeer/arduino-led-matrix/issues"
@@ -13,7 +13,10 @@
   "license": "ISC",
   "author": "",
   "type": "module",
-  "main": "index.js",
+  "main": "gulpfile.js",
+  "bin": {
+    "cdz-gen": "bin/cdz-gen.js"
+  },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -22,11 +25,15 @@
     "@mdit/plugin-demo": "^0.22.4",
     "@mdit/plugin-icon": "^0.23.1",
     "@mdit/plugin-img-size": "^0.22.5",
+    "@mdit/plugin-include": "^0.22.4",
+    "@mdit/plugin-katex": "^0.24.2",
     "@mdit/plugin-mark": "^0.22.2",
     "@mdit/plugin-snippet": "^0.22.5",
+    "@mdit/plugin-stylize": "^0.22.4",
     "@mdit/plugin-uml": "^0.23.1",
     "handlebars": "^4.7.8",
     "highlight.js": "^11.11.1",
+    "live-server": "^1.2.2",
     "markdown-it": "^14.1.0",
     "markdown-it-attrs": "^4.3.1",
     "markdown-it-meta": "^0.0.1"
@@ -34,5 +41,16 @@
   "devDependencies": {
     "gulp": "^5.0.1",
     "gulp-watch": "^5.0.1"
+  },
+  "cspell": {
+    "version": "0.2",
+    "ignorePaths": [
+      "*.md"
+    ],
+    "dictionaryDefinitions": [],
+    "dictionaries": [],
+    "words": [],
+    "ignoreWords": [],
+    "import": []
   }
 }

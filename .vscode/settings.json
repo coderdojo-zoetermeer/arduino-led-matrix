@@ -2,5 +2,8 @@
     "markdownlint.config": {
         "first-line-heading": false,
         "single-h1": false,
-    }
+    },
+    "editor.rulers": [
+        80
+    ]
 }
