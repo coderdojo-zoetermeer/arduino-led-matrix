@@ -18,7 +18,14 @@ import { uml } from "@mdit/plugin-uml";
 import { mark } from "@mdit/plugin-mark";
 import { container } from "@mdit/plugin-container";
 import { demo } from "@mdit/plugin-demo";
+import { stylize } from "@mdit/plugin-stylize";
+import { include } from "@mdit/plugin-include";
+import { katex } from "@mdit/plugin-katex";
 
+const templateDir = import.meta.dirname + "/templates";
+const cwd = process.cwd();
+
+hljs.registerLanguage("c", cpp);
 hljs.registerLanguage("cpp", cpp);
 hljs.registerLanguage("ino", cpp);
 hljs.registerLanguage("py", python);
@@ -28,7 +35,7 @@ const md = MarkdownIt({
   highlight: function (str, lang) {
     if (lang && hljs.getLanguage(lang)) {
       try {
-        return hljs.highlight(str, { language: lang, ignoreIllegals: true })
+        return hljs.highlight(str, { language: lang, ignoreIllegals: false })
           .value;
       } catch (__) {}
     }
@@ -37,9 +44,14 @@ const md = MarkdownIt({
   },
 });
 md.use(snippet, {
-  currentPath: (env) => env.filePath,
+  currentPath: (env) => env.currentMdFilePath,
+});
+md.use(include, {
+  currentPath: (env) => env.currentMdFilePath,
+  deep: true,
 });
 md.use(meta);
+md.use(katex);
 md.use(imgSize);
 md.use(markdownItAttrs);
 md.use(icon, {
@@ -48,7 +60,52 @@ md.use(icon, {
 md.use(mark);
 md.use(container, { name: "challenge" });
 md.use(container, { name: "codeblock" });
+md.use(container, { name: "read" });
+md.use(container, { name: "build" });
+md.use(container, { name: "program" });
 md.use(demo);
+md.use(stylize, {
+  config: [
+    {
+      matcher: "pagebreak",
+      replacer: ({ tag }) => {
+        if (tag === "em")
+          return {
+            tag: "div",
+            attrs: { class: "pagebreak" },
+            content: "",
+          };
+      },
+    },
+    {
+      matcher: "clear-float",
+      replacer: ({ tag }) => {
+        if (tag === "em")
+          return {
+            tag: "div",
+            attrs: { class: "clear-float" },
+            content: "",
+          };
+      },
+    },
+  ],
+});
+
+const proxy = (tokens, idx, options, env, self) =>
+  self.renderToken(tokens, idx, options);
+const defaultHrRenderer = md.renderer.hr || proxy;
+
+md.renderer.rules.hr = function (tokens, idx, options, env, self) {
+  if (tokens[idx].markup[0] === "-") {
+    tokens[idx].attrJoin("class", "separator-thin");
+  } else if (tokens[idx].markup[0] === "_") {
+    tokens[idx].attrJoin("class", "separator-hidden");
+  } else if (tokens[idx].markup[0] === "*") {
+    tokens[idx].attrJoin("class", "separator-fat");
+  }
+
+  return defaultHrRenderer(tokens, idx, options, env, self);
+};
 
 Handlebars.registerHelper(
   "renderMarkdown",
@@ -63,11 +120,13 @@ function generateAssignment() {
       try {
         logger.info("compiling " + data.path);
 
-        const result = md.render(data.contents.toString());
+        const result = md.render(data.contents.toString(), {
+          currentMdFilePath: data.path,
+        });
 
         const templateName = md.meta.template || "default";
         const template = await readFile(
-          `templates/template-${templateName}.hbs`,
+          `${templateDir}/template-${templateName}.hbs`,
           {
             encoding: "utf8",
           },
@@ -77,11 +136,11 @@ function generateAssignment() {
         const output = compiledTemplate({
           content: result,
           meta: md.meta,
-          templateAssetFolder: "/template-assets",
+          templateAssetFolder: "/templates/assets",
         });
 
         const pathInfo = path.parse(data.path);
-        const targetPath = path.join(pathInfo.dir, pathInfo.name + '.html');
+        const targetPath = path.join(pathInfo.dir, pathInfo.name + ".html");
         await writeFile(targetPath, output);
 
         cb(null, output);
@@ -96,7 +155,7 @@ function generateAssignment() {
 
 export function buildAssignments(cb) {
   const buildAssignmentsTask = vfs
-    .src(["src/**/*.md"])
+    .src(["opdrachten/**/*.md", "!opdrachten/**/lib/*"])
     .pipe(generateAssignment());
 
   buildAssignmentsTask.on("finish", () => {
@@ -105,11 +164,7 @@ export function buildAssignments(cb) {
 }
 
 export function watchTask(cb) {
-  const watcher = watch("src/**/*.md");
-
-  watcher.on("change", (path) => {
-    vfs.src(path).pipe(generateAssignment());
-  });
+  const watcher = watch("opdrachten/**/*.md", buildAssignments);
 }
 
 export const build = series(buildAssignments);
