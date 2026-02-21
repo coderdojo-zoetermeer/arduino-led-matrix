@@ -18,6 +18,7 @@ infoBlocks:
 ********************************************************************************
 
 ![schema =200x](./assets/matrix-display.png){ .float-right }
+
 ## Benodigdheden
 
 - 1 Arduino (UNO)+USB
@@ -52,7 +53,7 @@ In een LED-matrix zijn de LEDs opgesteld in rijen en kolommen. Alle Anode pins
 van de leds zijn verbonden met de anode pins van de andere leds in dezefde rij.
 Ale kathode pins van de leds zijn verbonden met de kathode pins van de andere
 leds in dezelfde kolom. De aansluitpennetjes op de LED-matrix zijn verbonden
-met de rijen en kolommen. 
+met de rijen en kolommen.
 
 Hiernaast kan je zien hoe een LED-matrix er vanbinnen uitziet. Ook kan je zien
 welke pins worden gebruikt om de rijen en de kolommen te besturen.
@@ -89,7 +90,6 @@ ________________________________________________________________________________
 Maak het voldende schema na. Vraag aan een mentor om te helpen met het uitzoeken
 van alle spullen die je nodig hebt.
 
-
 *clear-float*
 
 :::
@@ -115,10 +115,10 @@ ________________________________________________________________________________
 
 *Aanroepen van **updateDisplay()** functie*
 
-::: codeblock 
+::: codeblock
 
 <<<src/led-matrix1/led-matrix1.ino#snippet
- 
+
 ```c
 
 void setup() {
@@ -127,6 +127,7 @@ void setup() {
 // !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 }
 ```
+
 :::
 ::::
 
@@ -140,7 +141,7 @@ ________________________________________________________________________________
 *Uitdaging*
 
 Probeer eens om .......
-::: 
+:::
 
 ________________________________________________________________________________
 
@@ -148,8 +149,7 @@ ________________________________________________________________________________
 *Uitdaging*
 
 Probeer eens om .......
-::: 
-
+:::
 
 ________________________________________________________________________________
 

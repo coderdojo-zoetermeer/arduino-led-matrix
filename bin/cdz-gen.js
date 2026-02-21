@@ -20,7 +20,7 @@ liveServer.start({
   port: 8181,
   host: "0.0.0.0",
   root: "./",
-  open: true,
+  open: false,
   wait: 1000,
   mount: [["/templates", import.meta.dirname + "/../templates"]], // Mount a directory to a route.
   logLevel: 2,
