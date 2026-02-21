@@ -1,0 +1,17 @@
+<html>
+  <head>
+
+  </head>
+
+  <body>
+    <h1>Assignment Index</h1>
+    <ul>
+      {{#each assignments}}
+        <li>
+          <a href="{{this.path}}">{{this.meta.title}}</a><br/>
+          {{this.meta.description}}
+        </li>
+      {{/each}}
+    </ul>
+  </body>
+</html>

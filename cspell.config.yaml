@@ -5,7 +5,6 @@ dictionaryDefinitions:
   - name: "project-words"
     path: "./project-words.txt"
     addWords: true
-
 words: []
 ignoreWords: [a]
 import: []

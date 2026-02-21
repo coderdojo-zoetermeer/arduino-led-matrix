@@ -1,3 +1,10 @@
 arduino
-pagebreak
+coderdojo
 enspace
+fontawesome
+gulpfile
+gulplog
+katex
+mdit
+pagebreak
+streamx

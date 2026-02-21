@@ -1,8 +1,5 @@
 {
-    "markdownlint.config": {
-        "first-line-heading": false,
-        "single-h1": false,
-    },
+    "cSpell.language": "nl,en",
     "editor.rulers": [
         80
     ]

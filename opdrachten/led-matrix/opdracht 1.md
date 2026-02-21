@@ -35,8 +35,8 @@ infoBlocks:
 *Introductie*
 
 In deze opdracht ga je werken met een led matrix. Dit is een scherm waarin 64
-led-lampjes zitten en waarmee je allerlij leuke patronen kan maken. In deze
-opdacht gaan we een led-lampje besturen met een joystick.
+led-lampjes zitten en waarmee je allerlei leuke patronen kan maken. In deze
+opdracht gaan we een led-lampje besturen met een joystick.
 
 :::
 
@@ -50,7 +50,7 @@ ________________________________________________________________________________
 *Uitleg werking LED matrix*
 
 In een LED-matrix zijn de LEDs opgesteld in rijen en kolommen. Alle Anode pins
-van de leds zijn verbonden met de anode pins van de andere leds in dezefde rij.
+van de leds zijn verbonden met de anode pins van de andere leds in dezelfde rij.
 Ale kathode pins van de leds zijn verbonden met de kathode pins van de andere
 leds in dezelfde kolom. De aansluitpennetjes op de LED-matrix zijn verbonden
 met de rijen en kolommen.
@@ -71,11 +71,11 @@ ________________________________________________________________________________
 
 *Uitleg LED matrix*
 
-Je kan een LED aanzetten door een colom **HIGH** te maken en een rij **LOW** te
+Je kan een LED aanzetten door een kolom **HIGH** te maken en een rij **LOW** te
 maken. Er gaat dan stroom lopen van **HIGH** naar **LOW**. De LED op het
 kruispunt van de rij en de kolom gaat dan aan.
 
-Op deze manier kunnen de 64 LEDs met slechts 16 aanslutingen worden bestuurd.
+Op deze manier kunnen de 64 LEDs met slechts 16 aansluitingen worden bestuurd.
 
 :::
 
@@ -87,7 +87,7 @@ ________________________________________________________________________________
 
 *Bouwen van de elektronica*
 
-Maak het voldende schema na. Vraag aan een mentor om te helpen met het uitzoeken
+Maak het volgende schema na. Vraag aan een mentor om te helpen met het uitzoeken
 van alle spullen die je nodig hebt.
 
 *clear-float*
@@ -102,7 +102,7 @@ ________________________________________________________________________________
 
 *Bouwen van de elektronica*
 
-Maak het voldende schema na. Vraag aan een mentor om te helpen met het uitzoeken
+Maak het volgende schema na. Vraag aan een mentor om te helpen met het uitzoeken
 van alle spullen die je nodig hebt.
 
 *clear-float*
@@ -133,7 +133,7 @@ void setup() {
 
 ________________________________________________________________________________
 
-<!-- @include: ../lib/explain-mod.md#arduino -->
+<!-- @include: global-lib/explain-mod.md#arduino -->
 
 ________________________________________________________________________________
 

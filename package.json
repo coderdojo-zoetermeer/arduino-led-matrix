@@ -41,16 +41,5 @@
   "devDependencies": {
     "gulp": "^5.0.1",
     "gulp-watch": "^5.0.1"
-  },
-  "cspell": {
-    "version": "0.2",
-    "ignorePaths": [
-      "*.md"
-    ],
-    "dictionaryDefinitions": [],
-    "dictionaries": [],
-    "words": [],
-    "ignoreWords": [],
-    "import": []
   }
 }

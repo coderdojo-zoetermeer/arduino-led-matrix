@@ -19,10 +19,10 @@ console.log("/templates", import.meta.dirname + "/templates");
 liveServer.start({
   port: 8181,
   host: "0.0.0.0",
-  root: "./",
+  root: "./docs",
   open: false,
   wait: 1000,
-  mount: [["/templates", import.meta.dirname + "/../templates"]], // Mount a directory to a route.
+  // mount: [["/templates", import.meta.dirname + "/../templates"]],
   logLevel: 2,
   middleware: [
     function (req, res, next) {

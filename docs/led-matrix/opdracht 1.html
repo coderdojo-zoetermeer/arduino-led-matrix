@@ -11,7 +11,7 @@
       crossorigin="anonymous"
       referrerpolicy="no-referrer"
     />
-    <link rel="stylesheet" href="/templates/assets/default.css" />
+    <link rel="stylesheet" href="../template-assets/default.css" />
     <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet" type="text/css">
     <link href="https://fonts.googleapis.com/css?family=Roboto+Slab" rel="stylesheet" type="text/css">
 
@@ -19,14 +19,14 @@
     <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.28/dist/katex.min.js" integrity="sha384-+W9OcrYK2/bD7BmUAk+xeFAyKp0QjyRQUCxeU31dfyTt/FrPsUgaBTLLkVf33qWt" crossorigin="anonymous"></script>
     <style>
       body {
-        background-image: url("/templates/assets/arduino/left.svg"), url("/templates/assets/arduino/right.svg");
+        background-image: url("../template-assets/arduino/left.svg"), url("../template-assets/arduino/right.svg");
         background-size: 15px, 15px;
         background-repeat: repeat-y, repeat-y;
         background-position: left, right;
         margin: 0px;
       }
       .header {
-        background-image: url("/templates/assets/arduino/top.svg");
+        background-image: url("../template-assets/arduino/top.svg");
         background-size: 100% 15px;
         background-repeat: no-repeat;
         width: 100%;
@@ -34,7 +34,7 @@
       }
 
       .footer {
-        background-image: url("/templates/assets/arduino/bottom.svg");
+        background-image: url("../template-assets/arduino/bottom.svg");
         background-size: 100% 15px;
         background-repeat: no-repeat;
         width: 100%;
@@ -42,7 +42,7 @@
       }
       .separator-fat {
         display: block;
-        background-image: url("/templates/assets/arduino/separator.svg");
+        background-image: url("../template-assets/arduino/separator.svg");
         background-size: 100% 10px;
         background-repeat: no-repeat;
         height: 10px;
@@ -55,18 +55,18 @@
 
   <body>
     <img
-      src="/templates/assets/logo-arduino.png"
+      src="../template-assets/logo-arduino.png"
       class="language-logo"
     />
     <div class="header">
       <div class="header-content">
         <div style="padding-top: 20px; padding-left: 30px; max-height: 50px">
           <img
-            src="/templates/assets/logo-coderdojo-nl.png"
+            src="../template-assets/logo-coderdojo-nl.png"
             style="width: 250px; position: relative"
           />
           <img
-            src="/templates/assets/logo-zoetermeer.png"
+            src="../template-assets/logo-zoetermeer.png"
             style="width: 250px; position: relative; right: 30px; float: right"
           />
         </div>
@@ -90,7 +90,7 @@
           <td>
             <div class="assignment-content">
               <img
-                src="/templates/assets/level5.svg"
+                src="../template-assets/level5.svg"
                 style="width: 200px; float: right; margin-right: 0px"
               />
               <p class="assignment-title">Led Matrix</p>
@@ -109,7 +109,7 @@
               </div>
 
               <hr class="separator-fat">
-<p><img src="./assets/matrix-display.png" alt="schema" width="200" class="float-right"></p>
+<p><img src="./assets/matrix-display.png" alt="" width="200" class="float-right"></p>
 <h2>Benodigdheden</h2>
 <ul>
 <li>1 Arduino (UNO)+USB</li>
@@ -123,16 +123,16 @@
 <div class="read">
 <p><em>Introductie</em></p>
 <p>In deze opdracht ga je werken met een led matrix. Dit is een scherm waarin 64
-led-lampjes zitten en waarmee je allerlij leuke patronen kan maken. In deze
-opdacht gaan we een led-lampje besturen met een joystick.</p>
+led-lampjes zitten en waarmee je allerlei leuke patronen kan maken. In deze
+opdracht gaan we een led-lampje besturen met een joystick.</p>
 </div>
 <hr class="separator-hidden">
 <div class="read">
-<p><img src="./assets/1088as-datasheet-pins.gif" alt="schema" width="100" class="float-right">
-<img src="./assets/matrix-pinout.png" alt="schema" width="200" class="float-right"></p>
+<p><img src="./assets/1088as-datasheet-pins.gif" alt="" width="100" class="float-right">
+<img src="./assets/matrix-pinout.png" alt="" width="200" class="float-right"></p>
 <p><em>Uitleg werking LED matrix</em></p>
 <p>In een LED-matrix zijn de LEDs opgesteld in rijen en kolommen. Alle Anode pins
-van de leds zijn verbonden met de anode pins van de andere leds in dezefde rij.
+van de leds zijn verbonden met de anode pins van de andere leds in dezelfde rij.
 Ale kathode pins van de leds zijn verbonden met de kathode pins van de andere
 leds in dezelfde kolom. De aansluitpennetjes op de LED-matrix zijn verbonden
 met de rijen en kolommen.</p>
@@ -146,26 +146,26 @@ voor rij 5.</p>
 <p><div class="pagebreak"></div></p>
 <div class="read">
 <p><em>Uitleg LED matrix</em></p>
-<p>Je kan een LED aanzetten door een colom <strong>HIGH</strong> te maken en een rij <strong>LOW</strong> te
+<p>Je kan een LED aanzetten door een kolom <strong>HIGH</strong> te maken en een rij <strong>LOW</strong> te
 maken. Er gaat dan stroom lopen van <strong>HIGH</strong> naar <strong>LOW</strong>. De LED op het
 kruispunt van de rij en de kolom gaat dan aan.</p>
-<p>Op deze manier kunnen de 64 LEDs met slechts 16 aanslutingen worden bestuurd.</p>
+<p>Op deze manier kunnen de 64 LEDs met slechts 16 aansluitingen worden bestuurd.</p>
 </div>
 <hr class="separator-hidden">
 <p><div class="pagebreak"></div></p>
 <div class="build">
-<p><img src="./assets/schema1.svg" alt="schema" width="600" class="float-right"></p>
+<p><img src="./assets/schema1.svg" alt="" width="600" class="float-right"></p>
 <p><em>Bouwen van de elektronica</em></p>
-<p>Maak het voldende schema na. Vraag aan een mentor om te helpen met het uitzoeken
+<p>Maak het volgende schema na. Vraag aan een mentor om te helpen met het uitzoeken
 van alle spullen die je nodig hebt.</p>
 <p><div class="clear-float"></div></p>
 </div>
 <hr class="separator-hidden">
 <p><div class="pagebreak"></div></p>
 <div class="build">
-<p><img src="./assets/led-matrix-bb.png" alt="schema" width="600" class="float-right"></p>
+<p><img src="./assets/led-matrix-bb.png" alt="" width="600" class="float-right"></p>
 <p><em>Bouwen van de elektronica</em></p>
-<p>Maak het voldende schema na. Vraag aan een mentor om te helpen met het uitzoeken
+<p>Maak het volgende schema na. Vraag aan een mentor om te helpen met het uitzoeken
 van alle spullen die je nodig hebt.</p>
 <p><div class="clear-float"></div></p>
 </div>
@@ -191,7 +191,6 @@ van alle spullen die je nodig hebt.</p>
 </div>
 <hr class="separator-hidden">
 <div class="read">
-<p><em>Uitleg modulo functie</em></p>
 <p><em>Uitleg modulo functie</em></p>
 <p>De modulo functie geeft de restwaarde van een <em>gedeeld door</em> som met gehele
 getallen.</p>

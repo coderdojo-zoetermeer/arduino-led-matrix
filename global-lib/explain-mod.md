@@ -1,10 +1,8 @@
 <!-- #region uitleg -->
-*Uitleg modulo functie*
-
 De modulo functie geeft de restwaarde van een *gedeeld door* som met gehele
-getallen. 
+getallen.
 
-Bijvoorbeeld: Stel dat je 13 snoepjes wil verdelen over 4 vrienden. Iedereen 
+Bijvoorbeeld: Stel dat je 13 snoepjes wil verdelen over 4 vrienden. Iedereen
 krijgt dan 3 snoepjes, en er blijft er dan 1 over.
 
 Dus $13/4 = 3\enspace rest\enspace 1$
@@ -21,7 +19,7 @@ ________________________________________________________________________________
 
 Voorbeeld:
 
-![example](./modulo-scratch-example.svg)
+![example](./global-lib-assets/modulo-scratch-example.svg)
 
 De variabele met de naam *rest* heeft nu de waarde 1.
 
@@ -50,9 +48,6 @@ Voorbeeld:
 
 ________________________________________________________________________________
 
-
-________________________________________________________________________________
-
 <!-- #region python -->
 ::: read
 
@@ -67,6 +62,7 @@ Voorbeeld:
 ```py
     rest = 13 % 4 # De waarde van rest wordt 1
 ```
+
 :::
 <!-- #endregion python -->
 

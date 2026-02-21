@@ -1,4 +1,4 @@
-import { series, watch } from "gulp";
+import { series, watch, src, dest } from "gulp";
 import vfs from "vinyl-fs";
 import MarkdownIt from "markdown-it";
 import { readFile, writeFile } from "node:fs/promises";
@@ -21,9 +21,10 @@ import { demo } from "@mdit/plugin-demo";
 import { stylize } from "@mdit/plugin-stylize";
 import { include } from "@mdit/plugin-include";
 import { katex } from "@mdit/plugin-katex";
+import fs from "fs";
 
 const templateDir = import.meta.dirname + "/templates";
-const cwd = process.cwd();
+const assignmentMap = {};
 
 hljs.registerLanguage("c", cpp);
 hljs.registerLanguage("cpp", cpp);
@@ -45,9 +46,25 @@ const md = MarkdownIt({
 });
 md.use(snippet, {
   currentPath: (env) => env.currentMdFilePath,
+  resolvePath: (filePath, currentPath) => {
+    const pathParts = filePath.split(path.sep);
+    if (pathParts[0].indexOf("global-") === 0) {
+      return path.resolve(import.meta.dirname, filePath);
+    } else {
+      return path.resolve(currentPath, filePath);
+    }
+  },
 });
 md.use(include, {
   currentPath: (env) => env.currentMdFilePath,
+  resolvePath: (filePath, currentPath) => {
+    const pathParts = filePath.split(path.sep);
+    if (pathParts[0].indexOf("global-") === 0) {
+      return path.resolve(import.meta.dirname, filePath);
+    } else {
+      return path.resolve(currentPath, filePath);
+    }
+  },
   deep: true,
 });
 md.use(meta);
@@ -91,9 +108,10 @@ md.use(stylize, {
   ],
 });
 
-const proxy = (tokens, idx, options, env, self) =>
+const ruleProxy = (tokens, idx, options, env, self) =>
   self.renderToken(tokens, idx, options);
-const defaultHrRenderer = md.renderer.hr || proxy;
+
+const defaultHrRenderer = md.renderer.hr || ruleProxy;
 
 md.renderer.rules.hr = function (tokens, idx, options, env, self) {
   if (tokens[idx].markup[0] === "-") {
@@ -105,6 +123,17 @@ md.renderer.rules.hr = function (tokens, idx, options, env, self) {
   }
 
   return defaultHrRenderer(tokens, idx, options, env, self);
+};
+
+const defaultLinkRenderer = md.renderer.image || ruleProxy;
+
+md.renderer.rules.image = function (tokens, idx, options, env, self) {
+  env.usedAssets.push({
+    src: tokens[idx].attrGet("src"),
+    includedPaths: [...(env.includedPaths || [])],
+  });
+
+  return defaultLinkRenderer(tokens, idx, options, env, self);
 };
 
 Handlebars.registerHelper(
@@ -120,9 +149,23 @@ function generateAssignment() {
       try {
         logger.info("compiling " + data.path);
 
-        const result = md.render(data.contents.toString(), {
+        const pathInfo = path.parse(data.path);
+        const pathInWorkspace = path
+          .relative(process.cwd(), data.path)
+          .split(path.sep);
+        const targetDir = path.join(
+          process.cwd(),
+          "docs",
+          ...pathInWorkspace.slice(1, -1),
+        );
+        const relativeTargetPath = path.join(...pathInWorkspace.slice(1, -1));
+
+        const env = {
+          usedAssets: [],
           currentMdFilePath: data.path,
-        });
+        };
+
+        const result = md.render(data.contents.toString(), env);
 
         const templateName = md.meta.template || "default";
         const template = await readFile(
@@ -136,12 +179,52 @@ function generateAssignment() {
         const output = compiledTemplate({
           content: result,
           meta: md.meta,
-          templateAssetFolder: "/templates/assets",
+          templateAssetFolder: path.join(
+            path.relative(targetDir, path.join(process.cwd(), "docs")),
+            "template-assets",
+          ),
         });
 
-        const pathInfo = path.parse(data.path);
-        const targetPath = path.join(pathInfo.dir, pathInfo.name + ".html");
+        // Generate the assignment HTML file
+        await fs.promises.mkdir(targetDir, { recursive: true });
+        const targetPath = path.join(targetDir, pathInfo.name + ".html");
         await writeFile(targetPath, output);
+
+        assignmentMap[relativeTargetPath] = {
+          path: path.join(relativeTargetPath, pathInfo.name + ".html"),
+          meta: { ...md.meta },
+        };
+
+        // Copy used assets to the target directory
+        for (const asset of env.usedAssets) {
+          const assetSourcePath = path.resolve(
+            path.dirname(data.path),
+            asset.src,
+          );
+          const assetTargetPath = path.join(
+            targetDir,
+            ...path
+              .relative(data.path, assetSourcePath)
+              .split(path.sep)
+              .slice(1),
+          );
+
+          const targetDirForAsset = path.dirname(assetTargetPath);
+
+          await fs.promises.mkdir(targetDirForAsset, { recursive: true });
+
+          if (fs.existsSync(assetSourcePath)) {
+            await fs.promises.copyFile(assetSourcePath, assetTargetPath);
+          } else {
+            for (const includedPath of asset.includedPaths) {
+              const possiblePath = path.resolve(includedPath, asset.src);
+              if (fs.existsSync(possiblePath)) {
+                await fs.promises.copyFile(possiblePath, assetTargetPath);
+                continue;
+              }
+            }
+          }
+        }
 
         cb(null, output);
       } catch (e) {
@@ -155,7 +238,7 @@ function generateAssignment() {
 
 export function buildAssignments(cb) {
   const buildAssignmentsTask = vfs
-    .src(["opdrachten/**/*.md", "!opdrachten/**/lib/*"])
+    .src(["opdrachten/**/*.md"])
     .pipe(generateAssignment());
 
   buildAssignmentsTask.on("finish", () => {
@@ -163,9 +246,40 @@ export function buildAssignments(cb) {
   });
 }
 
-export function watchTask(cb) {
-  const watcher = watch("opdrachten/**/*.md", buildAssignments);
+export async function copyIndexHtml(cb) {
+  const template = await readFile(`${templateDir}/index-template.hbs`, {
+    encoding: "utf8",
+  });
+
+  const compiledTemplate = Handlebars.compile(template);
+
+  const output = compiledTemplate({
+    assignments: assignmentMap,
+  });
+
+  await writeFile(path.join(process.cwd(), "docs", "index.html"), output);
+
+  cb();
 }
 
-export const build = series(buildAssignments);
+export function copyTemplateAssets(cb) {
+  const buildAssignmentsTask = src(
+    [path.join(templateDir, "template-assets", "**/*")],
+    { encoding: false },
+  ).pipe(dest("docs/template-assets"));
+
+  buildAssignmentsTask.on("finish", () => {
+    cb();
+  });
+}
+
+export function watchTask(cb) {
+  watch("opdrachten/**/*.md", buildAssignments);
+}
+
+export const build = series(
+  buildAssignments,
+  copyTemplateAssets,
+  copyIndexHtml,
+);
 export const buildWatch = series(build, watchTask);
