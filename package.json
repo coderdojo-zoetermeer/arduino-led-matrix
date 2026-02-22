@@ -40,7 +40,6 @@
     "markdown-it-meta": "^0.0.1"
   },
   "devDependencies": {
-    "gulp": "^5.0.1",
-    "gulp-watch": "^5.0.1"
+    "gulp": "^5.0.1"
   }
 }

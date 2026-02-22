@@ -199,10 +199,13 @@ function generateAssignment() {
         const output = compiledTemplate({
           content: result,
           meta: md.meta,
-          templateAssetFolder: path.join(
-            path.relative(targetDir, path.join(process.cwd(), "docs")),
-            "template-assets",
-          ),
+          templateAssetFolder: path
+            .join(
+              path.relative(targetDir, path.join(process.cwd(), "docs")),
+              "template-assets",
+            )
+            .split(path.sep)
+            .join("/"),
         });
 
         // Generate the assignment HTML file
@@ -215,7 +218,7 @@ function generateAssignment() {
           pathInfo.name + ".html",
         );
         assignmentMap.push({
-          path: relativeTargetPathForMap,
+          path: relativeTargetPathForMap.split(path.sep).join("/"),
           meta: { ...md.meta },
         });
 
