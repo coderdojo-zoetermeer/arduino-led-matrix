@@ -1,18 +1,28 @@
 ---
-title: Scratch playground
+title: Led Matrix
 author: Ben Mens
-level: 1
+level: 5
 template: default
-progLang: scratch3
-theme: scratch
+progLang: arduino
+theme: arduino
+description: |
+    ddd
 infoBlocks:
   - title: Voorkennis
     content: | 
-      
+      LED, if, for, functions (basis), joystick
+
   - title: Leerdoelen
     content: |
-      
+      LED matrix, HIGH, LOW, abs, %
 ---
+
+********************************************************************************
+
+## Benodigdheden
+
+- iets
+- iets anders
 
 ********************************************************************************
 
@@ -20,31 +30,38 @@ infoBlocks:
 
 *Introductie*
 
-...
+In deze opdracht ...
 :::
 
 ________________________________________________________________________________
 
-<!-- @include: global-lib/explain-mod.md#scratch -->
+::: build
+
+*Bouwen van de elektronica*
+
+...
+
+:::
+
 ________________________________________________________________________________
 
 :::: program
 
-*Laat de kat lopen*
+*Aanroepen van **updateDisplay()** functie*
 
-Voeg de onderstaande blokken toe aan de code van ![cat =50x ](./assets/cat.svg)
+::: codeblock
 
-![cat =300x](./assets/zet-10.png)
+```c
 
-::::
+void setup() {
+}
 
-________________________________________________________________________________
+void loop() {
+}
+```
 
-::: challenge
-*Uitdaging*
-
-Probeer eens om .......
 :::
+::::
 
 ________________________________________________________________________________
 

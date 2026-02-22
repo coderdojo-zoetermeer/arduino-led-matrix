@@ -31,6 +31,7 @@
     "@mdit/plugin-snippet": "^0.22.5",
     "@mdit/plugin-stylize": "^0.22.4",
     "@mdit/plugin-uml": "^0.23.1",
+    "commander": "^14.0.3",
     "handlebars": "^4.7.8",
     "highlight.js": "^11.11.1",
     "live-server": "^1.2.2",

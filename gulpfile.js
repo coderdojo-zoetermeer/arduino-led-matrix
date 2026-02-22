@@ -1,4 +1,4 @@
-import { series, watch, src, dest } from "gulp";
+import { series, parallel, watch, src, dest } from "gulp";
 import vfs from "vinyl-fs";
 import MarkdownIt from "markdown-it";
 import { readFile, writeFile } from "node:fs/promises";
@@ -22,6 +22,7 @@ import { stylize } from "@mdit/plugin-stylize";
 import { include } from "@mdit/plugin-include";
 import { katex } from "@mdit/plugin-katex";
 import fs from "fs";
+import liveServer from "live-server";
 
 const templateDir = import.meta.dirname + "/templates";
 const assignmentMap = {};
@@ -75,7 +76,11 @@ md.use(icon, {
   render: fontawesomeRender,
 });
 md.use(mark);
-md.use(container, { name: "challenge" });
+md.use(container, {
+  name: "challenge",
+  closeRender: (tokens, index, options, _env, slf) =>
+    '<div class="clear-float"></div></div>',
+});
 md.use(container, { name: "codeblock" });
 md.use(container, { name: "read" });
 md.use(container, { name: "build" });
@@ -236,7 +241,7 @@ function generateAssignment() {
   return writable;
 }
 
-export function buildAssignments(cb) {
+function buildAssignments(cb) {
   const buildAssignmentsTask = vfs
     .src(["opdrachten/**/*.md"])
     .pipe(generateAssignment());
@@ -246,7 +251,7 @@ export function buildAssignments(cb) {
   });
 }
 
-export async function copyIndexHtml(cb) {
+async function copyIndexHtml(cb) {
   const template = await readFile(`${templateDir}/index-template.hbs`, {
     encoding: "utf8",
   });
@@ -262,7 +267,7 @@ export async function copyIndexHtml(cb) {
   cb();
 }
 
-export function copyTemplateAssets(cb) {
+function copyTemplateAssets(cb) {
   const buildAssignmentsTask = src(
     [path.join(templateDir, "template-assets", "**/*")],
     { encoding: false },
@@ -273,8 +278,24 @@ export function copyTemplateAssets(cb) {
   });
 }
 
-export function watchTask(cb) {
-  watch("opdrachten/**/*.md", buildAssignments);
+function watchTask(cb) {
+  watch("opdrachten/**/*", buildAssignments);
+}
+
+function serve(cb) {
+  liveServer.start({
+    port: 8181,
+    host: "0.0.0.0",
+    root: "./docs",
+    open: false,
+    wait: 1000,
+    logLevel: 2,
+    middleware: [
+      function (req, res, next) {
+        next();
+      },
+    ],
+  });
 }
 
 export const build = series(
@@ -282,4 +303,5 @@ export const build = series(
   copyTemplateAssets,
   copyIndexHtml,
 );
-export const buildWatch = series(build, watchTask);
+
+export const server = series(build, parallel(watchTask, serve));
