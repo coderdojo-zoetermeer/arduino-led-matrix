@@ -21,7 +21,13 @@ on a markdown file.
 
 ## Install
 
-ToDo
+Install [NodeJS](https://nodejs.org/en/download)
+
+Run:
+
+```cmd
+npm i -g https://github.com/coderdojo-zoetermeer/cdz-assignment-generator.git
+```
 
 ## Usage
 
