@@ -15,7 +15,7 @@ on a markdown file.
 
 ## Demo
 
-    [Demo](https://coderdojo-zoetermeer.github.io/cdz-assignment-generator/)
+[Demo](https://coderdojo-zoetermeer.github.io/cdz-assignment-generator/)
 
 ## Install
 
