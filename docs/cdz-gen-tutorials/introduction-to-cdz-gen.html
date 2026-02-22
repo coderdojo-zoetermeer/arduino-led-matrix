@@ -1,0 +1,252 @@
+<html>
+  <head>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.11.1/styles/arduino-light.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
+      integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link rel="stylesheet" href="../template-assets/default.css" />
+    <link
+      href="https://fonts.googleapis.com/css?family=Open+Sans"
+      rel="stylesheet"
+      type="text/css"
+    />
+    <link
+      href="https://fonts.googleapis.com/css?family=Roboto+Slab"
+      rel="stylesheet"
+      type="text/css"
+    />
+
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/katex@0.16.28/dist/katex.min.css"
+      integrity="sha384-Wsr4Nh3yrvMf2KCebJchRJoVo1gTU6kcP05uRSh5NV3sj9+a8IomuJoQzf3sMq4T"
+      crossorigin="anonymous"
+    />
+    <script
+      defer
+      src="https://cdn.jsdelivr.net/npm/katex@0.16.28/dist/katex.min.js"
+      integrity="sha384-+W9OcrYK2/bD7BmUAk+xeFAyKp0QjyRQUCxeU31dfyTt/FrPsUgaBTLLkVf33qWt"
+      crossorigin="anonymous"
+    ></script>
+    <style>
+      body {
+        background-image: url("../template-assets/generic/left.svg"), url("../template-assets/generic/right.svg");
+                    background-size: 15px, 15px;
+                    background-repeat: repeat-y, repeat-y;
+                    background-position: left, right;
+                    margin: 0px;
+                  }
+                  .header {
+                    background-image: url("../template-assets/generic/top.svg");
+                    background-size: 100% 15px;
+                    background-repeat: no-repeat;
+                    width: 100%;
+                    min-height: 15px;
+                  }
+
+                  .footer {
+                    background-image: url("../template-assets/generic/bottom.svg");
+                    background-size: 100% 15px;
+                    background-repeat: no-repeat;
+                    width: 100%;
+                    min-height: 15px;
+                  }
+                  .separator-fat {
+                    display: block;
+                    background-image: url("../template-assets/generic/separator.svg");
+                    background-size: 100% 10px;
+                    background-repeat: no-repeat;
+                    height: 10px;
+                    margin-top: 5px;
+                    margin-bottom: 5px;
+                    clear: both;
+                  }
+    </style>
+  </head>
+
+  <body>
+    <div class="header">
+      <div class="header-content">
+        <div style="padding-top: 20px; padding-left: 30px; max-height: 50px">
+          <img
+            src="../template-assets/logo-coderdojo-nl.png"
+            style="width: 250px; position: relative"
+          />
+          <img
+            src="../template-assets/logo-zoetermeer.png"
+            style="width: 250px; position: relative; right: 30px; float: right"
+          />
+        </div>
+      </div>
+
+      <div style="padding-left: 30px; padding-right: 30px">
+        <div class="separator-fat"></div>
+      </div>
+    </div>
+
+    <table style="width: 100%">
+      <thead>
+        <tr>
+          <th>
+            <div class="header-space"></div>
+          </th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>
+            <div class="assignment-content">
+              <img
+                src="../template-assets/level5.svg"
+                style="width: 200px; float: right; margin-right: 0px"
+              />
+              <p class="assignment-title">Maken van coderdojo opdrachten met de cdz-assignment-generator</p>
+
+              <div style="display: flex; flex-direction: row; gap: 0px 10px">
+                  <div class="header-info-block">
+                    <div class="header-info-title">Voorkennis</div>
+                    <p>markdown</p>
+
+                  </div>
+                  <div class="header-info-block">
+                    <div class="header-info-title">Leerdoelen</div>
+                    <ul>
+<li>Maken van een opdracht voor CoderDojo</li>
+</ul>
+
+                  </div>
+              </div>
+
+              <hr class="separator-fat">
+<div class="read">
+<p><em>Introductie</em></p>
+<p>In deze opdracht wordt uitgelegd hoe je met de cdz-assignment-generator
+CoderDojo opdrachten kan maken.</p>
+<div class="clear-float"></div></div><hr class="separator-hidden">
+<div class="read">
+<p><em>Over markdown</em></p>
+<p>Markdown is een eenvoudige opmaaktaal waarmee je tekst kunt structureren en
+opmaken met simpele tekens. Het wordt veel gebruikt voor documentatie,
+README-bestanden (bijvoorbeeld op GitHub), forums en notities.</p>
+<p>Het idee: je schrijft gewone tekst met een paar speciale symbolen, en die
+worden omgezet naar mooi opgemaakte tekst (vaak HTML).</p>
+<p>Zie ook <a href="https://www.markdownguide.org/" target="_blank">Markdown Guide</a></p>
+<p>(bron: ChatGPT, prompt: &quot;Wat is markdown?&quot;)</p>
+<div class="clear-float"></div></div><hr class="separator-hidden">
+<div class="read">
+<p><em>Over cdz-assignment-generator</em></p>
+<p>De CDZ assignment generator is een tool waarmee markdown bestanden eenvoudig
+kunnen worden omgezet naar CoderDojo opdrachten in HTML.</p>
+<p>Vaak voorkomende blokken kunnen in een bibliotheek worden gezet zodat ze in
+meerdere opdrachten kunnen worden gebruikt.</p>
+<p>Deze gegenereerde
+HTML bestanden zijn geschikt op te kunnen printen over meerdere pagina's. Met
+de text *pagebreak* kan je ervoor zorgen dat de volgende sectie op een nieuwe
+pagina begint.</p>
+<h2>voorbeeld</h2>
+<ul>
+<li><a href="https://raw.githubusercontent.com/coderdojo-zoetermeer/cdz-assignment-generator/refs/heads/main/opdrachten/scratch/scratch.md" target="_blank">markdown</a></li>
+<li><a href="https://coderdojo-zoetermeer.github.io/cdz-assignment-generator/scratch/scratch.html" target="_blank">HTML</a></li>
+</ul>
+<div class="clear-float"></div></div><hr class="separator-hidden">
+<div class="read">
+<p><em>Over blokken</em></p>
+<p>Hieronder worden de blokken verder uitgelegd</p>
+<div class="clear-float"></div></div><hr class="separator-hidden">
+<div class="read">
+<p><em>read-blok uitleg</em></p>
+<p>Een read-blok is een blokje text waarin uitleg wordt aan de leerling. Probeer
+deze blokjes klein te houden en begin elk blokje met een kopje waaruit
+duidelijk wordt wat er wordt uitgelegd, zodat de leerling kan bepalen of
+leerling het blokje moet lezen of hen het wil lezen.</p>
+<details><summary>Demo</summary>
+<pre><code class="language-md">::: read
+
+*Titel read blok*
+
+Tekst Read blok.
+
+:::
+</code></pre>
+<div class="demo-content">
+<div class="read">
+<p><em>Titel read blok</em></p>
+<p>Tekst Read blok.</p>
+<div class="clear-float"></div></div></div>
+</details>
+<div class="clear-float"></div></div><hr class="separator-hidden">
+<div class="read">
+<p><em>programmeer-blok uitleg</em></p>
+<p>Een programmeer-blok wordt gebruik om aan te duiden dat de leerling iets moet
+programmeren. In programmeerblokken kan je stukjes code toevoegen. Deze worden
+automatisch opgemaakt met syntax highlights.</p>
+<details><summary>Demo</summary>
+<pre><code class="language-md">::: program
+
+*Titel programmeer blok*
+
+Tekst programmeerblok.
+
+``` py
+
+print('Hello world!')
+
+```
+
+:::
+</code></pre>
+<div class="demo-content">
+<div class="program">
+<p><em>Titel programmeer blok</em></p>
+<p>Tekst programmeerblok.</p>
+<pre><code class="language-py">
+<span class="hljs-built_in">print</span>(<span class="hljs-string">&#x27;Hello world!&#x27;</span>)
+
+</code></pre>
+<div class="clear-float"></div></div></div>
+</details>
+<div class="clear-float"></div></div><hr class="separator-hidden">
+<div class="read">
+<p><em>build-blok uitleg</em></p>
+<p>Een build wordt gebruikt om aan te duiden dat de leering iets moet doen. Dit
+is met name van toepassing voor Arduino opdrachten. bijvoorbeeld voor het
+bouwen van een elektronische schakeling.</p>
+<details><summary>Demo</summary>
+<pre><code class="language-md">::: build
+
+*Titel build blok*
+
+Tekst build-blok.
+
+:::
+</code></pre>
+<div class="demo-content">
+<div class="build">
+<p><em>Titel build blok</em></p>
+<p>Tekst build-blok.</p>
+<div class="clear-float"></div></div></div>
+</details>
+<div class="clear-float"></div></div>
+            </div>
+          </td>
+        </tr>
+      </tbody>
+      <tfoot>
+        <tr>
+          <th>
+            <div class="footer-space"></div>
+          </th>
+        </tr>
+      </tfoot>
+    </table>
+
+    <div class="footer"></div>
+  </body>
+</html>

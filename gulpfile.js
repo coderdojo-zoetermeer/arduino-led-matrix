@@ -99,7 +99,9 @@ md.use(container, {
   name: "program",
   closeRender: containerCloseRender,
 });
-md.use(demo);
+md.use(demo, {
+  showCodeFirst: true,
+});
 md.use(stylize, {
   config: [
     {
@@ -183,7 +185,7 @@ function generateAssignment() {
           usedAssets: [],
           currentMdFilePath: data.path,
         };
-
+        md.meta = {};
         const result = md.render(data.contents.toString(), env);
 
         const templateName = md.meta.template || "default";
