@@ -1,9 +1,7 @@
-import { readFile, writeFile, mkdir, copyFile } from "node:fs/promises";
 import Handlebars from "handlebars";
 import path from "path";
-import { Writable } from "streamx";
-import logger from "gulplog";
 import { createMarkdownRenderer } from "./markdown-factory.js";
+import { readFile } from "node:fs/promises";
 import { stat } from "node:fs/promises";
 
 const templateDir = path.join(import.meta.dirname, "../templates");
@@ -19,112 +17,75 @@ async function exists(f) {
   }
 }
 
-export function generateAssignment(assignmentList) {
-  const writable = new Writable({
-    async write(data, cb) {
-      try {
-        logger.info("compiling " + data.path);
+export async function generateAssignment(v) {
+  const md = createMarkdownRenderer();
 
-        const md = createMarkdownRenderer();
+  var assignmentHandlebars = Handlebars.create();
 
-        var assignmentHandlebars = Handlebars.create();
-
-        assignmentHandlebars.registerHelper(
-          "renderMarkdown",
-          function (object, propertyName, defaultValue, options) {
-            return md.render(object.toString());
-          },
-        );
-
-        const pathInfo = path.parse(data.path);
-        const pathInWorkspace = path
-          .relative(process.cwd(), data.path)
-          .split(path.sep);
-        const targetDir = path.join(
-          process.cwd(),
-          "docs",
-          ...pathInWorkspace.slice(1, -1),
-        );
-        const relativeTargetPath = path.join(...pathInWorkspace.slice(1, -1));
-
-        const env = {
-          usedAssets: [],
-          currentMdFilePath: data.path,
-        };
-        const result = md.render(data.contents.toString(), env);
-
-        const templateName = md.meta.template || "default";
-        const template = await readFile(
-          `${templateDir}/template-${templateName}.hbs`,
-          {
-            encoding: "utf8",
-          },
-        );
-        const compiledTemplate = assignmentHandlebars.compile(template);
-
-        const output = compiledTemplate({
-          content: result,
-          meta: md.meta,
-          templateAssetFolder: path
-            .join(
-              path.relative(targetDir, path.join(process.cwd(), "docs")),
-              "template-assets",
-            )
-            .split(path.sep)
-            .join("/"),
-        });
-
-        // Generate the assignment HTML file
-        await mkdir(targetDir, { recursive: true });
-        const targetPath = path.join(targetDir, pathInfo.name + ".html");
-        await writeFile(targetPath, output);
-
-        const relativeTargetPathForMap = path.join(
-          relativeTargetPath,
-          pathInfo.name + ".html",
-        );
-        assignmentList.push({
-          path: relativeTargetPathForMap.split(path.sep).join("/"),
-          meta: { ...md.meta },
-        });
-
-        // Copy used assets to the target directory
-        for (const asset of env.usedAssets) {
-          const assetSourcePath = path.resolve(
-            path.dirname(data.path),
-            asset.src,
-          );
-          const assetTargetPath = path.join(
-            targetDir,
-            ...path
-              .relative(data.path, assetSourcePath)
-              .split(path.sep)
-              .slice(1),
-          );
-
-          const targetDirForAsset = path.dirname(assetTargetPath);
-
-          await mkdir(targetDirForAsset, { recursive: true });
-
-          if (await exists(assetSourcePath)) {
-            await copyFile(assetSourcePath, assetTargetPath);
-          } else {
-            for (const includedPath of asset.includedPaths) {
-              const possiblePath = path.resolve(includedPath, asset.src);
-              if (await exists(possiblePath)) {
-                await copyFile(possiblePath, assetTargetPath);
-                continue;
-              }
-            }
-          }
-        }
-
-        cb(null, output);
-      } catch (e) {
-        logger.error(e);
-      }
+  assignmentHandlebars.registerHelper(
+    "renderMarkdown",
+    function (object, propertyName, defaultValue, options) {
+      return md.render(object.toString());
     },
+  );
+
+  const env = {
+    usedAssets: [],
+    currentMdFilePath: v.path,
+  };
+  const result = md.render(v.contents.toString(), env);
+
+  const templateName = md.meta.template || "default";
+  const template = await readFile(
+    `${templateDir}/template-${templateName}.hbs`,
+    {
+      encoding: "utf8",
+    },
+  );
+  const compiledTemplate = assignmentHandlebars.compile(template);
+
+  const output = compiledTemplate({
+    content: result,
+    meta: md.meta,
+    templateAssetFolder: path.join(
+      path.relative(path.parse(v.relative).dir, "."),
+      "template-assets",
+    ),
   });
 
-  return writable;
+  // Copy used assets to the target directory
+  const assets = [];
+  for (const asset of env.usedAssets) {
+    const assetSourcePath = path.resolve(path.dirname(v.path), asset.src);
+    const assetTargetPath = path.join(path.parse(v.relative).dir, asset.src);
+
+    if (await exists(assetSourcePath)) {
+      assets.push({
+        sourcePath: assetSourcePath,
+        targetPath: assetTargetPath,
+      });
+    } else {
+      for (const includedPath of asset.includedPaths) {
+        const possiblePath = path.resolve(includedPath, asset.src);
+        if (await exists(possiblePath)) {
+          assets.push({
+            sourcePath: possiblePath,
+            targetPath: assetTargetPath,
+          });
+
+          break;
+        }
+      }
+    }
+  }
+
+  return {
+    output,
+    targetPath: path.join(
+      path.parse(v.relative).dir,
+      path.parse(v.basename).name + ".html",
+    ),
+    meta: { ...md.meta },
+    assets,
+  };
 }

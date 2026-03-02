@@ -1,59 +1,87 @@
 import { series, watch, src, dest } from "gulp";
-import vfs from "vinyl-fs";
-import { readFile, writeFile } from "node:fs/promises";
+import { readFile } from "node:fs/promises";
 import Handlebars from "handlebars";
 import path from "path";
 import { generateAssignment } from "./src/assignment-generator.js";
 import liveServer from "live-server";
 import minimist from "minimist";
+import Vinyl from "vinyl";
+import { Duplex } from "streamx";
+import fs from "node:fs";
+import logger from "gulplog";
+import chalk from "chalk";
 
 const templateDir = import.meta.dirname + "/templates";
-let assignmentList = [];
 
 const buildAssignments = () => {
-  return new Promise((resolve, reject) => {
-    assignmentList = [];
-    const buildAssignmentsTask = vfs
-      .src(["opdrachten/**/*.md"])
-      .pipe(generateAssignment(assignmentList));
+  return src(["opdrachten/**/*.md"], {
+    base: "opdrachten",
+  })
+    .pipe(
+      new Duplex({
+        open(cb) {
+          this.assignmentList = [];
+          cb();
+        },
+        async write(data, cb) {
+          logger.info(`Processing '${chalk.cyan(data.relative)}'`);
 
-    buildAssignmentsTask
-      .on("finish", () => {
-        resolve();
-      })
-      .on("error", (err) => {
-        reject(err);
-      });
-  });
-};
+          const assignment = await generateAssignment(data);
 
-const copyIndexHtml = async () => {
-  const template = await readFile(`${templateDir}/index-template.hbs`, {
-    encoding: "utf8",
-  });
+          this.assignmentList.push({
+            path: assignment.targetPath.split(path.sep).join("/"),
+            targetPath: assignment.targetPath,
+            meta: assignment.meta,
+          });
 
-  const compiledTemplate = Handlebars.compile(template);
+          for (const asset of assignment.assets) {
+            this.push(
+              new Vinyl({
+                path: asset.targetPath,
+                contents: fs.createReadStream(asset.sourcePath),
+              }),
+            );
+          }
 
-  const output = compiledTemplate({
-    assignments: assignmentList,
-  });
+          this.push(
+            new Vinyl({
+              path: assignment.targetPath,
+              contents: Buffer.from(assignment.output),
+            }),
+          );
 
-  await writeFile(path.join(process.cwd(), "docs", "index.html"), output);
+          cb();
+        },
+        async final(cb) {
+          const template = await readFile(`${templateDir}/index-template.hbs`, {
+            encoding: "utf8",
+          });
+
+          const compiledTemplate = Handlebars.compile(template);
+
+          const output = compiledTemplate({
+            assignments: this.assignmentList,
+          });
+
+          this.push(
+            new Vinyl({
+              path: "index.html",
+              contents: Buffer.from(output),
+            }),
+          );
+
+          this.push(null); // EOF
+          cb();
+        },
+      }),
+    )
+    .pipe(dest(path.join(process.cwd(), "docs")));
 };
 
 const copyTemplateAssets = async () => {
-  return new Promise((resolve, reject) => {
-    src([path.join(templateDir, "template-assets", "**/*")], {
-      encoding: false,
-    })
-      .pipe(dest("docs/template-assets"))
-      .on("finish", () => {
-        resolve();
-      })
-      .on("error", (err) => {
-        reject(err);
-      });
-  });
+  src([path.join(templateDir, "template-assets", "**/*")], {
+    encoding: false,
+  }).pipe(dest("docs/template-assets"));
 };
 
 const watchTask = () => {
@@ -61,7 +89,7 @@ const watchTask = () => {
     string: ["port"],
     boolean: ["noOpen"],
     alias: { p: "port", n: "noOpen" },
-    default: { port: 8181, "noOpen": false },
+    default: { port: 8181, noOpen: false },
     unknown: () => false,
   });
 
@@ -84,11 +112,7 @@ const watchTask = () => {
 watchTask.description =
   "Watch for changes in the opdrachten, templates, and global-lib folders and rebuild the documentation.";
 
-export const build = series(
-  buildAssignments,
-  copyTemplateAssets,
-  copyIndexHtml,
-);
+export const build = series(buildAssignments, copyTemplateAssets);
 build.description =
   "Build the assignment documentation and copy assets to the docs folder.";
 
