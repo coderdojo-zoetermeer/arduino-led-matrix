@@ -21,6 +21,7 @@
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "dependencies": {
+    "@eslint/js": "^10.0.1",
     "@mdit/plugin-container": "^0.22.3",
     "@mdit/plugin-demo": "^0.22.4",
     "@mdit/plugin-icon": "^0.23.1",
@@ -33,8 +34,12 @@
     "@mdit/plugin-tab": "^0.24.0",
     "@mdit/plugin-uml": "^0.23.1",
     "chalk": "^5.6.2",
-    "command-line-args": "^6.0.1",
     "commander": "^14.0.3",
+    "eslint": "^10.0.2",
+    "eslint-config-google": "^0.14.0",
+    "eslint-config-prettier": "^10.1.8",
+    "eslint-plugin-prettier": "^5.5.5",
+    "globals": "^17.4.0",
     "gulp": "^5.0.1",
     "gulp-cli": "^3.1.0",
     "handlebars": "^4.7.8",
@@ -44,6 +49,7 @@
     "markdown-it-attrs": "^4.3.1",
     "markdown-it-meta": "^0.0.1",
     "minimist": "^1.2.8",
+    "prettier": "^3.8.1",
     "stream-composer": "^1.0.2",
     "vinyl": "^3.0.1"
   }

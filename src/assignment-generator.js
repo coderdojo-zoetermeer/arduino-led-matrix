@@ -1,10 +1,10 @@
-import Handlebars from "handlebars";
-import path from "path";
-import { createMarkdownRenderer } from "./markdown-factory.js";
-import { readFile } from "node:fs/promises";
-import { stat } from "node:fs/promises";
+import Handlebars from 'handlebars';
+import path from 'path';
+import { createMarkdownRenderer } from './markdown-factory.js';
+import { readFile } from 'node:fs/promises';
+import { stat } from 'node:fs/promises';
 
-const templateDir = path.join(import.meta.dirname, "templates");
+const templateDir = path.join(import.meta.dirname, 'templates');
 
 // Helper to check the existence of a file. Replaces deprecated "exists" in
 // node:fs with a custom implementation using stat.
@@ -23,8 +23,8 @@ export async function generateAssignment(v) {
   var assignmentHandlebars = Handlebars.create();
 
   assignmentHandlebars.registerHelper(
-    "renderMarkdown",
-    function (object, propertyName, defaultValue, options) {
+    'renderMarkdown',
+    function (object, _propertyName, _defaultValue, _options) {
       return md.render(object.toString());
     },
   );
@@ -35,11 +35,11 @@ export async function generateAssignment(v) {
   };
   const result = md.render(v.contents.toString(), env);
 
-  const templateName = md.meta.template || "default";
+  const templateName = md.meta.template || 'default';
   const template = await readFile(
     `${templateDir}/template-${templateName}.hbs`,
     {
-      encoding: "utf8",
+      encoding: 'utf8',
     },
   );
   const compiledTemplate = assignmentHandlebars.compile(template);
@@ -48,8 +48,8 @@ export async function generateAssignment(v) {
     content: result,
     meta: md.meta,
     templateAssetFolder: path.join(
-      path.relative(path.parse(v.relative).dir, "."),
-      "template-assets",
+      path.relative(path.parse(v.relative).dir, '.'),
+      'template-assets',
     ),
   });
 
@@ -83,7 +83,7 @@ export async function generateAssignment(v) {
     output,
     targetPath: path.join(
       path.parse(v.relative).dir,
-      path.parse(v.basename).name + ".html",
+      path.parse(v.basename).name + '.html',
     ),
     meta: { ...md.meta },
     assets,

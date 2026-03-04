@@ -1,21 +1,21 @@
-import { series, watch, src, dest } from "gulp";
-import { readFile } from "node:fs/promises";
-import Handlebars from "handlebars";
-import path from "path";
-import { generateAssignment } from "./src/assignment-generator.js";
-import liveServer from "live-server";
-import minimist from "minimist";
-import Vinyl from "vinyl";
-import { Duplex } from "streamx";
-import fs from "node:fs";
-import logger from "gulplog";
-import chalk from "chalk";
+import { series, watch, src, dest } from 'gulp';
+import { readFile } from 'node:fs/promises';
+import Handlebars from 'handlebars';
+import path from 'path';
+import { generateAssignment } from './src/assignment-generator.js';
+import liveServer from 'live-server';
+import minimist from 'minimist';
+import Vinyl from 'vinyl';
+import { Duplex } from 'streamx';
+import fs from 'node:fs';
+import logger from 'gulplog';
+import chalk from 'chalk';
 
-const templateDir = path.join(import.meta.dirname, "src", "templates");
+const templateDir = path.join(import.meta.dirname, 'src', 'templates');
 
 const buildAssignments = () => {
-  return src(["opdrachten/**/*.md"], {
-    base: "opdrachten",
+  return src(['opdrachten/**/*.md'], {
+    base: 'opdrachten',
   })
     .pipe(
       new Duplex({
@@ -29,7 +29,7 @@ const buildAssignments = () => {
           const assignment = await generateAssignment(data);
 
           this.assignmentList.push({
-            path: assignment.targetPath.split(path.sep).join("/"),
+            path: assignment.targetPath.split(path.sep).join('/'),
             targetPath: assignment.targetPath,
             meta: assignment.meta,
           });
@@ -54,7 +54,7 @@ const buildAssignments = () => {
         },
         async final(cb) {
           const template = await readFile(`${templateDir}/index-template.hbs`, {
-            encoding: "utf8",
+            encoding: 'utf8',
           });
 
           const compiledTemplate = Handlebars.compile(template);
@@ -65,7 +65,7 @@ const buildAssignments = () => {
 
           this.push(
             new Vinyl({
-              path: "index.html",
+              path: 'index.html',
               contents: Buffer.from(output),
             }),
           );
@@ -75,29 +75,29 @@ const buildAssignments = () => {
         },
       }),
     )
-    .pipe(dest(path.join(process.cwd(), "docs")));
+    .pipe(dest(path.join(process.cwd(), 'docs')));
 };
 
 const copyTemplateAssets = async () => {
-  src([path.join(templateDir, "template-assets/**/*")], {
+  src([path.join(templateDir, 'template-assets/**/*')], {
     encoding: false,
-    base: path.join(templateDir, "template-assets")
-  }).pipe(dest("docs/template-assets"));
+    base: path.join(templateDir, 'template-assets'),
+  }).pipe(dest('docs/template-assets'));
 };
 
 const watchTask = () => {
   const options = minimist(process.argv.slice(2), {
-    string: ["port"],
-    boolean: ["noOpen"],
-    alias: { p: "port", n: "noOpen" },
+    string: ['port'],
+    boolean: ['noOpen'],
+    alias: { p: 'port', n: 'noOpen' },
     default: { port: 8181, noOpen: false },
     unknown: () => false,
   });
 
   liveServer.start({
     port: options.port,
-    host: "0.0.0.0",
-    root: "./docs",
+    host: '0.0.0.0',
+    root: './docs',
     open: !options.noOpen,
     wait: 1000,
     logLevel: 2,
@@ -108,21 +108,21 @@ const watchTask = () => {
     ],
   });
 
-  watch(["opdrachten/**/*", "templates/**/*", "global-lib/**/*"], build);
+  watch(['opdrachten/**/*', 'templates/**/*', 'global-lib/**/*'], build);
 };
 watchTask.description =
-  "Watch for changes in the opdrachten, templates, and global-lib folders and rebuild the documentation.";
+  'Watch for changes in the opdrachten, templates, and global-lib folders and rebuild the documentation.';
 
 export const build = series(buildAssignments, copyTemplateAssets);
 build.description =
-  "Build the assignment documentation and copy assets to the docs folder.";
+  'Build the assignment documentation and copy assets to the docs folder.';
 
 export const server = series(build, watchTask);
 server.description =
-  "Runs a HTTP server with live-reload when a assignment changes";
+  'Runs a HTTP server with live-reload when a assignment changes';
 server.flags = {
   '--port': 'The port to listen on. Default=8181',
-  '--noOpen': 'Do not open the browser. Default: false'
+  '--noOpen': 'Do not open the browser. Default: false',
 };
 
 export default build;
