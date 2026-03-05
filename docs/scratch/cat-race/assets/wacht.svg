@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" version="1.1" class="injectionDiv" viewBox="-7.158 1 156.474 54.649">
+  <style>
+    .blocklyText {
+        fill: #FFFFFF;
+        font-family: "Helvetica Neue", Helvetica, sans-serif;
+        font-size: 12pt;
+        font-weight: 500;
+    }
+    .blocklyNonEditableText&gt;text, .blocklyEditableText&gt;text {
+        fill: #575E75;
+    }
+    .blocklyDropdownText {
+        fill: #FFFFFF !important;
+    }
+    </style>
+  <g data-id="nwk?fZsfo.*ez}6g3g|?" class="blocklyDraggable blocklySelected" data-shapes="stack" data-category="control" transform="translate(1,1) scale(1)">
+    <path class="blocklyPath blocklyBlockBackground" stroke="#CF8B17" fill="#FFAB19" fill-opacity="1" d="m 0,4 A 4,4 0 0,1 4,0 H 12 c 2,0 3,1 4,2 l 4,4 c 1,1 2,2 4,2 h 12 c 2,0 3,-1 4,-2 l 4,-4 c 1,-1 2,-2 4,-2 H 137.3515625 a 4,4 0 0,1 4,4 v 40  a 4,4 0 0,1 -4,4 H 48   c -2,0 -3,1 -4,2 l -4,4 c -1,1 -2,2 -4,2 h -12 c -2,0 -3,-1 -4,-2 l -4,-4 c -1,-1 -2,-2 -4,-2 H 4 a 4,4 0 0,1 -4,-4 z"/>
+    <text class="blocklyText" y="2" text-anchor="middle" dominant-baseline="middle" dy="0" x="34.67578125" transform="translate(8, 24) " style="white-space: pre;">wacht tot</text>
+    <path class="blocklyPath" style="visibility: visible" d="M 16,0  h 16 l 16,16 l -16,16 h -16 l -16,-16 l 16,-16 z" fill="#CF8B17" transform="translate(85.3515625,8)" data-argument-type="boolean"/>
+  </g>
+</svg>

@@ -108,7 +108,7 @@ const watchTask = () => {
     ],
   });
 
-  watch(['opdrachten/**/*', 'templates/**/*', 'global-lib/**/*'], build);
+  watch(['opdrachten/**/*', 'src/templates/**/*', 'global-lib/**/*'], build);
 };
 watchTask.description =
   'Watch for changes in the opdrachten, templates, and global-lib folders and rebuild the documentation.';

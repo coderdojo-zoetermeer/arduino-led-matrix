@@ -1,11 +1,16 @@
 @media print {
   .pagebreak {
-    page-break-before: always;
+    break-before: always;
     margin: 20px;
   }
 
   @page {
-    @bottom-right {
+    size: 793px 1122px;
+    margin-top: 0cm;
+    margin-bottom: 1cm;
+    margin-left: 0cm;
+    margin-right: 0cm;
+    @bottom-center {
       content: "Pagina " counter(page) " van " counter(pages);
     }
   }
@@ -57,7 +62,13 @@
 
   body,
   table {
-    font-size: 15pt;
+    /* font-size: 15pt;
+    transform: scale(2); */
+  }
+
+  html {
+    --width-a: 100vw;
+    zoom: calc(var(--width-a) / 793px);
   }
 }
 
@@ -102,6 +113,7 @@ table {
 
 .header-info-block {
   flex: 1 1 auto;
+  flex-basis: 0;
   border: 1px solid black;
   padding: 10px;
 }
@@ -113,6 +125,7 @@ table {
 }
 
 .read {
+  break-inside: avoid;
   border: 2px solid blue;
   padding: 10px;
   margin-top: 10px;
@@ -125,6 +138,7 @@ table {
 }
 
 .program {
+  break-inside: avoid;
   border: 2px solid green;
   padding: 10px;
   margin-top: 10px;
@@ -137,6 +151,7 @@ table {
 }
 
 .build {
+  break-inside: avoid;
   border: 2px solid black;
   padding: 10px;
   margin-top: 10px;
@@ -150,6 +165,7 @@ table {
 }
 
 .challenge {
+  break-inside: avoid;
   border: 2px solid red;
   padding: 10px;
   margin-top: 10px;
@@ -234,4 +250,8 @@ hr.separator-hidden {
 
 .tabs-tab-button.active {
   background-color: #ccc;
+}
+
+.license {
+  break-inside: avoid;
 }

@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" version="1.1" class="injectionDiv" viewBox="-1.094 1 115.611 40">
+  <style>
+    .blocklyText {
+        fill: #FFFFFF;
+        font-family: "Helvetica Neue", Helvetica, sans-serif;
+        font-size: 12pt;
+        font-weight: 500;
+    }
+    .blocklyNonEditableText&gt;text, .blocklyEditableText&gt;text {
+        fill: #575E75;
+    }
+    .blocklyDropdownText {
+        fill: #FFFFFF !important;
+    }
+    </style>
+  <g data-id="?n*#*?v;QyHe9w[aO-Zb" class="blocklyDraggable blocklySelected" data-shapes="reporter boolean" data-category="operators" transform="translate(1,1) scale(1)">
+    <path class="blocklyPath blocklyBlockBackground" stroke="#389438" fill="#59C059" fill-opacity="1" d="m 0,0 m 20,0 H 91.265625 l 20 20 l -20 20 H 20 l -20 -20 l 20 -20 z"/>
+    <text class="blocklyText" y="2" text-anchor="middle" dominant-baseline="middle" dy="0" x="13.6328125" transform="translate(20, 20) " style="white-space: pre;">niet</text>
+    <path class="blocklyPath" style="visibility: visible" d="M 16,0  h 16 l 16,16 l -16,16 h -16 l -16,-16 l 16,-16 z" fill="#389438" transform="translate(55.265625,4)" data-argument-type="boolean"/>
+  </g>
+</svg>

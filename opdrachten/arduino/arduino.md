@@ -12,10 +12,9 @@ infoBlocks:
   - title: Voorkennis
     content: |
       geen
-      
   - title: Leerdoelen
     content: |
-     - Aansluiten van Arduino UNU
+     - Aansluiten van Arduino UNO
      - LED
       
 ---

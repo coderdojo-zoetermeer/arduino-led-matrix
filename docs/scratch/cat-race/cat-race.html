@@ -11,7 +11,7 @@
       crossorigin='anonymous'
       referrerpolicy='no-referrer'
     />
-    <link rel='stylesheet' href='../template-assets/default.css' />
+    <link rel='stylesheet' href='../../template-assets/default.css' />
     <link
       href='https://fonts.googleapis.com/css?family=Open+Sans'
       rel='stylesheet'
@@ -39,8 +39,8 @@
       @media print {
         body {
         background-image:
-          url("../template-assets/arduino/left.svg"),
-                url("../template-assets/arduino/right.svg");
+          url("../../template-assets/scratch/left.svg"),
+                url("../../template-assets/scratch/right.svg");
                 background-size: 15px, 15px;
                 background-repeat: repeat-y, repeat-y;
                 background-position: left, right;
@@ -51,8 +51,8 @@
             @media screen {
               body {
               background-image:
-                url("../template-assets/arduino/left.svg"),
-                url("../template-assets/arduino/right.svg");
+                url("../../template-assets/scratch/left.svg"),
+                url("../../template-assets/scratch/right.svg");
                 background-size: 15px 100%, 15px 100%;
                 background-repeat: no-repeat, no-repeat;
                 background-position: left, right;
@@ -61,7 +61,7 @@
             }
 
               .header {
-                background-image: url("../template-assets/arduino/top.svg");
+                background-image: url("../../template-assets/scratch/top.svg");
                 background-size: 100% 15px;
                 background-repeat: no-repeat;
                 width: 100%;
@@ -69,7 +69,7 @@
               }
 
               .footer {
-                background-image: url("../template-assets/arduino/bottom.svg");
+                background-image: url("../../template-assets/scratch/bottom.svg");
                 background-size: 100% 15px;
                 background-repeat: no-repeat;
                 width: 100%;
@@ -77,7 +77,7 @@
               }
               .separator-fat {
                 display: block;
-                background-image: url("../template-assets/arduino/separator.svg");
+                background-image: url("../../template-assets/scratch/separator.svg");
                 background-size: 100% 10px;
                 background-repeat: no-repeat;
                 height: 10px;
@@ -90,18 +90,18 @@
 
   <body>
       <img
-        src='../template-assets/logo-arduino.png'
+        src='../../template-assets/logo-scratch3.png'
         class='language-logo'
       />
     <div class='header'>
       <div class='header-content'>
         <div style='padding-top: 20px; padding-left: 30px; max-height: 50px'>
           <img
-            src='../template-assets/logo-coderdojo-nl.png'
+            src='../../template-assets/logo-coderdojo-nl.png'
             style='width: 250px; position: relative'
           />
           <img
-            src='../template-assets/logo-zoetermeer.png'
+            src='../../template-assets/logo-zoetermeer.png'
             style='width: 250px; position: relative; right: 30px; float: right'
           />
         </div>
@@ -125,102 +125,153 @@
           <td>
             <div class='assignment-content'>
                 <img
-                  src='../template-assets/level5.svg'
+                  src='../../template-assets/level2.svg'
                   style='width: 200px; float: right; margin-right: 0px'
                 />
-              <p class='assignment-title'>Arduino Blink</p>
+              <p class='assignment-title'>Kat Race</p>
 
               <div style='display: flex; flex-direction: row; gap: 0px 10px'>
                   <div class='header-info-block'>
                     <div class='header-info-title'>Voorkennis</div>
-                    <p>geen</p>
+                    <p>Deze opdracht is gemaakt voor beginners</p>
 
                   </div>
                   <div class='header-info-block'>
                     <div class='header-info-title'>Leerdoelen</div>
                     <ul>
-<li>Aansluiten van Arduino UNO</li>
-<li>LED</li>
+<li>x-as</li>
+<li>gebeurtenissen</li>
+<li>variabelen</li>
 </ul>
 
                   </div>
               </div>
 
               <hr class="separator-fat">
-<h2>Benodigdheden</h2>
-<ul>
-<li>Arduino UNO</li>
-<li>Kabel om de Arduino aan te sluiten</li>
-</ul>
-<hr class="separator-fat">
 <div class="read">
 <p><em>Introductie</em></p>
-<p>In deze opdracht ga je werken met de ingebouwde LED van een Arduino UNO.</p>
+<p>In deze opdracht ga je een spel maken die als doel heeft de kat zo snel mogelijk
+naar de overkant te laten lopen.</p>
 <div class="clear-float"></div></div><hr class="separator-hidden">
-<div class="build">
-<p><img src="./assets/schema.svg" alt="" width="400" class="float-right">
-<em>Arduino aansluiten</em></p>
-<p>Sluit de arduino UNO aan met de kabel op je computer. Als dit de eerste keer is
-vraag dan een mentor om je te helpen.</p>
-<div class="clear-float"></div></div><p><div class="pagebreak"></div></p>
-<hr class="separator-hidden">
 <div class="program">
-<p><em>Open het Blink voorbeeld programma</em></p>
-<p>Start de Arduino IDE en open het voor voorbeeld Blink. Je kan deze vinden in het
-menu <strong>File -&gt; Examples -&gt; 01.Basics -&gt; Blink</strong>. Hieronder kan je zien hoe de
-code eruit ziet.</p>
-<p>Start het programma met de <strong>Upload</strong> button. De LED knippert nu.</p>
-<div class="codeblock">
-<pre><code class="language-ino"><span class="hljs-comment">/*
-  Blink
-
-  Turns an LED on for one second, then off for one second, repeatedly.
-
-  Most Arduinos have an on-board LED you can control. On the UNO, MEGA and ZERO
-  it is attached to digital pin 13, on MKR1000 on pin 6. LED_BUILTIN is set to
-  the correct LED pin independent of which board is used.
-  If you want to know what pin the on-board LED is connected to on your Arduino
-  model, check the Technical Specs of your board at:
-  https://docs.arduino.cc/hardware/
-
-  modified 8 May 2014
-  by Scott Fitzgerald
-  modified 2 Sep 2016
-  by Arturo Guadalupi
-  modified 8 Sep 2016
-  by Colby Newman
-
-  This example code is in the public domain.
-
-  https://docs.arduino.cc/built-in-examples/basics/Blink/
-*/</span>
-
-<span class="hljs-comment">// the setup function runs once when you press reset or power the board</span>
-<span class="hljs-function"><span class="hljs-type">void</span> <span class="hljs-title">setup</span><span class="hljs-params">()</span> </span>{
-  <span class="hljs-comment">// initialize digital pin LED_BUILTIN as an output.</span>
-  <span class="hljs-built_in">pinMode</span>(LED_BUILTIN, OUTPUT);
-}
-
-<span class="hljs-comment">// the loop function runs over and over again forever</span>
-<span class="hljs-function"><span class="hljs-type">void</span> <span class="hljs-title">loop</span><span class="hljs-params">()</span> </span>{
-  <span class="hljs-built_in">digitalWrite</span>(LED_BUILTIN, HIGH);  <span class="hljs-comment">// turn the LED on (HIGH is the voltage level)</span>
-  <span class="hljs-built_in">delay</span>(<span class="hljs-number">1000</span>);                      <span class="hljs-comment">// wait for a second</span>
-  <span class="hljs-built_in">digitalWrite</span>(LED_BUILTIN, LOW);   <span class="hljs-comment">// turn the LED off by making the voltage LOW</span>
-  <span class="hljs-built_in">delay</span>(<span class="hljs-number">1000</span>);                      <span class="hljs-comment">// wait for a second</span>
-}
-</code></pre>
-<div class="clear-float"></div></div><div class="clear-float"></div></div><p><div class="pagebreak"></div></p>
-<hr class="separator-hidden">
-<div class="challenge">
-<p><em>Uitdaging</em></p>
-<p>Laat de LED sneller knipperen.</p>
+<p><img src="./assets/cat.svg" alt="" width="50" class="float-right">
+<em>begin van de opdracht</em></p>
+<p>Ga naar de Kat-sprite en maak de kat kleiner. Zet de grootte op 50.</p>
+<p><img src="./assets/size-to-50.svg" alt="" width="400"></p>
+<div class="clear-float"></div></div><hr class="separator-hidden">
+<div class="program">
+<p><img src="./assets/cat.svg" alt="" width="50" class="float-right">
+<em>Zet kat links</em></p>
+<p>Als het spelletje start (Groene vlag) moet de kat links van het scherm staan.
+Gebruik de onderstaande code blokken om dit mogelijk te maken.</p>
+<p><img src="./assets/cat-to-left200.svg" alt="" width="300"></p>
+<div class="clear-float"></div></div><hr class="separator-hidden">
+<div class="read">
+<p><em>Uitleg x-as</em></p>
+<p>X wijst de plek van links naar recht op het scherm.</p>
+<ul>
+<li>Helemaal links is -220</li>
+<li>Het midden is 0</li>
+<li>Helemaal rechts is 220</li>
+</ul>
+<p><img src="./assets/x-as.drawio.svg" alt="" width="600"></p>
+<div class="clear-float"></div></div><hr class="separator-hidden">
+<div class="program">
+<p><img src="./assets/cat.svg" alt="" width="50" class="float-right">
+<em>De kat laten bewegen</em></p>
+<p>We willen de kat iedere keer een stukje naar voren laten bewegen als we op de
+spatiebalk drukken, dit kunnen we met de volgende extra code blokken.</p>
+<p>Voeg de code die in het rode rechthoek staat toe aan de code
+van <img src="./assets/cat.svg" alt="" width="30">.</p>
+<p><img src="./assets/take-10-steps.svg" alt="" width="400"></p>
+<p><img src="./assets/start-flag.svg" alt="" width="400" class="float-right">
+Probeer het uit:</p>
+<ul>
+<li>Start het programma door op de groene vlag te klikken.</li>
+<li>Druk een paar keer op de spatiebalk.</li>
+<li>Start het programma opnieuw door op de groene vlag te klikken.</li>
+<li>Houd de spatiebalk ingedrukt.</li>
+</ul>
+<p>Snap je hoe het werkt?</p>
+<div class="clear-float"></div></div><hr class="separator-hidden">
+<div class="read">
+<p><img src="./assets/events.svg" alt="" width="200" class="float-right">
+<em>Uitleg gebeurtenissen</em></p>
+<p>Een gebeurtenis is iets dat door de computer wordt herkend en waarmee je een
+blok in je programma kan starten.</p>
+<p>De gebeurtenis [wanneer op <img src="./assets/flag.svg" alt="" width="20"> wordt geklikt] wordt
+door de computer herkend als je met je muis op de groene vlag klikt. De acties
+onder het blok [wanneer op <img src="./assets/flag.svg" alt="" width="20"> wordt geklikt] worden
+dan uitgevoerd.</p>
+<p>De gebeurtenis [wanneer spatiebalk is ingedrukt] wordt herkend als de spatiebalk
+wordt ingedrukt. De acties onder deze gebeurtenis worden dan uitgevoerd.</p>
+<p>Er zijn nog veel meer gebeurtenissen die je kan gebruiken. Deze vind bij
+gebeurtenissen in de balk links.</p>
+<div class="clear-float"></div></div><hr class="separator-hidden">
+<div class="program">
+<p><img src="./assets/cat.svg" alt="" width="50" class="float-right">
+<em>Niet vals spelen!</em></p>
+<p><img src="./assets/wait-for-release-spacekey.svg" alt="" width="200" class="float-right">
+Om te voorkomen dat je makkelijk aan de overkant komt, willen we wachten nadat
+de spatiebalk is ingedrukt, dat hij eerst weer is los gelaten.</p>
+<p>Pas de code van <img src="./assets/cat.svg" alt="" width="30"> aan zoals hiernaast is in de
+rode rechthoek is weergegeven.</p>
+<p>Kijk goed naar de kleuren!</p>
+<ul>
+<li>Het blok <img src="./assets/wacht.svg" alt="" height="12"> (donker oranje) vind je in de Besturen lijst</li>
+<li>Het blok <img src="./assets/niet.svg" alt="" height="12"> (groen) vind je in de Functies lijst</li>
+<li>Het blok <img src="./assets/toets-space.svg" alt="" height="12"> (licht blauwe) vind je in de Waarnemen lijst</li>
+</ul>
+<p>Je moet de blokken dus in elkaar schuiven!</p>
+<div class="clear-float"></div></div><hr class="separator-hidden">
+<div class="program">
+<p><img src="./assets/cat.svg" alt="" width="50" class="float-right">
+<em>Een finishlijn toevoegen</em></p>
+<p>Maak een nieuwe Sprite (plaatje) aan en teken hier een finishlijn in.</p>
+<p><img src="./assets/draw-sprite.svg" alt="" width="200">
+<img src="./assets/finishline.png" alt="" width="200"></p>
+<div class="clear-float"></div></div><hr class="separator-hidden">
+<div class="program">
+<p><img src="./assets/cat.svg" alt="" width="50" class="float-right">
+<em>Spel laten stoppen als kat bij de finish is</em></p>
+<p>Als de kat nu bij de finish lijn komt moet ons spel stoppen. Dit kan je met de
+volgende code blokken doen. Voeg deze codeblokken toe
+aan <img src="./assets/cat.svg" alt="" width="30"></p>
+<p><img src="./assets/stop-at-finish.svg" alt="" width="200"></p>
+<div class="clear-float"></div></div><hr class="separator-hidden">
+<div class="read">
+<p><em>uitleg variabelen</em></p>
+<p>Met variabelen kan je je programma vertellen om dingen te onthouden. Een
+variabele is een plekje in het geheugen van de computer waarin je een waarde kan
+bewaren. Bijvoorbeeld de score of de uitkomst van een som.</p>
+<h2>Maken van een variabele</h2>
+<p>Om een variabele te kunnen gebruiken, moet je hem eerst maken. Dit doe je door
+op maak variabele te klikken.</p>
+<p><img src="./assets/maak-variabele.svg" alt="" width="200"></p>
+<p>Je krijgt nu een formulier waarin je de variabele een naam kan geven. In dit
+voorbeeld score.</p>
+<p><img src="./assets/maak-variabele1.svg" alt="" width="200"></p>
+<h2>Gebruiken van een variabele</h2>
+<p>Je krijgt nu een nieuwe bouwsteen die je kan gebruiken in je programma.</p>
+<p><img src="./assets/maak-variabele2.svg" alt="" height="75">
+<img src="./assets/gebruik-variabele.svg" alt="" height="100"></p>
+<div class="clear-float"></div></div><hr class="separator-hidden">
+<div class="program">
+<p><img src="./assets/cat.svg" alt="" width="50" class="float-right">
+<em>De tijd bijhouden</em></p>
+<p>Dit is een Race! dus moeten we de tijd bij gaan houden hoelang de kat erover
+doet.</p>
+<p>We hebben hiervoor een variabele nodig met de naam <code>tijd</code>. In de
+uitleg over variabelen staat hoe dit moet.</p>
+<p>Maak nu zelf een variabele met de naam tijd.</p>
+<p><img src="./assets/variabele-tijd.svg" alt="" height="150"></p>
 <div class="clear-float"></div></div>
 
 
               <div class="license">
                 <hr />
                 <img
-                  src='../template-assets/by-nc-sa.png'
+                  src='../../template-assets/by-nc-sa.png'
                   style='width: 117px; height: 41px; float: right'
                 />
                 <div class='license'>
@@ -271,7 +322,6 @@ code eruit ziet.</p>
                 <div class='acknowledgements'>
                   <em>Acknowledgements:</em>
                   <div style='padding-left: 20px;'>
-                      <p>author(s): Ben Mens</p>
 
                     <p>This document was created by CoderDojo Zoetermeer. The
                       template design was inspired by the CoderDojo branding and
