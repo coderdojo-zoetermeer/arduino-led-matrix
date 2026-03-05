@@ -183,7 +183,7 @@ Gebruik de onderstaande code blokken om dit mogelijk te maken.</p>
 <p>We willen de kat iedere keer een stukje naar voren laten bewegen als we op de
 spatiebalk drukken, dit kunnen we met de volgende extra code blokken.</p>
 <p>Voeg de code die in het rode rechthoek staat toe aan de code
-van <img src="./assets/cat.svg" alt="" width="30">.</p>
+van <img src="./assets/cat.svg" alt="" width="12">.</p>
 <p><img src="./assets/take-10-steps.svg" alt="" width="400"></p>
 <p><img src="./assets/start-flag.svg" alt="" width="400" class="float-right">
 Probeer het uit:</p>
@@ -200,9 +200,9 @@ Probeer het uit:</p>
 <em>Uitleg gebeurtenissen</em></p>
 <p>Een gebeurtenis is iets dat door de computer wordt herkend en waarmee je een
 blok in je programma kan starten.</p>
-<p>De gebeurtenis [wanneer op <img src="./assets/flag.svg" alt="" width="20"> wordt geklikt] wordt
+<p>De gebeurtenis [wanneer op <img src="./assets/flag.svg" alt="" width="12"> wordt geklikt] wordt
 door de computer herkend als je met je muis op de groene vlag klikt. De acties
-onder het blok [wanneer op <img src="./assets/flag.svg" alt="" width="20"> wordt geklikt] worden
+onder het blok [wanneer op <img src="./assets/flag.svg" alt="" width="12"> wordt geklikt] worden
 dan uitgevoerd.</p>
 <p>De gebeurtenis [wanneer spatiebalk is ingedrukt] wordt herkend als de spatiebalk
 wordt ingedrukt. De acties onder deze gebeurtenis worden dan uitgevoerd.</p>
@@ -212,10 +212,10 @@ gebeurtenissen in de balk links.</p>
 <div class="program">
 <p><img src="./assets/cat.svg" alt="" width="50" class="float-right">
 <em>Niet vals spelen!</em></p>
-<p><img src="./assets/wait-for-release-spacekey.svg" alt="" width="200" class="float-right">
+<p><img src="./assets/wait-for-release-spacekey.svg" alt="" width="300" class="float-right">
 Om te voorkomen dat je makkelijk aan de overkant komt, willen we wachten nadat
 de spatiebalk is ingedrukt, dat hij eerst weer is los gelaten.</p>
-<p>Pas de code van <img src="./assets/cat.svg" alt="" width="30"> aan zoals hiernaast is in de
+<p>Pas de code van <img src="./assets/cat.svg" alt="" width="12"> aan zoals hiernaast is in de
 rode rechthoek is weergegeven.</p>
 <p>Kijk goed naar de kleuren!</p>
 <ul>
@@ -235,10 +235,13 @@ rode rechthoek is weergegeven.</p>
 <div class="program">
 <p><img src="./assets/cat.svg" alt="" width="50" class="float-right">
 <em>Spel laten stoppen als kat bij de finish is</em></p>
-<p>Als de kat nu bij de finish lijn komt moet ons spel stoppen. Dit kan je met de
-volgende code blokken doen. Voeg deze codeblokken toe
-aan <img src="./assets/cat.svg" alt="" width="30"></p>
-<p><img src="./assets/stop-at-finish.svg" alt="" width="200"></p>
+<p><img src="./assets/stop-at-finish.svg" alt="" width="300" class="float-right">
+Als de kat nu bij de finish lijn komt moet ons spel stoppen. Dit kan je met de
+volgende code blokken doen.</p>
+<p>Voeg deze codeblokken toe aan <img src="./assets/cat.svg" alt="" width="12"></p>
+<p>Dit zorgt ervoor dat <img src="./assets/cat.svg" alt="" width="12"> hallo zegt als hij
+<code>Sprite 2</code> raakt. <code>Sprite 2</code> is de sprite voor de
+finishlijn.</p>
 <div class="clear-float"></div></div><hr class="separator-hidden">
 <div class="read">
 <p><em>uitleg variabelen</em></p>
@@ -259,13 +262,133 @@ voorbeeld score.</p>
 <div class="clear-float"></div></div><hr class="separator-hidden">
 <div class="program">
 <p><img src="./assets/cat.svg" alt="" width="50" class="float-right">
-<em>De tijd bijhouden</em></p>
+<em>Maken variabele voor het bijhouden van de tijd</em></p>
 <p>Dit is een Race! dus moeten we de tijd bij gaan houden hoelang de kat erover
 doet.</p>
 <p>We hebben hiervoor een variabele nodig met de naam <code>tijd</code>. In de
 uitleg over variabelen staat hoe dit moet.</p>
 <p>Maak nu zelf een variabele met de naam tijd.</p>
 <p><img src="./assets/variabele-tijd.svg" alt="" height="150"></p>
+<div class="clear-float"></div></div><hr class="separator-hidden">
+<div class="program">
+<p><img src="./assets/cat.svg" alt="" width="50" class="float-right">
+<em>De tijd bijhouden</em></p>
+<p>Nu moeten we er eerst voor zorgen dat de tijd op nul wordt gezet als je het
+programma start.</p>
+<p><img src="./assets/reset-time.svg" alt="" height="150"></p>
+<p>Zorg er nu voor dat de variable <code>tijd</code> elke seconde met 1 wordt
+verhoogt.</p>
+<p><img src="./assets/count-seconds.svg" alt="" height="150"></p>
+<div class="clear-float"></div></div><hr class="separator-hidden">
+<div class="program">
+<p><img src="./assets/cat.svg" alt="" width="50" class="float-right">
+<em>Score en tijd laten zien</em></p>
+<p><img src="./assets/say-score.svg" alt="" width="300" class="float-right">
+We gaan er nu voor zorgen dat je de score ziet als <img src="./assets/cat.svg" alt="" width="12">
+bij de finish komt.</p>
+<p>De tijd meten in hele seconden is misschien niet zo leuk. Laten we de tijd
+in 1/10 van een seconde gaan meten.</p>
+<p>We willen dus de variabele tijd niet 1x per seconde verhogen, maar 10x
+per seconden</p>
+<p>Pas de code aan zoals hiernaast is weergegeven.</p>
+<div class="clear-float"></div></div><hr class="separator-hidden">
+<div class="program">
+<p><img src="./assets/cat.svg" alt="" width="50" class="float-right">
+<em>Hindernissen 1</em></p>
+<p>Laten we het wat moeilijker maken en een hindernis op de weg van de kat zetten.</p>
+<p>Dit kan je doen door Kies een sprite. Kies een leuk plaatje uit en
+maak het plaatje ook weer wat kleiner, bijvoorbeeld weer grootte 50</p>
+<p><img src="./assets/banaan.svg" alt="" width="400"></p>
+<p>Nu moeten we ervoor zorgen dat als <img src="./assets/cat.svg" alt="" width="12"> de hindernis
+aanraakt (de bananen) dat de kat weer terug word gezet aan het begin van het
+spel. Dat kan je met de volgende commando blokken doen</p>
+<p><img src="./assets/hit-banannas.svg" alt="" width="300"></p>
+<div class="clear-float"></div></div><hr class="separator-hidden">
+<div class="read">
+<p><em>Uitleg y-as</em></p>
+<p><img src="./assets/y-as.drawio.svg" alt="" width="150" class="float-right">
+Y wijst de plek van boven naar beneden op het scherm.</p>
+<ul>
+<li>Helemaal boven is 170</li>
+<li>Het midden is 0</li>
+<li>Helemaal onder is -170</li>
+</ul>
+<div class="clear-float"></div></div><hr class="separator-hidden">
+<div class="program">
+<p><img src="./assets/cat.svg" alt="" width="50" class="float-right">
+<em>Omhoog bewegen</em></p>
+<p>Nu moeten we het wel mogelijk maken voor de kat om de hindernis te ontwijken.
+Dit kunnen we doen door de kat omhoog en omlaag te laten gaan. Gebruik pijltje
+omhoog om de kat om hoog te laten gaan. De Y Positie van de kat bepaald hoe
+hoog de kat staat.</p>
+<p><img src="./assets/move-up.svg" alt="" width="300"></p>
+<div class="clear-float"></div></div><hr class="separator-hidden">
+<div class="program">
+<p><img src="./assets/cat.svg" alt="" width="50" class="float-right">
+<em>Omlaag bewegen</em></p>
+<p>Maak zelf een block om de kat omlaag te laten bewegen als op pijltje omlaag
+wordt gedrukt.</p>
+<div class="clear-float"></div></div><hr class="separator-hidden">
+<div class="program">
+<p><img src="./assets/cat.svg" alt="" width="50" class="float-right">
+<em>Y positie op 0 zetten bij het begin</em></p>
+<p>Als het spel begint moet <img src="./assets/cat.svg" alt="" width="12"> op y-positie 0 staan.</p>
+<p>Voeg het onderstaande blok toe aan je programma. Je moet zelf bepalen waar hij
+moet komen.</p>
+<p><img src="./assets/reset-y.svg" alt="" width="150"></p>
+<div class="clear-float"></div></div><hr class="separator-hidden">
+<div class="challenge">
+<p><em>Extra hindernissen</em></p>
+<p><img src="./assets/meer-hindernissen.png" alt="" width="200" class="float-right">
+Maak meerdere hindernissen door rotsen toe te voegen.</p>
+<p>Zorg er voor dat als de kat tegen
+de hindernissen aanloopt hij altijd
+weer terug links word geplaatst!</p>
+<div class="clear-float"></div></div><hr class="separator-hidden">
+<div class="challenge">
+<p><em>Langzamer lopen</em></p>
+<p>Laat de kat langzamer lopen, dus dat je nog veel vaker op de spatiebalk moet
+drukken om bij de finish te komen.</p>
+<ul>
+<li>Met hoeveel stappen per keer loopt de kat nu?</li>
+<li>Moet je het aantal stappen hoger of lager maken om de kat langzamer
+te laten lopen?</li>
+</ul>
+<div class="clear-float"></div></div><hr class="separator-hidden">
+<div class="challenge">
+<p><em>Twee spelers</em></p>
+<p>Kan je dit een 2-speler spel maken?</p>
+<ul>
+<li>Maak naast de kat een andere speler in je spel</li>
+<li>Kopieer de code van de kat naar de andere speler</li>
+</ul>
+<p>Verander de toetsen voor de spelers</p>
+<ul>
+<li>
+<p>Kat (Speler 1)</p>
+<ul>
+<li>Vooruit : Z</li>
+<li>Omhoog: S</li>
+<li>Omlaag: X</li>
+</ul>
+</li>
+<li>
+<p>Speler 2</p>
+<ul>
+<li>Vooruit: N</li>
+<li>Omhoog: K</li>
+<li>Omlaag: M</li>
+</ul>
+</li>
+<li>
+<p>Als de 2 spelers elkaar aanraken, zet dan beide spelers terug aan het begin!</p>
+</li>
+</ul>
+<div class="clear-float"></div></div><hr class="separator-hidden">
+<div class="read">
+<p><em>Voorbeeld spel programma</em></p>
+<p><a href="./assets/cat-race.sb3">Download</a></p>
+<p><img src="./assets/example-result.png" alt="" width="700"></p>
 <div class="clear-float"></div></div>
 
 

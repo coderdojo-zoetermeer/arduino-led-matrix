@@ -85,6 +85,13 @@ const copyTemplateAssets = async () => {
   }).pipe(dest('docs/template-assets'));
 };
 
+const copyAssignmentAssets = async () => {
+  src([path.join('opdrachten/**/assets/**/*')], {
+    encoding: false,
+    base: path.join('opdrachten'),
+  }).pipe(dest('docs'));
+};
+
 const watchTask = () => {
   const options = minimist(process.argv.slice(2), {
     string: ['port'],
@@ -113,7 +120,7 @@ const watchTask = () => {
 watchTask.description =
   'Watch for changes in the opdrachten, templates, and global-lib folders and rebuild the documentation.';
 
-export const build = series(buildAssignments, copyTemplateAssets);
+export const build = series(buildAssignments, copyTemplateAssets, copyAssignmentAssets);
 build.description =
   'Build the assignment documentation and copy assets to the docs folder.';
 
