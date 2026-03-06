@@ -23,7 +23,7 @@ infoBlocks:
 
 ::::: tabs#Functies
 
-@tab:active scratch#scratch
+@tab:active scratch
 
 ## &lt;!-- @include: global-lib/explain-function.md#voorbeeld-scratch --&gt;
 
@@ -45,9 +45,97 @@ infoBlocks:
 
 ********************************************************************************
 
+# X-as
+
+::::: tabs#x-axes
+
+@tab:active scratch#scratch
+
+## &lt;!-- @include: global-lib/explain-axis.md#x-as-scratch --&gt;
+
+<!-- @include: global-lib/explain-axis.md#x-as-scratch -->
+
+@tab arduino#arduino
+
+==ToDo==
+
+@tab python#python
+
+==ToDo==
+
+:::::
+
+********************************************************************************
+
+# Y-as
+
+::::: tabs#y-axes
+
+@tab:active scratch#scratch
+
+## &lt;!-- @include: global-lib/explain-axis.md#y-as-scratch --&gt;
+
+<!-- @include: global-lib/explain-axis.md#y-as-scratch -->
+
+@tab arduino#arduino
+
+==ToDo==
+
+@tab python#python
+
+==ToDo==
+
+:::::
+
+********************************************************************************
+
+# Variabelen
+
+::::: tabs#variable
+
+@tab:active scratch#scratch
+
+## &lt;!-- @include: global-lib/explain-variabele.md#scratch --&gt;
+
+<!-- @include: global-lib/explain-variabele.md#scratch -->
+
+@tab arduino#arduino
+
+==ToDo==
+
+@tab python#python
+
+==ToDo==
+
+:::::
+
+********************************************************************************
+
+# Events
+
+::::: tabs#events
+
+@tab:active scratch#scratch
+
+## &lt;!-- @include: global-lib/explain-events.md#scratch --&gt;
+
+<!-- @include: global-lib/explain-events.md#scratch -->
+
+@tab arduino#arduino
+
+==ToDo==
+
+@tab python#python
+
+==ToDo==
+
+:::::
+
+********************************************************************************
+
 # Modulo functie
 
-::::: tabs#Functies
+::::: tabs#modulo
 
 @tab:active scratch#scratch
 

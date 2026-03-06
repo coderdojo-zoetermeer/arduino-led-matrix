@@ -15,6 +15,7 @@ infoBlocks:
   - title: Leerdoelen
     content: |
       - x-as
+      - y-as
       - gebeurtenissen
       - variabelen
       
@@ -58,19 +59,7 @@ Gebruik de onderstaande code blokken om dit mogelijk te maken.
 
 ________________________________________________________________________________
 
-::: read
-
-*Uitleg x-as*
-
-X wijst de plek van links naar recht op het scherm.
-
-- Helemaal links is -220
-- Het midden is 0
-- Helemaal rechts is 220
-
-![x-as =600x ](./assets/x-as.drawio.svg)
-
-:::
+<!-- @include: global-lib/explain-axis.md#x-as-scratch -->
 
 ________________________________________________________________________________
 
@@ -101,26 +90,7 @@ Snap je hoe het werkt?
 
 ________________________________________________________________________________
 
-::: read
-
-![events =200x](./assets/events.svg){.float-right}
-*Uitleg gebeurtenissen*
-
-Een gebeurtenis is iets dat door de computer wordt herkend en waarmee je een
-blok in je programma kan starten.
-
-De gebeurtenis [wanneer op ![flag =12x](./assets/flag.svg) wordt geklikt] wordt
-door de computer herkend als je met je muis op de groene vlag klikt. De acties
-onder het blok [wanneer op ![flag =12x](./assets/flag.svg) wordt geklikt] worden
-dan uitgevoerd.
-
-De gebeurtenis [wanneer spatiebalk is ingedrukt] wordt herkend als de spatiebalk
-wordt ingedrukt. De acties onder deze gebeurtenis worden dan uitgevoerd.
-
-Er zijn nog veel meer gebeurtenissen die je kan gebruiken. Deze vind bij
-gebeurtenissen in de balk links.
-
-:::
+<!-- @include: global-lib/explain-events.md#scratch -->
 
 ________________________________________________________________________________
 
@@ -138,9 +108,9 @@ rode rechthoek is weergegeven.
 
 Kijk goed naar de kleuren!
 
-- Het blok ![wacht =x12](./assets/wacht.svg) (donker oranje) vind je in de Besturen lijst
-- Het blok ![niet =x12](./assets/niet.svg) (groen) vind je in de Functies lijst
-- Het blok ![space =x12](./assets/toets-space.svg) (licht blauwe) vind je in de Waarnemen lijst
+- Het blok ![wacht =x15](./assets/wacht.svg) (donker oranje) vind je in de Besturen lijst
+- Het blok ![niet =x15](./assets/niet.svg) (groen) vind je in de Functies lijst
+- Het blok ![space =x15](./assets/toets-space.svg) (licht blauwe) vind je in de Waarnemen lijst
 
 Je moet de blokken dus in elkaar schuiven!
 
@@ -181,34 +151,7 @@ finishlijn.
 
 ________________________________________________________________________________
 
-::: read
-
-*uitleg variabelen*
-
-Met variabelen kan je je programma vertellen om dingen te onthouden. Een
-variabele is een plekje in het geheugen van de computer waarin je een waarde kan
-bewaren. Bijvoorbeeld de score of de uitkomst van een som.
-
-## Maken van een variabele
-
-Om een variabele te kunnen gebruiken, moet je hem eerst maken. Dit doe je door
-op maak variabele te klikken.
-
-![maak variabele =200x](./assets/maak-variabele.svg)
-
-Je krijgt nu een formulier waarin je de variabele een naam kan geven. In dit
-voorbeeld score.
-
-![maak variabele1 =200x](./assets/maak-variabele1.svg)
-
-## Gebruiken van een variabele
-
-Je krijgt nu een nieuwe bouwsteen die je kan gebruiken in je programma.
-
-![maak variabele =x75](./assets/maak-variabele2.svg)
-![gebruik variabele =x100](./assets/gebruik-variabele.svg)
-
-:::
+<!-- @include: global-lib/explain-variabele.md#scratch -->
 
 ________________________________________________________________________________
 
@@ -293,18 +236,7 @@ spel. Dat kan je met de volgende commando blokken doen
 
 ________________________________________________________________________________
 
-::: read
-
-*Uitleg y-as*
-
-![y-as =150x ](./assets/y-as.drawio.svg){.float-right}
-Y wijst de plek van boven naar beneden op het scherm.
-
-- Helemaal boven is 170
-- Het midden is 0
-- Helemaal onder is -170
-
-:::
+<!-- @include: global-lib/explain-axis.md#y-as-scratch -->
 
 ________________________________________________________________________________
 
@@ -329,7 +261,7 @@ ________________________________________________________________________________
 ![cat =50x ](./assets/cat.svg){.float-right}
 *Omlaag bewegen*
 
-Maak zelf een block om de kat omlaag te laten bewegen als op pijltje omlaag
+Maak zelf een blok om de kat omlaag te laten bewegen als op pijltje omlaag
 wordt gedrukt.
 
 :::
@@ -347,6 +279,8 @@ Voeg het onderstaande blok toe aan je programma. Je moet zelf bepalen waar hij
 moet komen.
 
 ![reset y =150x](./assets/reset-y.svg)
+
+Speel het spel en kijk of alles werkt.
 
 :::
 

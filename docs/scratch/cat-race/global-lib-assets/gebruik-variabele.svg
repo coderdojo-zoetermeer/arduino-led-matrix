@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" version="1.1" class="injectionDiv" viewBox="-224.587 287.52 1032.066 259.965">
+  <style>
+    .blocklyText {
+        fill: #FFFFFF;
+        font-family: "Helvetica Neue", Helvetica, sans-serif;
+        font-size: 12pt;
+        font-weight: 500;
+    }
+    .blocklyNonEditableText&gt;text, .blocklyEditableText&gt;text {
+        fill: #575E75;
+    }
+    .blocklyDropdownText {
+        fill: #FFFFFF !important;
+    }
+    </style>
+  <g data-id="y=mpd#^)x/s.#s*1`$Kl" class="blocklyDraggable" data-shapes="stack" data-category="data" transform="matrix(1, 0, 0, 1, -163.114365, 343.753876)">
+    <path class="blocklyPath blocklyBlockBackground" stroke="#DB6E00" fill="#FF8C1A" fill-opacity="1" d="m 0,4 A 4,4 0 0,1 4,0 H 12 c 2,0 3,1 4,2 l 4,4 c 1,1 2,2 4,2 h 12 c 2,0 3,-1 4,-2 l 4,-4 c 1,-1 2,-2 4,-2 H 191.25 a 4,4 0 0,1 4,4 v 40  a 4,4 0 0,1 -4,4 H 48   c -2,0 -3,1 -4,2 l -4,4 c -1,1 -2,2 -4,2 h -12 c -2,0 -3,-1 -4,-2 l -4,-4 c -1,-1 -2,-2 -4,-2 H 4 a 4,4 0 0,1 -4,-4 z" style=""/>
+    <g data-id="TzkDJZTpxF8QV01[2JTJ" data-argument-type="text" data-shapes="argument round" transform="translate(147.25,8)">
+      <path class="blocklyPath blocklyBlockBackground" stroke="#DB6E00" fill="#FFFFFF" fill-opacity="1" d="m 0,0 m 16,0 H 24 a 16 16 0 0 1 0 32 H 16 a 16 16 0 0 1 0 -32 z"/>
+      <g class="blocklyEditableText" transform="translate(8, 0) " style="cursor: text;">
+        <text class="blocklyText" x="12" y="18" dominant-baseline="middle" dy="0" text-anchor="middle" style="white-space: pre;">0</text>
+      </g>
+    </g>
+    <text class="blocklyText" y="2" text-anchor="middle" dominant-baseline="middle" dy="0" x="20.15625" style="white-space: pre;" transform="translate(8, 24) ">maak</text>
+    <g data-argument-type="variable" class="blocklyEditableText" transform="translate(56.3125, 8) " style="cursor: default;">
+      <rect rx="4" ry="4" x="0" y="0" width="82.9375" height="32" stroke="#DB6E00" fill="#FF8C1A" class="blocklyBlockBackground" fill-opacity="1"/>
+      <text class="blocklyText blocklyDropdownText" x="31.46875" y="18" dominant-baseline="middle" dy="0" text-anchor="middle" style="white-space: pre;">score</text>
+      <image height="12px" width="12px" transform="translate(58.9375,11)" href="data:image/svg+xml;base64,PHN2ZyBpZD0iTGF5ZXJfMSIgZGF0YS1uYW1lPSJMYXllciAxIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxMi43MSIgaGVpZ2h0PSI4Ljc5IiB2aWV3Qm94PSIwIDAgMTIuNzEgOC43OSI+PHRpdGxlPmRyb3Bkb3duLWFycm93PC90aXRsZT48ZyBvcGFjaXR5PSIwLjEiPjxwYXRoIGQ9Ik0xMi43MSwyLjQ0QTIuNDEsMi40MSwwLDAsMSwxMiw0LjE2TDguMDgsOC4wOGEyLjQ1LDIuNDUsMCwwLDEtMy40NSwwTDAuNzIsNC4xNkEyLjQyLDIuNDIsMCwwLDEsMCwyLjQ0LDIuNDgsMi40OCwwLDAsMSwuNzEuNzFDMSwwLjQ3LDEuNDMsMCw2LjM2LDBTMTEuNzUsMC40NiwxMiwuNzFBMi40NCwyLjQ0LDAsMCwxLDEyLjcxLDIuNDRaIiBmaWxsPSIjMjMxZjIwIi8+PC9nPjxwYXRoIGQ9Ik02LjM2LDcuNzlhMS40MywxLjQzLDAsMCwxLTEtLjQyTDEuNDIsMy40NWExLjQ0LDEuNDQsMCwwLDEsMC0yYzAuNTYtLjU2LDkuMzEtMC41Niw5Ljg3LDBhMS40NCwxLjQ0LDAsMCwxLDAsMkw3LjM3LDcuMzdBMS40MywxLjQzLDAsMCwxLDYuMzYsNy43OVoiIGZpbGw9IiNmZmYiLz48L3N2Zz4="/>
+    </g>
+    <path class="blocklyPath" style="visibility: hidden" fill="#DB6E00" d=""/>
+  </g>
+  <g data-id="Y=mu4UXqfXKD@~PIoC,5" class="blocklyDraggable" data-shapes="stack" data-category="data" transform="matrix(1, 0, 0, 1, 120.976143, 343.753876)">
+    <path class="blocklyPath blocklyBlockBackground" stroke="#DB6E00" fill="#FF8C1A" fill-opacity="1" d="m 0,4 A 4,4 0 0,1 4,0 H 12 c 2,0 3,1 4,2 l 4,4 c 1,1 2,2 4,2 h 12 c 2,0 3,-1 4,-2 l 4,-4 c 1,-1 2,-2 4,-2 H 252.3043975830078 a 4,4 0 0,1 4,4 v 40  a 4,4 0 0,1 -4,4 H 48   c -2,0 -3,1 -4,2 l -4,4 c -1,1 -2,2 -4,2 h -12 c -2,0 -3,-1 -4,-2 l -4,-4 c -1,-1 -2,-2 -4,-2 H 4 a 4,4 0 0,1 -4,-4 z"/>
+    <g data-id="pF)ZP#OX6}^TBDKAh9I|" data-argument-type="text number" data-shapes="argument round" transform="translate(208.3043975830078,8)">
+      <path class="blocklyPath blocklyBlockBackground" stroke="#DB6E00" fill="#FFFFFF" fill-opacity="1" d="m 0,0 m 16,0 H 24 a 16 16 0 0 1 0 32 H 16 a 16 16 0 0 1 0 -32 z"/>
+      <g class="blocklyEditableText" transform="translate(8, 0) " style="cursor: text;">
+        <text class="blocklyText" x="12" y="18" dominant-baseline="middle" dy="0" text-anchor="middle" style="white-space: pre;">1</text>
+      </g>
+    </g>
+    <text class="blocklyText" y="2" text-anchor="middle" dominant-baseline="middle" dy="0" x="32.609375" style="white-space: pre;" transform="translate(8, 24) ">verander</text>
+    <g data-argument-type="variable" class="blocklyEditableText" transform="translate(81.21875, 8) " style="cursor: default;">
+      <rect rx="4" ry="4" x="0" y="0" width="82.9375" height="32" stroke="#DB6E00" fill="#FF8C1A" class="blocklyBlockBackground" fill-opacity="1"/>
+      <text class="blocklyText blocklyDropdownText" x="31.46875" y="18" dominant-baseline="middle" dy="0" text-anchor="middle" style="white-space: pre;">score</text>
+      <image height="12px" width="12px" transform="translate(58.9375,11)" href="data:image/svg+xml;base64,PHN2ZyBpZD0iTGF5ZXJfMSIgZGF0YS1uYW1lPSJMYXllciAxIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxMi43MSIgaGVpZ2h0PSI4Ljc5IiB2aWV3Qm94PSIwIDAgMTIuNzEgOC43OSI+PHRpdGxlPmRyb3Bkb3duLWFycm93PC90aXRsZT48ZyBvcGFjaXR5PSIwLjEiPjxwYXRoIGQ9Ik0xMi43MSwyLjQ0QTIuNDEsMi40MSwwLDAsMSwxMiw0LjE2TDguMDgsOC4wOGEyLjQ1LDIuNDUsMCwwLDEtMy40NSwwTDAuNzIsNC4xNkEyLjQyLDIuNDIsMCwwLDEsMCwyLjQ0LDIuNDgsMi40OCwwLDAsMSwuNzEuNzFDMSwwLjQ3LDEuNDMsMCw2LjM2LDBTMTEuNzUsMC40NiwxMiwuNzFBMi40NCwyLjQ0LDAsMCwxLDEyLjcxLDIuNDRaIiBmaWxsPSIjMjMxZjIwIi8+PC9nPjxwYXRoIGQ9Ik02LjM2LDcuNzlhMS40MywxLjQzLDAsMCwxLTEtLjQyTDEuNDIsMy40NWExLjQ0LDEuNDQsMCwwLDEsMC0yYzAuNTYtLjU2LDkuMzEtMC41Niw5Ljg3LDBhMS40NCwxLjQ0LDAsMCwxLDAsMkw3LjM3LDcuMzdBMS40MywxLjQzLDAsMCwxLDYuMzYsNy43OVoiIGZpbGw9IiNmZmYiLz48L3N2Zz4="/>
+    </g>
+    <text class="blocklyText" y="2" text-anchor="middle" dominant-baseline="middle" dy="0" x="14.074073791503906" style="white-space: pre;" transform="translate(172.15625, 24) ">met</text>
+    <path class="blocklyPath" style="visibility: hidden" fill="#DB6E00" d=""/>
+  </g>
+  <g data-id=":ztQ:Jlb#INEsQ8[7r_;" class="blocklyDraggable blocklySelected" data-shapes="stack" data-category="data" transform="matrix(1, 0, 0, 1, 433.572449, 343.753876)">
+    <path class="blocklyPath blocklyBlockBackground" stroke="#DB6E00" fill="#FF8C1A" fill-opacity="1" d="m 0,4 A 4,4 0 0,1 4,0 H 12 c 2,0 3,1 4,2 l 4,4 c 1,1 2,2 4,2 h 12 c 2,0 3,-1 4,-2 l 4,-4 c 1,-1 2,-2 4,-2 H 289.7890625 a 4,4 0 0,1 4,4 v 48  a 4,4 0 0,1 -4,4 H 48   c -2,0 -3,1 -4,2 l -4,4 c -1,1 -2,2 -4,2 h -12 c -2,0 -3,-1 -4,-2 l -4,-4 c -1,-1 -2,-2 -4,-2 H 4 a 4,4 0 0,1 -4,-4 z"/>
+    <text class="blocklyText" y="2" text-anchor="middle" dominant-baseline="middle" dy="0" x="20.15625" style="white-space: pre;" transform="translate(8, 28) ">maak</text>
+    <g data-argument-type="variable" class="blocklyEditableText" transform="translate(56.3125, 12) " style="cursor: default;">
+      <rect rx="4" ry="4" x="0" y="0" width="82.9375" height="32" stroke="#DB6E00" fill="#FF8C1A" class="blocklyBlockBackground" fill-opacity="1"/>
+      <text class="blocklyText blocklyDropdownText" x="31.46875" y="18" dominant-baseline="middle" dy="0" text-anchor="middle" style="white-space: pre;">score</text>
+      <image height="12px" width="12px" transform="translate(58.9375,11)" href="data:image/svg+xml;base64,PHN2ZyBpZD0iTGF5ZXJfMSIgZGF0YS1uYW1lPSJMYXllciAxIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxMi43MSIgaGVpZ2h0PSI4Ljc5IiB2aWV3Qm94PSIwIDAgMTIuNzEgOC43OSI+PHRpdGxlPmRyb3Bkb3duLWFycm93PC90aXRsZT48ZyBvcGFjaXR5PSIwLjEiPjxwYXRoIGQ9Ik0xMi43MSwyLjQ0QTIuNDEsMi40MSwwLDAsMSwxMiw0LjE2TDguMDgsOC4wOGEyLjQ1LDIuNDUsMCwwLDEtMy40NSwwTDAuNzIsNC4xNkEyLjQyLDIuNDIsMCwwLDEsMCwyLjQ0LDIuNDgsMi40OCwwLDAsMSwuNzEuNzFDMSwwLjQ3LDEuNDMsMCw2LjM2LDBTMTEuNzUsMC40NiwxMiwuNzFBMi40NCwyLjQ0LDAsMCwxLDEyLjcxLDIuNDRaIiBmaWxsPSIjMjMxZjIwIi8+PC9nPjxwYXRoIGQ9Ik02LjM2LDcuNzlhMS40MywxLjQzLDAsMCwxLTEtLjQyTDEuNDIsMy40NWExLjQ0LDEuNDQsMCwwLDEsMC0yYzAuNTYtLjU2LDkuMzEtMC41Niw5Ljg3LDBhMS40NCwxLjQ0LDAsMCwxLDAsMkw3LjM3LDcuMzdBMS40MywxLjQzLDAsMCwxLDYuMzYsNy43OVoiIGZpbGw9IiNmZmYiLz48L3N2Zz4="/>
+    </g>
+    <path class="blocklyPath" style="visibility: hidden" d="M 16,0 h 16 a 16 16 0 0 1 0 32 h -16 a 16 16 0 0 1 0 -32 z" fill="#DB6E00" data-argument-type="round" transform="translate(147.25,8)"/>
+    <g data-id="c6lIRN#]R(?.M+bLyvq`" class="blocklyDraggable" data-shapes="reporter round" data-category="operators" transform="translate(147.25,3.9999999999998863)">
+      <path class="blocklyPath blocklyBlockBackground" stroke="#389438" fill="#59C059" fill-opacity="1" d="m 0,0 m 24,0 H 114.5390625 a 24 24 0 0 1 0 48 H 24 a 24 24 0 0 1 0 -48 z"/>
+      <path class="blocklyPath" style="visibility: hidden" d="M 16,0 h 16 a 16 16 0 0 1 0 32 h -16 a 16 16 0 0 1 0 -32 z" fill="#389438" transform="translate(4,4)" data-argument-type="round"/>
+      <text class="blocklyText" y="2" text-anchor="middle" dominant-baseline="middle" dy="0" x="4.80078125" transform="translate(76.9375, 24) " style="white-space: pre;">+</text>
+      <path class="blocklyPath" style="visibility: hidden" d="M 16,0 h 16 a 16 16 0 0 1 0 32 h -16 a 16 16 0 0 1 0 -32 z" fill="#389438" transform="translate(69.6015625,4)" data-argument-type="round"/>
+      <g data-id="JnFD.FJOf;IF9CA?-oqy" data-argument-type="text number" data-shapes="argument round" transform="translate(94.5390625,8)">
+        <path class="blocklyPath blocklyBlockBackground" stroke="#389438" fill="#FFFFFF" fill-opacity="1" d="m 0,0 m 16,0 H 24 a 16 16 0 0 1 0 32 H 16 a 16 16 0 0 1 0 -32 z"/>
+        <g class="blocklyEditableText" transform="translate(8, 0) " style="cursor: text;">
+          <text class="blocklyText" x="12" y="18" dominant-baseline="middle" dy="0" text-anchor="middle" style="white-space: pre;">10</text>
+        </g>
+      </g>
+      <g data-id="cba]|wTaXXk(%d}(9c,e" class="blocklyDraggable" data-shapes="reporter round" data-category="data" transform="translate(4.000000000000057,4)">
+        <path class="blocklyPath blocklyBlockBackground" stroke="#DB6E00" fill="#FF8C1A" fill-opacity="1" d="m 0,0 m 20,0 H 44.9375 a 20 20 0 0 1 0 40 H 20 a 20 20 0 0 1 0 -40 z"/>
+        <g transform="translate(12, 4) ">
+          <text class="blocklyText" x="20.46875" y="18" dominant-baseline="middle" dy="0" text-anchor="middle" style="white-space: pre;">score</text>
+        </g>
+      </g>
+    </g>
+  </g>
+  <text style="white-space: pre; fill: rgb(51, 51, 51); font-family: Arial, sans-serif; font-size: 28px;" x="63.477" y="597.08" transform="matrix(1, 0, 0, 1, -226.591354, -162.441101)">Maak de waarde<tspan x="63.47700119018555" dy="1em">​</tspan>van de variabele<tspan x="63.47700119018555" dy="1em">​</tspan>met de naam <tspan x="63.47700119018555" dy="1em">​</tspan>score 0</text>
+  <text style="white-space: pre; fill: rgb(51, 51, 51); font-family: Arial, sans-serif; font-size: 28px;" x="335.354" y="705.144" transform="matrix(1, 0, 0, 1, -214.377869, -270.505127)">Tel 1 op bij de <tspan x="335.35400390625" dy="1em">​</tspan>waarde van score</text>
+  <text style="white-space: pre; fill: rgb(51, 51, 51); font-family: Arial, sans-serif; font-size: 28px;" x="685.276" y="729.725" transform="matrix(1, 0, 0, 1, -245.836746, -287.086151)">Tel 10 op bij de waarde<tspan x="685.2760009765625" dy="1em">​</tspan>van score</text>
+</svg>
