@@ -16,6 +16,9 @@ import { stylize } from '@mdit/plugin-stylize';
 import { include } from '@mdit/plugin-include';
 import { katex } from '@mdit/plugin-katex';
 import { tab } from '@mdit/plugin-tab';
+import MarkdownItTOC from 'markdown-it-table-of-contents';
+import MarkdownItAnchor from 'markdown-it-anchor';
+import { inlineRule } from '@mdit/plugin-inline-rule';
 
 hljs.registerLanguage('c', cpp);
 hljs.registerLanguage('cpp', cpp);
@@ -121,6 +124,17 @@ export function createMarkdownRenderer() {
   });
   md.use(tab, {
     name: 'tabs',
+  });
+  md.use(MarkdownItTOC);
+  md.use(MarkdownItAnchor);
+  md.use(inlineRule, {
+    marker: '!',
+    tag: 'span',
+    token: 'bordered',
+    nested: true,
+    double: true,
+    placement: 'before-emphasis',
+    attrs: [['class', 'bordered']],
   });
 
   const ruleProxy = (tokens, idx, options, env, self) =>

@@ -8,7 +8,7 @@ Met variabelen kan je je programma vertellen om dingen te onthouden. Een
 variabele is een plekje in het geheugen van de computer waarin je een waarde kan
 bewaren. Bijvoorbeeld de score of de uitkomst van een som.
 
-## Maken van een variabele
+*Maken van een variabele*
 
 Om een variabele te kunnen gebruiken, moet je hem eerst maken. Dit doe je door
 op maak variabele te klikken.
@@ -20,7 +20,7 @@ voorbeeld score.
 
 ![maak variabele1 =200x](./global-lib-assets/maak-variabele1.svg)
 
-## Gebruiken van een variabele
+*Gebruiken van een variabele*
 
 Je krijgt nu een nieuwe bouwsteen die je kan gebruiken in je programma.
 

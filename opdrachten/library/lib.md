@@ -12,32 +12,39 @@ infoBlocks:
 
 ********************************************************************************
 
+# Index
+
+[[toc]]
+
+********************************************************************************
+
 # Functies
 
 ## Algemeen
 
-## &lt;!-- @include: global-lib/explain-function.md#uitleg --&gt;
+```<!-- @include: global-lib/explain-function.md#uitleg -->```
+
 <!-- @include: global-lib/explain-function.md#uitleg -->
 
 ## Voorbeelden voor het maken van een functie
 
 ::::: tabs#Functies
 
-@tab:active scratch
+@tab:active scratch#scratch
 
-## &lt;!-- @include: global-lib/explain-function.md#voorbeeld-scratch --&gt;
+```<!-- @include: global-lib/explain-function.md#voorbeeld-scratch -->```
 
 <!-- @include: global-lib/explain-function.md#voorbeeld-scratch -->
 
 @tab arduino#arduino
 
-## &lt;!-- @include: global-lib/explain-function.md#voorbeeld-arduino --&gt;
+```<!-- @include: global-lib/explain-function.md#voorbeeld-arduino -->```
 
 <!-- @include: global-lib/explain-function.md#voorbeeld-arduino -->
 
 @tab python#python
 
-## &lt;!-- @include: global-lib/explain-function.md#voorbeeld-python --&gt;
+```<!-- @include: global-lib/explain-function.md#voorbeeld-python -->```
 
 <!-- @include: global-lib/explain-function.md#voorbeeld-python -->
 
@@ -51,7 +58,7 @@ infoBlocks:
 
 @tab:active scratch#scratch
 
-## &lt;!-- @include: global-lib/explain-axis.md#x-as-scratch --&gt;
+```<!-- @include: global-lib/explain-axis.md#x-as-scratch -->```
 
 <!-- @include: global-lib/explain-axis.md#x-as-scratch -->
 
@@ -73,7 +80,7 @@ infoBlocks:
 
 @tab:active scratch#scratch
 
-## &lt;!-- @include: global-lib/explain-axis.md#y-as-scratch --&gt;
+```<!-- @include: global-lib/explain-axis.md#y-as-scratch -->```
 
 <!-- @include: global-lib/explain-axis.md#y-as-scratch -->
 
@@ -95,7 +102,7 @@ infoBlocks:
 
 @tab:active scratch#scratch
 
-## &lt;!-- @include: global-lib/explain-variabele.md#scratch --&gt;
+```<!-- @include: global-lib/explain-variabele.md#scratch -->```
 
 <!-- @include: global-lib/explain-variabele.md#scratch -->
 
@@ -117,7 +124,7 @@ infoBlocks:
 
 @tab:active scratch#scratch
 
-## &lt;!-- @include: global-lib/explain-events.md#scratch --&gt;
+```<!-- @include: global-lib/explain-events.md#scratch -->```
 
 <!-- @include: global-lib/explain-events.md#scratch -->
 
@@ -139,19 +146,19 @@ infoBlocks:
 
 @tab:active scratch#scratch
 
-## &lt;!-- @include: global-lib/explain-mod.md#scratch --&gt;
+```<!-- @include: global-lib/explain-mod.md#scratch -->```
 
 <!-- @include: global-lib/explain-mod.md#scratch -->
 
 @tab arduino#arduino
 
-## &lt;!-- @include: global-lib/explain-mod.md#arduino --&gt;
+```<!-- @include: global-lib/explain-mod.md#arduino -->```
 
 <!-- @include: global-lib/explain-mod.md#arduino -->
 
 @tab python#python
 
-## &lt;!-- @include: global-lib/explain-mod.md#python --&gt;
+```<!-- @include: global-lib/explain-mod.md#python -->```
 
 <!-- @include: global-lib/explain-mod.md#python -->
 

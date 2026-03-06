@@ -11,7 +11,7 @@
     margin-left: 0cm;
     margin-right: 0cm;
     @bottom-center {
-      content: "Pagina " counter(page) " van " counter(pages);
+      content: 'Pagina ' counter(page) ' van ' counter(pages);
     }
   }
 
@@ -74,7 +74,7 @@
 
 body,
 table {
-  font-family: "Open Sans", sans-serif;
+  font-family: 'Open Sans', sans-serif;
 }
 
 .float-left {
@@ -133,7 +133,7 @@ table {
 }
 
 .read::before {
-  background-image: url("./readme-brands-solid-full.svg");
+  background-image: url('./readme-brands-solid-full.svg');
   float: left;
 }
 
@@ -146,7 +146,7 @@ table {
 }
 
 .program::before {
-  background-image: url("./code-solid-full.svg");
+  background-image: url('./code-solid-full.svg');
   float: left;
 }
 
@@ -159,9 +159,9 @@ table {
 }
 
 .build::before {
-  background-image: url("./hammer-solid-full.svg");
+  background-image: url('./hammer-solid-full.svg');
   float: left;
-  content: "uitdaging";
+  content: 'uitdaging';
 }
 
 .challenge {
@@ -173,7 +173,7 @@ table {
 }
 
 .challenge::before {
-  background-image: url("./lightbulb-regular-full.svg");
+  background-image: url('./lightbulb-regular-full.svg');
   float: left;
 }
 
@@ -192,7 +192,7 @@ table {
   background-size: 40px;
   background-repeat: no-repeat;
   background-position: left-top;
-  content: "";
+  content: '';
   display: inline-block;
   margin-top: 10px;
   margin-right: 10px;
@@ -254,4 +254,13 @@ hr.separator-hidden {
 
 .license {
   break-inside: avoid;
+}
+
+.bordered {
+  border: 1px solid black;
+  padding: 1px;
+  background-color: #F8F8FF;
+  font-family: 'Courier New', monospace;
+  display:inline-block;
+  border-radius: 3px;
 }

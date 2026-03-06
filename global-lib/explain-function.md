@@ -1,6 +1,8 @@
 <!-- #region uitleg -->
 :::: read
 
+*Uitleg functies*
+
 Een functie is en groep van instructies die samen een taak uitvoeren. Je kan
 functies gebruiken om je programma in kleinere stukjes op te hakken zodat het
 makkelijker is om te lezen. Ook zijn functies handig als je dezelfde groep

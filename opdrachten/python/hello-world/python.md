@@ -1,5 +1,5 @@
 ---
-title: Python Demo
+title: Hello world
 acknowledgements:
   author(s): Ben Mens
 level: 1
@@ -7,7 +7,7 @@ template: default
 progLang: python
 theme: python
 description: |
-    Python assignment demo
+    Python hello world
 infoBlocks:
   - title: Voorkennis
     content: | 

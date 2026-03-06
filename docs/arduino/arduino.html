@@ -2,143 +2,143 @@
 <html>
   <head>
     <link
-      rel='stylesheet'
-      href='https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.11.1/styles/arduino-light.min.css'
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.11.1/styles/arduino-light.min.css"
     />
     <link
-      rel='stylesheet'
-      href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css'
-      integrity='sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=='
-      crossorigin='anonymous'
-      referrerpolicy='no-referrer'
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
+      integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
     />
-    <link rel='stylesheet' href='../template-assets/default.css' />
+    <link rel="stylesheet" href="../template-assets/default.css" />
     <link
-      href='https://fonts.googleapis.com/css?family=Open+Sans'
-      rel='stylesheet'
-      type='text/css'
+      href="https://fonts.googleapis.com/css?family=Open+Sans"
+      rel="stylesheet"
+      type="text/css"
     />
     <link
-      href='https://fonts.googleapis.com/css?family=Roboto+Slab'
-      rel='stylesheet'
-      type='text/css'
+      href="https://fonts.googleapis.com/css?family=Roboto+Slab"
+      rel="stylesheet"
+      type="text/css"
     />
 
     <link
-      rel='stylesheet'
-      href='https://cdn.jsdelivr.net/npm/katex@0.16.28/dist/katex.min.css'
-      integrity='sha384-Wsr4Nh3yrvMf2KCebJchRJoVo1gTU6kcP05uRSh5NV3sj9+a8IomuJoQzf3sMq4T'
-      crossorigin='anonymous'
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/katex@0.16.28/dist/katex.min.css"
+      integrity="sha384-Wsr4Nh3yrvMf2KCebJchRJoVo1gTU6kcP05uRSh5NV3sj9+a8IomuJoQzf3sMq4T"
+      crossorigin="anonymous"
     />
     <script
       defer
-      src='https://cdn.jsdelivr.net/npm/katex@0.16.28/dist/katex.min.js'
-      integrity='sha384-+W9OcrYK2/bD7BmUAk+xeFAyKp0QjyRQUCxeU31dfyTt/FrPsUgaBTLLkVf33qWt'
-      crossorigin='anonymous'
+      src="https://cdn.jsdelivr.net/npm/katex@0.16.28/dist/katex.min.js"
+      integrity="sha384-+W9OcrYK2/bD7BmUAk+xeFAyKp0QjyRQUCxeU31dfyTt/FrPsUgaBTLLkVf33qWt"
+      crossorigin="anonymous"
     ></script>
     <style>
       @media print {
         body {
         background-image:
           url("../template-assets/arduino/left.svg"),
-                url("../template-assets/arduino/right.svg");
-                background-size: 15px, 15px;
-                background-repeat: repeat-y, repeat-y;
-                background-position: left, right;
-                margin: 0px;
-              }
-            }
+                      url("../template-assets/arduino/right.svg");
+                      background-size: 15px, 15px;
+                      background-repeat: repeat-y, repeat-y;
+                      background-position: left, right;
+                      margin: 0px;
+                    }
+                  }
 
-            @media screen {
-              body {
-              background-image:
-                url("../template-assets/arduino/left.svg"),
-                url("../template-assets/arduino/right.svg");
-                background-size: 15px 100%, 15px 100%;
-                background-repeat: no-repeat, no-repeat;
-                background-position: left, right;
-                margin: 0px;
-              }
-            }
+                  @media screen {
+                    body {
+                    background-image:
+                      url("../template-assets/arduino/left.svg"),
+                      url("../template-assets/arduino/right.svg");
+                      background-size: 15px 100%, 15px 100%;
+                      background-repeat: no-repeat, no-repeat;
+                      background-position: left, right;
+                      margin: 0px;
+                    }
+                  }
 
-              .header {
-                background-image: url("../template-assets/arduino/top.svg");
-                background-size: 100% 15px;
-                background-repeat: no-repeat;
-                width: 100%;
-                min-height: 15px;
-              }
+                    .header {
+                      background-image: url("../template-assets/arduino/top.svg");
+                      background-size: 100% 15px;
+                      background-repeat: no-repeat;
+                      width: 100%;
+                      min-height: 15px;
+                    }
 
-              .footer {
-                background-image: url("../template-assets/arduino/bottom.svg");
-                background-size: 100% 15px;
-                background-repeat: no-repeat;
-                width: 100%;
-                min-height: 15px;
-              }
-              .separator-fat {
-                display: block;
-                background-image: url("../template-assets/arduino/separator.svg");
-                background-size: 100% 10px;
-                background-repeat: no-repeat;
-                height: 10px;
-                margin-top: 5px;
-                margin-bottom: 5px;
-                clear: both;
-              }
+                    .footer {
+                      background-image: url("../template-assets/arduino/bottom.svg");
+                      background-size: 100% 15px;
+                      background-repeat: no-repeat;
+                      width: 100%;
+                      min-height: 15px;
+                    }
+                    .separator-fat {
+                      display: block;
+                      background-image: url("../template-assets/arduino/separator.svg");
+                      background-size: 100% 10px;
+                      background-repeat: no-repeat;
+                      height: 10px;
+                      margin-top: 5px;
+                      margin-bottom: 5px;
+                      clear: both;
+                    }
     </style>
   </head>
 
   <body>
       <img
-        src='../template-assets/logo-arduino.png'
-        class='language-logo'
+        src="../template-assets/logo-arduino.png"
+        class="language-logo"
       />
-    <div class='header'>
-      <div class='header-content'>
-        <div style='padding-top: 20px; padding-left: 30px; max-height: 50px'>
+    <div class="header">
+      <div class="header-content">
+        <div style="padding-top: 20px; padding-left: 30px; max-height: 50px">
           <img
-            src='../template-assets/logo-coderdojo-nl.png'
-            style='width: 250px; position: relative'
+            src="../template-assets/logo-coderdojo-nl.png"
+            style="width: 250px; position: relative"
           />
           <img
-            src='../template-assets/logo-zoetermeer.png'
-            style='width: 250px; position: relative; right: 30px; float: right'
+            src="../template-assets/logo-zoetermeer.png"
+            style="width: 250px; position: relative; right: 30px; float: right"
           />
         </div>
       </div>
 
-      <div style='padding-left: 30px; padding-right: 30px'>
-        <div class='separator-fat'></div>
+      <div style="padding-left: 30px; padding-right: 30px">
+        <div class="separator-fat"></div>
       </div>
     </div>
 
-    <table style='width: 100%'>
+    <table style="width: 100%">
       <thead>
         <tr>
           <th>
-            <div class='header-space'></div>
+            <div class="header-space"></div>
           </th>
         </tr>
       </thead>
       <tbody>
         <tr>
           <td>
-            <div class='assignment-content'>
+            <div class="assignment-content">
                 <img
-                  src='../template-assets/level5.svg'
-                  style='width: 200px; float: right; margin-right: 0px'
+                  src="../template-assets/level5.svg"
+                  style="width: 200px; float: right; margin-right: 0px"
                 />
-              <p class='assignment-title'>Arduino Blink</p>
+              <p class="assignment-title">Arduino Blink</p>
 
-              <div style='display: flex; flex-direction: row; gap: 0px 10px'>
-                  <div class='header-info-block'>
-                    <div class='header-info-title'>Voorkennis</div>
+              <div style="display: flex; flex-direction: row; gap: 0px 10px">
+                  <div class="header-info-block">
+                    <div class="header-info-title">Voorkennis</div>
                     <p>geen</p>
 
                   </div>
-                  <div class='header-info-block'>
-                    <div class='header-info-title'>Leerdoelen</div>
+                  <div class="header-info-block">
+                    <div class="header-info-title">Leerdoelen</div>
                     <ul>
 <li>Aansluiten van Arduino UNO</li>
 <li>LED</li>
@@ -148,7 +148,7 @@
               </div>
 
               <hr class="separator-fat">
-<h2>Benodigdheden</h2>
+<h2 id="benodigdheden" tabindex="-1">Benodigdheden</h2>
 <ul>
 <li>Arduino UNO</li>
 <li>Kabel om de Arduino aan te sluiten</li>
@@ -221,10 +221,10 @@ code eruit ziet.</p>
               <div class="license">
                 <hr />
                 <img
-                  src='../template-assets/by-nc-sa.png'
-                  style='width: 117px; height: 41px; float: right'
+                  src="../template-assets/by-nc-sa.png"
+                  style="width: 117px; height: 41px; float: right"
                 />
-                <div class='license'>
+                <div class="license">
 
                   <p><b>[NL] Licentie Informatie</b></p>
                   <p>
@@ -232,7 +232,7 @@ code eruit ziet.</p>
                     Creative Commons Naamsvermelding-NietCommercieel-GelijkDelen
                     3.0
                     <a
-                      href='https://creativecommons.org/licenses/by-nc-sa/3.0/'
+                      href="https://creativecommons.org/licenses/by-nc-sa/3.0/"
                     >https://creativecommons.org/licenses/by-nc-sa/3.0/</a>.
 
                   </p>
@@ -242,19 +242,19 @@ code eruit ziet.</p>
                     het materiaal te verbeteren, of het materiaal te vertalen,
                     neem dan contact met CoderDojo Zoetermeer
                     <a
-                      href='https://codeclub.org/en/clubs/4f8d36fb-7545-4ba9-b9fb-b379b6b87938'
+                      href="https://codeclub.org/en/clubs/4f8d36fb-7545-4ba9-b9fb-b379b6b87938"
                     >https://codeclub.org/en/clubs/4f8d36fb-7545-4ba9-b9fb-b379b6b87938</a>
                   </p>
 
                 </div>
 
-                <div class='license'>
+                <div class="license">
                   <p><b>[EN] License Information</b></p>
                   <p>
                     All work in this document are licensed under the Creative
                     Commons Attribution-NonCommercial-ShareAlike 3.0
                     <a
-                      href='https://creativecommons.org/licenses/by-nc-sa/3.0/'
+                      href="https://creativecommons.org/licenses/by-nc-sa/3.0/"
                     >https://creativecommons.org/licenses/by-nc-sa/3.0/</a>.
 
                   </p>
@@ -264,14 +264,14 @@ code eruit ziet.</p>
                     improve the content, or translate it, then please contact
                     CoderDojo Zoetermeer
                     <a
-                      href='https://codeclub.org/en/clubs/4f8d36fb-7545-4ba9-b9fb-b379b6b87938'
+                      href="https://codeclub.org/en/clubs/4f8d36fb-7545-4ba9-b9fb-b379b6b87938"
                     >https://codeclub.org/en/clubs/4f8d36fb-7545-4ba9-b9fb-b379b6b87938</a>
                     .
                   </p>
                 </div>
-                <div class='acknowledgements'>
+                <div class="acknowledgements">
                   <em>Acknowledgements:</em>
-                  <div style='padding-left: 20px;'>
+                  <div style="padding-left: 20px;">
                       <p>author(s): Ben Mens</p>
 
                     <p>This document was created by CoderDojo Zoetermeer. The
@@ -291,38 +291,14 @@ code eruit ziet.</p>
       <tfoot>
         <tr>
           <th>
-            <div class='footer-space'></div>
+            <div class="footer-space"></div>
           </th>
         </tr>
       </tfoot>
     </table>
 
-    <div class='footer'></div>
+    <div class="footer"></div>
 
-    <script>
-      const inactive = (tab) => tab.classList.remove('active');
-      const active = (tab) => tab.classList.add('active');
-      const tabClick = (tab) => tab.addEventListener('click', listener);
-      const listener = (event) => {
-        const tabId = event.target.getAttribute('data-id');
-        containerId =
-          event.target.parentElement.parentElement.getAttribute('data-id');
-        const parentQuery = `.tabs-tabs-wrapper[data-id=${containerId}]`;
-        document
-          .querySelectorAll(
-            `${parentQuery}
-            .tabs-tab-content`,
-          )
-          .forEach(inactive);
-        document
-          .querySelectorAll(
-            `${parentQuery} .tabs-tabs-header
-            button`,
-          )
-          .forEach(inactive);
-        document.querySelectorAll(`[data-id=${tabId}]`).forEach(active);
-      };
-      document.querySelectorAll('.tabs-tabs-header button').forEach(tabClick);
-    </script>
+    <script src="../template-assets/template-helpers.js"></script>
   </body>
 </html>
