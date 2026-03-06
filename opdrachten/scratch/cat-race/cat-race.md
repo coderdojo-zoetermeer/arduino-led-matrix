@@ -187,7 +187,7 @@ programma start.
 Zorg er nu voor dat de variable <code>tijd</code> elke seconde met 1 wordt
 verhoogt.
 
-![count seconds =x150](./assets/count-seconds.svg)
+![count seconds =x200](./assets/count-seconds.svg)
 
 :::
 
