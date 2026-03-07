@@ -19,6 +19,29 @@ infoBlocks:
 In dit document wordt uitgelegd hoe je met de cdz-assignment-generator
 CoderDojo opdrachten kan maken.
 
+# Over cdz-assignment-generator
+
+De CDZ assignment generator is een tool waarmee markdown bestanden eenvoudig
+kunnen worden omgezet naar CoderDojo opdrachten in HTML.
+
+Vaak voorkomende blokken kunnen in een bibliotheek worden gezet zodat ze in
+meerdere opdrachten kunnen worden gebruikt.
+
+Deze gegenereerde
+HTML bestanden zijn geschikt op te kunnen printen over meerdere pagina's. Met
+de text ```*pagebreak*``` kan je ervoor zorgen dat de volgende sectie op een
+nieuwe pagina begint.
+
+Een voorbeeld van een opdracht die is gemaakt met deze generator is Kat Race.
+
+- [Opdracht Kat race](https://coderdojo-zoetermeer.github.io/cdz-assignment-generator/scratch/cat-race/cat-race.html){target=_blank}
+- [Broncode](https://github.com/coderdojo-zoetermeer/cdz-assignment-generator/blob/main/opdrachten/scratch/cat-race/cat-race.md?plain=1){target=_blank}
+
+# Gebruik
+
+Voor instructie over installatie en gebruik van de cdz-assignment-generator
+zie [README.md](https://github.com/coderdojo-zoetermeer/cdz-assignment-generator/blob/main/README.md)
+
 # Over markdown
 
 Markdown is een eenvoudige opmaaktaal waarmee je tekst kunt structureren en
@@ -37,24 +60,6 @@ Zie ook:
 
 --------------------------------------------------------------------------------
 
-# Over cdz-assignment-generator
-
-De CDZ assignment generator is een tool waarmee markdown bestanden eenvoudig
-kunnen worden omgezet naar CoderDojo opdrachten in HTML.
-
-Vaak voorkomende blokken kunnen in een bibliotheek worden gezet zodat ze in
-meerdere opdrachten kunnen worden gebruikt.
-
-Deze gegenereerde
-HTML bestanden zijn geschikt op te kunnen printen over meerdere pagina's. Met
-de text \*pagebreak\* kan je ervoor zorgen dat de volgende sectie op een nieuwe
-pagina begint.
-
-***voorbeeld***
-
-- [markdown](https://raw.githubusercontent.com/coderdojo-zoetermeer/cdz-assignment-generator/refs/heads/main/opdrachten/scratch/scratch.md){target=_blank}
-- [HTML](https://coderdojo-zoetermeer.github.io/cdz-assignment-generator/scratch/scratch.html){target=_blank}
-
 # Over blokken
 
 Blokken worden gebruikt om opdrachten op te delen in stukken. Bij het printen
@@ -67,7 +72,7 @@ deze blokjes klein te houden en begin elk blokje met een kopje waaruit
 duidelijk wordt wat er wordt uitgelegd, zodat de leerling kan bepalen of
 leerling het blokje moet lezen of hen het wil lezen.
 
-:::: demo
+```md{.markdown-example}
 
 ::: read
 
@@ -77,7 +82,15 @@ Tekst Read blok.
 
 :::
 
-::::
+```
+
+::: read
+
+*Titel read blok*
+
+Tekst Read blok.
+
+:::
 
 ## programmeer-blok
 
@@ -85,7 +98,19 @@ Een programmeer-blok wordt gebruik om aan te duiden dat de leerling iets moet
 programmeren. In programmeerblokken kan je stukjes code toevoegen. Deze worden
 automatisch opgemaakt met syntax highlights.
 
-:::: demo
+````md{.markdown-example}
+::: program
+
+*Titel programmeer blok*
+
+Tekst programmeerblok.
+
+```py
+  print('Hello world!')
+```
+:::
+
+````
 
 ::: program
 
@@ -94,14 +119,11 @@ automatisch opgemaakt met syntax highlights.
 Tekst programmeerblok.
 
 ```py
-
 print('Hello world!')
 
 ```
 
 :::
-
-::::
 
 ## build-blok
 
@@ -109,7 +131,15 @@ Een build wordt gebruikt om aan te duiden dat de leering iets moet doen. Dit
 is met name van toepassing voor Arduino opdrachten. bijvoorbeeld voor het
 bouwen van een elektronische schakeling.
 
-:::: demo
+```md{.markdown-example}
+::: build
+
+*Titel build blok*
+
+Tekst build-blok.
+
+:::
+```
 
 ::: build
 
@@ -119,13 +149,19 @@ Tekst build-blok.
 
 :::
 
-::::
-
 ## uitdaging-blok
 
 Een uitdaging-blok wordt gebuikt om de Ninja een extra uitdaging te geven.
 
-:::: demo
+```md{.markdown-example}
+::: challenge
+
+*Titel uitdaging blok*
+
+Tekst uitdaging-blok.
+
+:::
+```
 
 ::: challenge
 
@@ -134,8 +170,6 @@ Een uitdaging-blok wordt gebuikt om de Ninja een extra uitdaging te geven.
 Tekst uitdaging-blok.
 
 :::
-
-::::
 
 # Gebruik van images
 
@@ -148,7 +182,7 @@ Met het element ```*clear-float*``` kan je ervoor zorgen dat de tekst erna weer
 onder het plaatje wordt weergegeven en dus niet ernaast.
 (Zie ook: [CSS](https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Properties/clear))
 
-::: demo Plaatjes
+::: demo Plaatjes demo
 
 ![Arduino](assets/schema.svg){.float-right}
 Het plaatje hiernaast wordt met de style float-right weergegeven.
@@ -177,7 +211,7 @@ eenvoudig kunnen worden hergebruikt. Hieronder een voorbeeld van het gebruik
 van het standaard element voor de uitleg van de modulo functie. Hier kan zelfs
 worden aangegeven in welke programmeertaal de uitleg moet worden gegeven.
 
-```md
+```md{.markdown-example}
  <!-- @include: global-lib/explain-mod.md#scratch -->
 ```
 
@@ -187,7 +221,7 @@ wordt in Scratch:
 
 voor arduino:
 
-```md
+```md{.markdown-example}
  <!-- @include: global-lib/explain-mod.md#arduino -->
 ```
 
@@ -216,3 +250,47 @@ familie, naam en grootte zijn optioneel.
 | ```::solid microchip =30::```        | ::solid microchip =30::        |
 | ```::solid microchip =30 /green::``` | ::solid microchip =30 /green:: |
 | ```::microchip::```                  | ::microchip::                  |
+
+# Signaaltekst
+
+Je kan teksten als volg accentueren.
+
+```md{.markdown-example}
+>[!belangrijk]
+>Belangrijk ....
+```
+
+>[!belangrijk]
+>Belangrijk ....
+
+```md{.markdown-example}
+>[!notitie]
+>Notitie ...
+```
+
+>[!notitie]
+>Notitie ...
+
+```md{.markdown-example}
+>[!tip]
+>Tip ...
+```
+
+>[!tip]
+>Tip ...
+
+```md{.markdown-example}
+>[!waarschuwing]
+>Waarschuwing ...
+```
+
+>[!waarschuwing]
+>Waarschuwing ...
+
+```md{.markdown-example}
+>[!voorzichtig]
+>Voorzichtig ...
+```
+
+>[!voorzichtig]
+>Voorzichtig ...

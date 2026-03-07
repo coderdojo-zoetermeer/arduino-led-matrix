@@ -121,11 +121,28 @@
               <div style="display: flex; flex-direction: row; gap: 0px 10px">
               </div>
 
-              <div class="table-of-contents"><ul><li><a href="#introductie">Introductie</a></li><li><a href="#over-markdown">Over markdown</a></li><li><a href="#over-cdz-assignment-generator">Over cdz-assignment-generator</a></li><li><a href="#over-blokken">Over blokken</a><ul><li><a href="#read-blok">read-blok</a></li><li><a href="#programmeer-blok">programmeer-blok</a></li><li><a href="#build-blok">build-blok</a></li><li><a href="#uitdaging-blok">uitdaging-blok</a></li></ul></li><li><a href="#gebruik-van-images">Gebruik van images</a></li><li><a href="#verwijzen-naar-standaard-opdracht-blokken">Verwijzen naar standaard opdracht blokken</a></li><li><a href="#fontawesome-iconen">Fontawesome iconen</a></li></ul></div>
+              <div class="table-of-contents"><ul><li><a href="#introductie">Introductie</a></li><li><a href="#over-cdz-assignment-generator">Over cdz-assignment-generator</a></li><li><a href="#gebruik">Gebruik</a></li><li><a href="#over-markdown">Over markdown</a></li><li><a href="#over-blokken">Over blokken</a><ul><li><a href="#read-blok">read-blok</a></li><li><a href="#programmeer-blok">programmeer-blok</a></li><li><a href="#build-blok">build-blok</a></li><li><a href="#uitdaging-blok">uitdaging-blok</a></li></ul></li><li><a href="#gebruik-van-images">Gebruik van images</a></li><li><a href="#verwijzen-naar-standaard-opdracht-blokken">Verwijzen naar standaard opdracht blokken</a></li><li><a href="#fontawesome-iconen">Fontawesome iconen</a></li><li><a href="#signaaltekst">Signaaltekst</a></li></ul></div>
 <hr class="separator-fat">
 <h1 id="introductie" tabindex="-1">Introductie</h1>
 <p>In dit document wordt uitgelegd hoe je met de cdz-assignment-generator
 CoderDojo opdrachten kan maken.</p>
+<h1 id="over-cdz-assignment-generator" tabindex="-1">Over cdz-assignment-generator</h1>
+<p>De CDZ assignment generator is een tool waarmee markdown bestanden eenvoudig
+kunnen worden omgezet naar CoderDojo opdrachten in HTML.</p>
+<p>Vaak voorkomende blokken kunnen in een bibliotheek worden gezet zodat ze in
+meerdere opdrachten kunnen worden gebruikt.</p>
+<p>Deze gegenereerde
+HTML bestanden zijn geschikt op te kunnen printen over meerdere pagina's. Met
+de text <code>*pagebreak*</code> kan je ervoor zorgen dat de volgende sectie op een
+nieuwe pagina begint.</p>
+<p>Een voorbeeld van een opdracht die is gemaakt met deze generator is Kat Race.</p>
+<ul>
+<li><a href="https://coderdojo-zoetermeer.github.io/cdz-assignment-generator/scratch/cat-race/cat-race.html" target="_blank">Opdracht Kat race</a></li>
+<li><a href="https://github.com/coderdojo-zoetermeer/cdz-assignment-generator/blob/main/opdrachten/scratch/cat-race/cat-race.md?plain=1" target="_blank">Broncode</a></li>
+</ul>
+<h1 id="gebruik" tabindex="-1">Gebruik</h1>
+<p>Voor instructie over installatie en gebruik van de cdz-assignment-generator
+zie <a href="https://github.com/coderdojo-zoetermeer/cdz-assignment-generator/blob/main/README.md">README.md</a></p>
 <h1 id="over-markdown" tabindex="-1">Over markdown</h1>
 <p>Markdown is een eenvoudige opmaaktaal waarmee je tekst kunt structureren en
 opmaken met simpele tekens. Het wordt veel gebruikt voor documentatie,
@@ -139,20 +156,6 @@ worden omgezet naar mooi opgemaakte tekst (vaak HTML).</p>
 <li><a href="https://www.markdownguide.org/cheat-sheet/" target="_blank">Cheat sheet</a></li>
 </ul>
 <hr class="separator-thin">
-<h1 id="over-cdz-assignment-generator" tabindex="-1">Over cdz-assignment-generator</h1>
-<p>De CDZ assignment generator is een tool waarmee markdown bestanden eenvoudig
-kunnen worden omgezet naar CoderDojo opdrachten in HTML.</p>
-<p>Vaak voorkomende blokken kunnen in een bibliotheek worden gezet zodat ze in
-meerdere opdrachten kunnen worden gebruikt.</p>
-<p>Deze gegenereerde
-HTML bestanden zijn geschikt op te kunnen printen over meerdere pagina's. Met
-de text *pagebreak* kan je ervoor zorgen dat de volgende sectie op een nieuwe
-pagina begint.</p>
-<p><em><strong>voorbeeld</strong></em></p>
-<ul>
-<li><a href="https://raw.githubusercontent.com/coderdojo-zoetermeer/cdz-assignment-generator/refs/heads/main/opdrachten/scratch/scratch.md" target="_blank">markdown</a></li>
-<li><a href="https://coderdojo-zoetermeer.github.io/cdz-assignment-generator/scratch/scratch.html" target="_blank">HTML</a></li>
-</ul>
 <h1 id="over-blokken" tabindex="-1">Over blokken</h1>
 <p>Blokken worden gebruikt om opdrachten op te delen in stukken. Bij het printen
 van een opdracht worden een page-break binnen een blok automatisch vermeden.</p>
@@ -161,56 +164,46 @@ van een opdracht worden een page-break binnen een blok automatisch vermeden.</p>
 deze blokjes klein te houden en begin elk blokje met een kopje waaruit
 duidelijk wordt wat er wordt uitgelegd, zodat de leerling kan bepalen of
 leerling het blokje moet lezen of hen het wil lezen.</p>
-<details><summary>Demo</summary>
-<pre><code class="language-md">::: read
+<pre><code class="markdown-example language-md">
+::: read
 
 *Titel read blok*
 
 Tekst Read blok.
 
 :::
+
 </code></pre>
-<div class="demo-content">
 <div class="read">
 <p><em>Titel read blok</em></p>
 <p>Tekst Read blok.</p>
-<div class="clear-float"></div></div></div>
-</details>
-<h2 id="programmeer-blok" tabindex="-1">programmeer-blok</h2>
+<div class="clear-float"></div></div><h2 id="programmeer-blok" tabindex="-1">programmeer-blok</h2>
 <p>Een programmeer-blok wordt gebruik om aan te duiden dat de leerling iets moet
 programmeren. In programmeerblokken kan je stukjes code toevoegen. Deze worden
 automatisch opgemaakt met syntax highlights.</p>
-<details><summary>Demo</summary>
-<pre><code class="language-md">::: program
+<pre><code class="markdown-example language-md">::: program
 
 *Titel programmeer blok*
 
 Tekst programmeerblok.
 
 ```py
-
-print('Hello world!')
-
+  print('Hello world!')
 ```
-
 :::
+
 </code></pre>
-<div class="demo-content">
 <div class="program">
 <p><em>Titel programmeer blok</em></p>
 <p>Tekst programmeerblok.</p>
-<pre><code class="language-py">
-<span class="hljs-built_in">print</span>(<span class="hljs-string">&#x27;Hello world!&#x27;</span>)
+<pre><code class="language-py"><span class="hljs-built_in">print</span>(<span class="hljs-string">&#x27;Hello world!&#x27;</span>)
 
 </code></pre>
-<div class="clear-float"></div></div></div>
-</details>
-<h2 id="build-blok" tabindex="-1">build-blok</h2>
+<div class="clear-float"></div></div><h2 id="build-blok" tabindex="-1">build-blok</h2>
 <p>Een build wordt gebruikt om aan te duiden dat de leering iets moet doen. Dit
 is met name van toepassing voor Arduino opdrachten. bijvoorbeeld voor het
 bouwen van een elektronische schakeling.</p>
-<details><summary>Demo</summary>
-<pre><code class="language-md">::: build
+<pre><code class="markdown-example language-md">::: build
 
 *Titel build blok*
 
@@ -218,16 +211,12 @@ Tekst build-blok.
 
 :::
 </code></pre>
-<div class="demo-content">
 <div class="build">
 <p><em>Titel build blok</em></p>
 <p>Tekst build-blok.</p>
-<div class="clear-float"></div></div></div>
-</details>
-<h2 id="uitdaging-blok" tabindex="-1">uitdaging-blok</h2>
+<div class="clear-float"></div></div><h2 id="uitdaging-blok" tabindex="-1">uitdaging-blok</h2>
 <p>Een uitdaging-blok wordt gebuikt om de Ninja een extra uitdaging te geven.</p>
-<details><summary>Demo</summary>
-<pre><code class="language-md">::: challenge
+<pre><code class="markdown-example language-md">::: challenge
 
 *Titel uitdaging blok*
 
@@ -235,13 +224,10 @@ Tekst uitdaging-blok.
 
 :::
 </code></pre>
-<div class="demo-content">
 <div class="challenge">
 <p><em>Titel uitdaging blok</em></p>
 <p>Tekst uitdaging-blok.</p>
-<div class="clear-float"></div></div></div>
-</details>
-<h1 id="gebruik-van-images" tabindex="-1">Gebruik van images</h1>
+<div class="clear-float"></div></div><h1 id="gebruik-van-images" tabindex="-1">Gebruik van images</h1>
 <p>Je kan eenvoudig plaatjes aan blokken toevoegen. Ook is het mogelijk plaatjes
 naar links of rechts te laten &quot;floaten&quot; zodat de tekst er automatisch omheen
 wordt weergegeven. De plaatjes kan je ergens in de directory structuur van
@@ -249,7 +235,7 @@ de opdracht plaatsen. Linken naar plaatjes die online staan is ook mogelijk.</p>
 <p>Met het element <code>*clear-float*</code> kan je ervoor zorgen dat de tekst erna weer
 onder het plaatje wordt weergegeven en dus niet ernaast.
 (Zie ook: <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Properties/clear">CSS</a>)</p>
-<details><summary>Plaatjes</summary>
+<details><summary>Plaatjes demo</summary>
 <pre><code class="language-md">![Arduino](assets/schema.svg){.float-right}
 Het plaatje hiernaast wordt met de style float-right weergegeven.
 
@@ -284,7 +270,7 @@ Het plaatje hiernaast wordt met de style float-left weergegeven.</p>
 eenvoudig kunnen worden hergebruikt. Hieronder een voorbeeld van het gebruik
 van het standaard element voor de uitleg van de modulo functie. Hier kan zelfs
 worden aangegeven in welke programmeertaal de uitleg moet worden gegeven.</p>
-<pre><code class="language-md"> &lt;!-- @include: global-lib/explain-mod.md#scratch --&gt;
+<pre><code class="markdown-example language-md"> &lt;!-- @include: global-lib/explain-mod.md#scratch --&gt;
 </code></pre>
 <p>wordt in Scratch:</p>
 <div class="read">
@@ -298,7 +284,7 @@ krijgt dan 3 snoepjes, en er blijft er dan 1 over.</p>
 <p><img src="./global-lib-assets/modulo-scratch-example.svg" alt=""></p>
 <p>De variabele met de naam <em>rest</em> heeft nu de waarde 1.</p>
 <div class="clear-float"></div></div><p>voor arduino:</p>
-<pre><code class="language-md"> &lt;!-- @include: global-lib/explain-mod.md#arduino --&gt;
+<pre><code class="markdown-example language-md"> &lt;!-- @include: global-lib/explain-mod.md#arduino --&gt;
 </code></pre>
 <div class="read">
 <p><em>Uitleg modulo functie</em></p>
@@ -350,6 +336,43 @@ zijn beschikbaar. De PRO iconen dus niet.</p>
 </tr>
 </tbody>
 </table>
+<h1 id="signaaltekst" tabindex="-1">Signaaltekst</h1>
+<p>Je kan teksten als volg accentueren.</p>
+<pre><code class="markdown-example language-md">&gt;[!belangrijk]
+&gt;Belangrijk ....
+</code></pre>
+<div class="markdown-alert markdown-alert-belangrijk">
+<p class="markdown-alert-title">Belangrijk</p>
+<p>Belangrijk ....</p>
+</div>
+<pre><code class="markdown-example language-md">&gt;[!notitie]
+&gt;Notitie ...
+</code></pre>
+<div class="markdown-alert markdown-alert-notitie">
+<p class="markdown-alert-title">Notitie</p>
+<p>Notitie ...</p>
+</div>
+<pre><code class="markdown-example language-md">&gt;[!tip]
+&gt;Tip ...
+</code></pre>
+<div class="markdown-alert markdown-alert-tip">
+<p class="markdown-alert-title">Tip</p>
+<p>Tip ...</p>
+</div>
+<pre><code class="markdown-example language-md">&gt;[!waarschuwing]
+&gt;Waarschuwing ...
+</code></pre>
+<div class="markdown-alert markdown-alert-waarschuwing">
+<p class="markdown-alert-title">Waarschuwing</p>
+<p>Waarschuwing ...</p>
+</div>
+<pre><code class="markdown-example language-md">&gt;[!voorzichtig]
+&gt;Voorzichtig ...
+</code></pre>
+<div class="markdown-alert markdown-alert-voorzichtig">
+<p class="markdown-alert-title">Voorzichtig</p>
+<p>Voorzichtig ...</p>
+</div>
 
 
 
