@@ -23,10 +23,18 @@
 */
 
 // the setup function runs once when you press reset or power the board
-void setup() { // [!code --]
-  // sss [!code info]
-  pinMode(LED_BUILTIN, OUTPUT); // [!code --] cc
-} // [!code ++]
+void setup() { 
+  // [!code --:3]
+  // sss 
+  pinMode(LED_BUILTIN, OUTPUT); // cc
+
+  // [!code ++:3]
+  // sss dddd
+  pinMode(LED_BUILTIN, OUTPUT); // cc
+
+} 
+
+
 
 // the loop function runs over and over again forever
 void loop() {

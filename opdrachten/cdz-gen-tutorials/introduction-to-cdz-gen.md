@@ -294,3 +294,126 @@ Je kan teksten als volg accentueren.
 
 >[!voorzichtig]
 >Voorzichtig ...
+
+# Advanced Code fences
+
+Er zijn verschillende manieren om code binnen code fences te accentueren.
+
+## Fence metadata
+
+Door metadata aan een code fence toe te voegen kan je individuele regels of
+ranges accentueren.
+
+Voorbeeld:
+
+Accentueer regels 1-3 en regel 6.
+
+````md
+```ino {1-3,6}
+void setup() {
+
+}
+
+void loop() {
+  // Voeg hier je code toe
+}
+```
+````
+
+Resultaat:
+
+```ino {1-3,6}
+void setup() {
+
+}
+
+void loop() {
+  // Voeg hier je code toe
+}
+```
+
+## Inline markup tags
+
+Je kan ook binnen de code tags toevoegen waarmee code wordt gemarkeerd. Deze
+tags zet je dan in het commentaar van de code.
+
+Zie ook: [transformers](https://shiki.style/packages/transformers#transformernotationerrorlevel)
+
+| tag                              | Uitleg                        |
+|:---------------------------------|:------------------------------|
+| `[!code highlight]`              | highlight regel               |
+| `[!code highlight:3]`            | highlight 3 regels            |
+| `[!code ++]`                     | regel toegevoegd              |
+| `[!code ++:3]`                   | 3 regels toegevoegd           |
+| `[!code --:3]`                   | regels verwijderd             |
+| `[!code --:3]`                   | regels verwijderd             |
+| `[!code highlight]`              | highlight regel               |
+| `[!code info]`                   | info regel                    |
+| `[!code warn]`                   | waarschuwing regel            |
+| `[!code error]`                  | error regel                   |
+
+Voorbeeld:
+
+````md
+```ino
+int answer = 42; // [!code info]
+
+void setup() {
+  // De code hier wordt 1 keer uitgevoerd [!code highlight]
+}
+
+// [!code ++:4]
+void loop() {
+
+}
+```
+````
+
+Resultaat:
+
+```ino
+int answer = 42; // [!code info]
+
+void setup() {
+  // De code hier wordt 1 keer uitgevoerd [!code highlight]
+}
+
+// [!code ++:4]
+void loop() {
+
+}
+```
+
+# Scratchblocks
+
+Scratchblocks kunnen in code fences of inline worden toegevoegd.
+
+## Scratchblocks code fence
+
+Markdown:
+
+````md
+```scratch
+Wanneer groene vlag wordt aangeklikt
+neem (10) stappen
+```
+````
+
+Resultaat:
+
+```scratch
+Wanneer groene vlag wordt aangeklikt
+neem (10) stappen
+```
+
+## Scratchblocks inline code
+
+Markdown:
+
+Met de opdracht `` `neem (10) stappen`{.scratch} `` vertel je Cat om 10 stappen te
+nemen.
+
+Resultaat:
+
+Met de opdracht `neem (10) stappen`{.scratch} vertel je Cat om 10 stappen te
+nemen.

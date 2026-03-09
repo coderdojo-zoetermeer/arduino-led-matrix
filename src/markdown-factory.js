@@ -59,11 +59,11 @@ export async function createMarkdownRenderer() {
             __raw: langAttrs,
           },
           transformers: [
-            transformerNotationDiff(),
-            transformerMetaHighlight(),
-            transformerNotationHighlight(),
-            transformerNotationErrorLevel(),
-            transformerRemoveLineBreak(),
+            transformerNotationDiff({ matchAlgorithm: 'v1' }),
+            transformerMetaHighlight({ matchAlgorithm: 'v1' }),
+            transformerNotationHighlight({ matchAlgorithm: 'v1' }),
+            transformerNotationErrorLevel({ matchAlgorithm: 'v1' }),
+            transformerRemoveLineBreak({ matchAlgorithm: 'v1' }),
             {
               line(node, line) {
                 node.properties['data-line'] = line;

@@ -118,7 +118,7 @@
               <div style="display: flex; flex-direction: row; gap: 0px 10px">
               </div>
 
-              <div class="table-of-contents"><ul><li><a href="#handleiding">Handleiding</a></li><li><a href="#over-cdz-assignment-generator">Over cdz-assignment-generator</a></li><li><a href="#gebruik">Gebruik</a></li><li><a href="#over-markdown">Over markdown</a></li><li><a href="#over-blokken">Over blokken</a><ul><li><a href="#read-blok">read-blok</a></li><li><a href="#programmeer-blok">programmeer-blok</a></li><li><a href="#build-blok">build-blok</a></li><li><a href="#uitdaging-blok">uitdaging-blok</a></li></ul></li><li><a href="#gebruik-van-images">Gebruik van images</a></li><li><a href="#verwijzen-naar-standaard-opdracht-blokken">Verwijzen naar standaard opdracht blokken</a></li><li><a href="#fontawesome-iconen">Fontawesome iconen</a></li><li><a href="#signaaltekst">Signaaltekst</a></li></ul></div>
+              <div class="table-of-contents"><ul><li><a href="#handleiding">Handleiding</a></li><li><a href="#over-cdz-assignment-generator">Over cdz-assignment-generator</a></li><li><a href="#gebruik">Gebruik</a></li><li><a href="#over-markdown">Over markdown</a></li><li><a href="#over-blokken">Over blokken</a><ul><li><a href="#read-blok">read-blok</a></li><li><a href="#programmeer-blok">programmeer-blok</a></li><li><a href="#build-blok">build-blok</a></li><li><a href="#uitdaging-blok">uitdaging-blok</a></li></ul></li><li><a href="#gebruik-van-images">Gebruik van images</a></li><li><a href="#verwijzen-naar-standaard-opdracht-blokken">Verwijzen naar standaard opdracht blokken</a></li><li><a href="#fontawesome-iconen">Fontawesome iconen</a></li><li><a href="#signaaltekst">Signaaltekst</a></li><li><a href="#advanced-code-fences">Advanced Code fences</a><ul><li><a href="#fence-metadata">Fence metadata</a></li><li><a href="#inline-markup-tags">Inline markup tags</a></li></ul></li><li><a href="#scratchblocks">Scratchblocks</a><ul><li><a href="#scratchblocks-code-fence">Scratchblocks code fence</a></li><li><a href="#scratchblocks-inline-code">Scratchblocks inline code</a></li></ul></li></ul></div>
 <hr class="separator-fat">
 <h1 id="handleiding" tabindex="-1">Handleiding</h1>
 <p>In dit document wordt uitgelegd hoe je met de cdz-assignment-generator
@@ -310,6 +310,90 @@ zijn beschikbaar. De PRO iconen dus niet.</p>
 <p class="markdown-alert-title">Voorzichtig</p>
 <p>Voorzichtig ...</p>
 </div>
+<h1 id="advanced-code-fences" tabindex="-1">Advanced Code fences</h1>
+<p>Er zijn verschillende manieren om code binnen code fences te accentueren.</p>
+<h2 id="fence-metadata" tabindex="-1">Fence metadata</h2>
+<p>Door metadata aan een code fence toe te voegen kan je individuele regels of
+ranges accentueren.</p>
+<p>Voorbeeld:</p>
+<p>Accentueer regels 1-3 en regel 6.</p>
+<pre class="shiki vitesse-light" style="background-color:#ffffff;color:#393a34" tabindex="0"><code><span class="line" data-line="1"><span style="color:#999999">```</span><span style="color:#393A34">ino {1-3,6}</span></span><span class="line" data-line="2"><span style="color:#393A34">void setup() {</span></span><span class="line" data-line="3"></span><span class="line" data-line="4"><span style="color:#393A34">}</span></span><span class="line" data-line="5"></span><span class="line" data-line="6"><span style="color:#393A34">void loop() {</span></span><span class="line" data-line="7"><span style="color:#393A34">  // Voeg hier je code toe</span></span><span class="line" data-line="8"><span style="color:#393A34">}</span></span><span class="line" data-line="9"><span style="color:#999999">```</span></span><span class="line" data-line="10"></span></code></pre>
+<p>Resultaat:</p>
+<pre class="shiki vitesse-light" style="background-color:#ffffff;color:#393a34" tabindex="0"><code><span class="line highlighted" data-line="1"><span style="color:#AB5959">void</span><span style="color:#59873A"> setup</span><span style="color:#999999">()</span><span style="color:#999999"> {</span></span><span class="line highlighted" data-line="2"></span><span class="line highlighted" data-line="3"><span style="color:#999999">}</span></span><span class="line" data-line="4"></span><span class="line" data-line="5"><span style="color:#AB5959">void</span><span style="color:#59873A"> loop</span><span style="color:#999999">()</span><span style="color:#999999"> {</span></span><span class="line highlighted" data-line="6"><span style="color:#A0ADA0">  // Voeg hier je code toe</span></span><span class="line" data-line="7"><span style="color:#999999">}</span></span><span class="line" data-line="8"></span></code></pre>
+<h2 id="inline-markup-tags" tabindex="-1">Inline markup tags</h2>
+<p>Je kan ook binnen de code tags toevoegen waarmee code wordt gemarkeerd. Deze
+tags zet je dan in het commentaar van de code.</p>
+<p>Zie ook: <a href="https://shiki.style/packages/transformers#transformernotationerrorlevel">transformers</a></p>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">tag</th>
+<th style="text-align:left">Uitleg</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left"><code>[!code highlight]</code></td>
+<td style="text-align:left">highlight regel</td>
+</tr>
+<tr>
+<td style="text-align:left"><code>[!code highlight:3]</code></td>
+<td style="text-align:left">highlight 3 regels</td>
+</tr>
+<tr>
+<td style="text-align:left"><code>[!code ++]</code></td>
+<td style="text-align:left">regel toegevoegd</td>
+</tr>
+<tr>
+<td style="text-align:left"><code>[!code ++:3]</code></td>
+<td style="text-align:left">3 regels toegevoegd</td>
+</tr>
+<tr>
+<td style="text-align:left"><code>[!code --:3]</code></td>
+<td style="text-align:left">regels verwijderd</td>
+</tr>
+<tr>
+<td style="text-align:left"><code>[!code --:3]</code></td>
+<td style="text-align:left">regels verwijderd</td>
+</tr>
+<tr>
+<td style="text-align:left"><code>[!code highlight]</code></td>
+<td style="text-align:left">highlight regel</td>
+</tr>
+<tr>
+<td style="text-align:left"><code>[!code info]</code></td>
+<td style="text-align:left">info regel</td>
+</tr>
+<tr>
+<td style="text-align:left"><code>[!code warn]</code></td>
+<td style="text-align:left">waarschuwing regel</td>
+</tr>
+<tr>
+<td style="text-align:left"><code>[!code error]</code></td>
+<td style="text-align:left">error regel</td>
+</tr>
+</tbody>
+</table>
+<p>Voorbeeld:</p>
+<pre class="shiki vitesse-light" style="background-color:#ffffff;color:#393a34" tabindex="0"><code><span class="line" data-line="1"><span style="color:#999999">```</span><span style="color:#393A34">ino</span></span><span class="line" data-line="2"><span style="color:#393A34">int answer = 42; // [!code info]</span></span><span class="line" data-line="3"></span><span class="line" data-line="4"><span style="color:#393A34">void setup() {</span></span><span class="line" data-line="5"><span style="color:#393A34">  // De code hier wordt 1 keer uitgevoerd [!code highlight]</span></span><span class="line" data-line="6"><span style="color:#393A34">}</span></span><span class="line" data-line="7"></span><span class="line" data-line="8"><span style="color:#393A34">// [!code ++:4]</span></span><span class="line" data-line="9"><span style="color:#393A34">void loop() {</span></span><span class="line" data-line="10"></span><span class="line" data-line="11"><span style="color:#393A34">}</span></span><span class="line" data-line="12"><span style="color:#999999">```</span></span><span class="line" data-line="13"></span></code></pre>
+<p>Resultaat:</p>
+<pre class="shiki vitesse-light has-diff has-highlighted" style="background-color:#ffffff;color:#393a34" tabindex="0"><code><span class="line highlighted info" data-line="1"><span style="color:#AB5959">int</span><span style="color:#393A34"> answer </span><span style="color:#999999">=</span><span style="color:#2F798A"> 42</span><span style="color:#999999">;</span></span><span class="line" data-line="2"></span><span class="line" data-line="3"><span style="color:#AB5959">void</span><span style="color:#59873A"> setup</span><span style="color:#999999">()</span><span style="color:#999999"> {</span></span><span class="line highlighted" data-line="4"><span style="color:#A0ADA0">  // De code hier wordt 1 keer uitgevoerd</span></span><span class="line" data-line="5"><span style="color:#999999">}</span></span><span class="line" data-line="6"></span><span class="line diff add" data-line="8"><span style="color:#AB5959">void</span><span style="color:#59873A"> loop</span><span style="color:#999999">()</span><span style="color:#999999"> {</span></span><span class="line diff add" data-line="9"></span><span class="line diff add" data-line="10"><span style="color:#999999">}</span></span><span class="line" data-line="11"></span></code></pre>
+<h1 id="scratchblocks" tabindex="-1">Scratchblocks</h1>
+<p>Scratchblocks kunnen in code fences of inline worden toegevoegd.</p>
+<h2 id="scratchblocks-code-fence" tabindex="-1">Scratchblocks code fence</h2>
+<p>Markdown:</p>
+<pre class="shiki vitesse-light" style="background-color:#ffffff;color:#393a34" tabindex="0"><code><span class="line" data-line="1"><span style="color:#999999">```</span><span style="color:#393A34">scratch</span></span><span class="line" data-line="2"><span style="color:#393A34">Wanneer groene vlag wordt aangeklikt</span></span><span class="line" data-line="3"><span style="color:#393A34">neem (10) stappen</span></span><span class="line" data-line="4"><span style="color:#999999">```</span></span><span class="line" data-line="5"></span></code></pre>
+<p>Resultaat:</p>
+<pre class="scratchblocks">Wanneer groene vlag wordt aangeklikt
+neem (10) stappen
+</pre>
+<h2 id="scratchblocks-inline-code" tabindex="-1">Scratchblocks inline code</h2>
+<p>Markdown:</p>
+<p>Met de opdracht <code>`neem (10) stappen`{.scratch}</code> vertel je Cat om 10 stappen te
+nemen.</p>
+<p>Resultaat:</p>
+<p>Met de opdracht <code class="scratch">neem (10) stappen</code> vertel je Cat om 10 stappen te
+nemen.</p>
 
 
 
