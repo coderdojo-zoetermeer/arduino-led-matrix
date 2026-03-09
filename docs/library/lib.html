@@ -1,14 +1,8 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.11.1/styles/arduino-light.min.css"
-    />
     <link rel="stylesheet" href="../template-assets/fontawesome/css/all.css" />
     <link rel="stylesheet" href="../template-assets/alert.css" />
-    <link rel="stylesheet" href="../template-assets/scratch/style.css" />
-    <link rel="stylesheet" href="../template-assets/default.css" />
     <link
       href="https://fonts.googleapis.com/css?family=Open+Sans"
       rel="stylesheet"
@@ -19,19 +13,21 @@
       rel="stylesheet"
       type="text/css"
     />
-
     <link
       rel="stylesheet"
       href="https://cdn.jsdelivr.net/npm/katex@0.16.28/dist/katex.min.css"
       integrity="sha384-Wsr4Nh3yrvMf2KCebJchRJoVo1gTU6kcP05uRSh5NV3sj9+a8IomuJoQzf3sMq4T"
       crossorigin="anonymous"
     />
+    <link rel="stylesheet" href="../template-assets/default.css" />
+
     <script
       defer
       src="https://cdn.jsdelivr.net/npm/katex@0.16.28/dist/katex.min.js"
       integrity="sha384-+W9OcrYK2/bD7BmUAk+xeFAyKp0QjyRQUCxeU31dfyTt/FrPsUgaBTLLkVf33qWt"
       crossorigin="anonymous"
     ></script>
+
     <style>
       @media print {
         body {
@@ -85,7 +81,7 @@
     </style>
   </head>
 
-  <body>
+  <body class="line-numbers">
     <div class="header">
       <div class="header-content">
         <div style="padding-top: 20px; padding-left: 30px; max-height: 50px">
@@ -148,41 +144,41 @@ functies kunnen maken:</p>
 <code>maak_rekenen_huiswerk</code>. Het stukje <code>(hoofdstuk)</code> geeft
 aan dat de functie extra informatie nodig heeft over wat gedaan moet worden.</p>
 <div class="codeblock">
-<pre><code class="language-text">functie maak_rekenen_huiswerk(hoofdstuk):
-    pak boek
-    zoek hoofdstuk op
-    pak papier
-    maak sommen
-    ...
-</code></pre>
+<pre class="shiki vitesse-light" style="background-color:#ffffff;color:#393a34" tabindex="0"><code><span class="line" data-line="1"><span>functie maak_rekenen_huiswerk(hoofdstuk):</span></span>
+<span class="line" data-line="2"><span>    pak boek</span></span>
+<span class="line" data-line="3"><span>    zoek hoofdstuk op</span></span>
+<span class="line" data-line="4"><span>    pak papier</span></span>
+<span class="line" data-line="5"><span>    maak sommen</span></span>
+<span class="line" data-line="6"><span>    ...</span></span>
+<span class="line" data-line="7"><span></span></span></code></pre>
 <div class="clear-float"></div></div><p>Programmeer wat er moet worden gedaan om taalhuiswerk te maken.</p>
 <div class="codeblock">
-<pre><code class="language-text">functie maak_taal_huiswerk(hoofdstuk):
-    pak boek
-    zoek hoofdstuk op
-    leer woordjes
-    ...
-</code></pre>
+<pre class="shiki vitesse-light" style="background-color:#ffffff;color:#393a34" tabindex="0"><code><span class="line" data-line="1"><span>functie maak_taal_huiswerk(hoofdstuk):</span></span>
+<span class="line" data-line="2"><span>    pak boek</span></span>
+<span class="line" data-line="3"><span>    zoek hoofdstuk op</span></span>
+<span class="line" data-line="4"><span>    leer woordjes</span></span>
+<span class="line" data-line="5"><span>    ...</span></span>
+<span class="line" data-line="6"><span></span></span></code></pre>
 <div class="clear-float"></div></div><p>Programmeer wat er moet worden gedaan om in je agenda te zoeken. Het resultaat
 van de functie is een lijst van alle opdrachten die op de opgegeven datum
 moeten worden gemaakt.</p>
 <div class="codeblock">
-<pre><code class="language-text">functie zoek_huiswerk_in_agenda(datum):
-    pak agenda
-    zoek datum op
-
-    resultaat -&gt; lijst_met_opdrachten
-</code></pre>
+<pre class="shiki vitesse-light" style="background-color:#ffffff;color:#393a34" tabindex="0"><code><span class="line" data-line="1"><span>functie zoek_huiswerk_in_agenda(datum):</span></span>
+<span class="line" data-line="2"><span>    pak agenda</span></span>
+<span class="line" data-line="3"><span>    zoek datum op</span></span>
+<span class="line" data-line="4"><span></span></span>
+<span class="line" data-line="5"><span>    resultaat -> lijst_met_opdrachten</span></span>
+<span class="line" data-line="6"><span></span></span></code></pre>
 <div class="clear-float"></div></div><p>Voer alle functies in de juiste volgorde uit.</p>
 <div class="codeblock">
-<pre><code class="language-text">zoek_huiswerk_in_agenda(vandaag):
-    voor elke opdracht:
-        als soort is &quot;rekenen&quot;:
-            maak_rekenen_huiswerk(hoofdstuk)
-        als soort is &quot;taal&quot;:
-            maak_taal_huiswerk(hoofdstuk)
-
-</code></pre>
+<pre class="shiki vitesse-light" style="background-color:#ffffff;color:#393a34" tabindex="0"><code><span class="line" data-line="1"><span>zoek_huiswerk_in_agenda(vandaag):</span></span>
+<span class="line" data-line="2"><span>    voor elke opdracht:</span></span>
+<span class="line" data-line="3"><span>        als soort is "rekenen":</span></span>
+<span class="line" data-line="4"><span>            maak_rekenen_huiswerk(hoofdstuk)</span></span>
+<span class="line" data-line="5"><span>        als soort is "taal":</span></span>
+<span class="line" data-line="6"><span>            maak_taal_huiswerk(hoofdstuk)</span></span>
+<span class="line" data-line="7"><span></span></span>
+<span class="line" data-line="8"><span></span></span></code></pre>
 <div class="clear-float"></div></div><div class="clear-float"></div></div><h2 id="voorbeelden-voor-het-maken-van-een-functie" tabindex="-1">Voorbeelden voor het maken van een functie</h2>
 <div class="tabs-tabs-wrapper" data-id="Functies">
   <div class="tabs-tabs-header">
@@ -202,19 +198,19 @@ moeten worden gemaakt.</p>
 <div class="read">
 <p><em>Voorbeeld functies</em></p>
 <p>Voorbeeld:</p>
-<pre><code class="language-c"><span class="hljs-function"><span class="hljs-type">void</span> <span class="hljs-title">doeIets</span><span class="hljs-params">()</span> </span>{
-
-}
-</code></pre>
+<pre class="shiki vitesse-light" style="background-color:#ffffff;color:#393a34" tabindex="0"><code><span class="line" data-line="1"><span style="color:#AB5959">void</span><span style="color:#59873A"> doeIets</span><span style="color:#999999">()</span><span style="color:#999999"> {</span></span>
+<span class="line" data-line="2"></span>
+<span class="line" data-line="3"><span style="color:#999999">}</span></span>
+<span class="line" data-line="4"></span></code></pre>
 <div class="clear-float"></div></div></div>
 <div class="tabs-tab-content" data-index="2" data-id="python">
 <p><code>&lt;!-- @include: global-lib/explain-function.md#voorbeeld-python --&gt;</code></p>
 <div class="read">
 <p><em>Voorbeeld functies</em></p>
 <p>Voorbeeld:</p>
-<pre><code class="language-py"><span class="hljs-keyword">def</span> <span class="hljs-title function_">doeIets</span>:
-    <span class="hljs-built_in">print</span>(<span class="hljs-string">&#x27;hallo!&#x27;</span>)
-</code></pre>
+<pre class="shiki vitesse-light" style="background-color:#ffffff;color:#393a34" tabindex="0"><code><span class="line" data-line="1"><span style="color:#AB5959">def</span><span style="color:#393A34"> doeIets</span><span style="color:#999999">:</span></span>
+<span class="line" data-line="2"><span style="color:#998418">    print</span><span style="color:#999999">(</span><span style="color:#B5695977">'</span><span style="color:#B56959">hallo!</span><span style="color:#B5695977">'</span><span style="color:#999999">)</span></span>
+<span class="line" data-line="3"></span></code></pre>
 <div class="clear-float"></div></div></div>
   </div>
 </div>
@@ -378,8 +374,8 @@ krijgt dan 3 snoepjes, en er blijft er dan 1 over.</p>
 <p>Dus <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>13</mn><mi mathvariant="normal">/</mi><mn>4</mn><mo>=</mo><mn>3</mn><mspace width="0.5em"/><mi>r</mi><mi>e</mi><mi>s</mi><mi>t</mi><mspace width="0.5em"/><mn>1</mn></mrow><annotation encoding="application/x-tex">13/4 = 3\enspace rest\enspace 1</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord">13/4</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:0.6444em;"></span><span class="mord">3</span><span class="mspace" style="margin-right:0.5em;"></span><span class="mord mathnormal">res</span><span class="mord mathnormal">t</span><span class="mspace" style="margin-right:0.5em;"></span><span class="mord">1</span></span></span></span></p>
 <p>Bij arduino schrijf je de modulo functie als een <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi mathvariant="normal">%</mi></mrow><annotation encoding="application/x-tex">\%</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8056em;vertical-align:-0.0556em;"></span><span class="mord">%</span></span></span></span>-teken.</p>
 <p>Voorbeeld:</p>
-<pre><code class="language-c">    integer rest = <span class="hljs-number">13</span> % <span class="hljs-number">4</span>; <span class="hljs-comment">// De waarde van rest wordt 1</span>
-</code></pre>
+<pre class="shiki vitesse-light" style="background-color:#ffffff;color:#393a34" tabindex="0"><code><span class="line" data-line="1"><span style="color:#393A34">    integer rest </span><span style="color:#999999">=</span><span style="color:#2F798A"> 13</span><span style="color:#AB5959"> %</span><span style="color:#2F798A"> 4</span><span style="color:#999999">;</span><span style="color:#A0ADA0"> // De waarde van rest wordt 1</span></span>
+<span class="line" data-line="2"></span></code></pre>
 <div class="clear-float"></div></div></div>
 <div class="tabs-tab-content" data-index="2" data-id="python">
 <p><code>&lt;!-- @include: global-lib/explain-mod.md#python --&gt;</code></p>
@@ -392,8 +388,8 @@ krijgt dan 3 snoepjes, en er blijft er dan 1 over.</p>
 <p>Dus <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>13</mn><mi mathvariant="normal">/</mi><mn>4</mn><mo>=</mo><mn>3</mn><mspace width="0.5em"/><mi>r</mi><mi>e</mi><mi>s</mi><mi>t</mi><mspace width="0.5em"/><mn>1</mn></mrow><annotation encoding="application/x-tex">13/4 = 3\enspace rest\enspace 1</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord">13/4</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:0.6444em;"></span><span class="mord">3</span><span class="mspace" style="margin-right:0.5em;"></span><span class="mord mathnormal">res</span><span class="mord mathnormal">t</span><span class="mspace" style="margin-right:0.5em;"></span><span class="mord">1</span></span></span></span></p>
 <p>In python schrijf je de modulo functie als een <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi mathvariant="normal">%</mi></mrow><annotation encoding="application/x-tex">\%</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8056em;vertical-align:-0.0556em;"></span><span class="mord">%</span></span></span></span>-teken.</p>
 <p>Voorbeeld:</p>
-<pre><code class="language-py">    rest = <span class="hljs-number">13</span> % <span class="hljs-number">4</span> <span class="hljs-comment"># De waarde van rest wordt 1</span>
-</code></pre>
+<pre class="shiki vitesse-light" style="background-color:#ffffff;color:#393a34" tabindex="0"><code><span class="line" data-line="1"><span style="color:#393A34">    rest </span><span style="color:#999999">=</span><span style="color:#2F798A"> 13</span><span style="color:#AB5959"> %</span><span style="color:#2F798A"> 4</span><span style="color:#A0ADA0"> # De waarde van rest wordt 1</span></span>
+<span class="line" data-line="2"></span></code></pre>
 <div class="clear-float"></div></div></div>
   </div>
 </div>
@@ -409,24 +405,24 @@ worden uitgevoerd.</p>
 <p><i class="fa-regular fa-hand-point-right"></i> <em>Sequentie</em></p>
 <p>In een sequentie worden de opdrachten opeenvolgend uitgevoerd. In Python ziet
 dat er als volgt uit:</p>
-<pre><code class="language-py">    <span class="hljs-built_in">print</span>(<span class="hljs-string">&quot;Dit wordt als eerste uitgevoerd&quot;</span>)
-    <span class="hljs-built_in">print</span>(<span class="hljs-string">&quot;Dit wordt als tweede uitgevoerd&quot;</span>)
-    <span class="hljs-built_in">print</span>(<span class="hljs-string">&quot;Dit wordt als laatste uitgevoerd&quot;</span>)
-</code></pre>
+<pre class="shiki vitesse-light" style="background-color:#ffffff;color:#393a34" tabindex="0"><code><span class="line" data-line="1"><span style="color:#998418">    print</span><span style="color:#999999">(</span><span style="color:#B5695977">"</span><span style="color:#B56959">Dit wordt als eerste uitgevoerd</span><span style="color:#B5695977">"</span><span style="color:#999999">)</span></span>
+<span class="line" data-line="2"><span style="color:#998418">    print</span><span style="color:#999999">(</span><span style="color:#B5695977">"</span><span style="color:#B56959">Dit wordt als tweede uitgevoerd</span><span style="color:#B5695977">"</span><span style="color:#999999">)</span></span>
+<span class="line" data-line="3"><span style="color:#998418">    print</span><span style="color:#999999">(</span><span style="color:#B5695977">"</span><span style="color:#B56959">Dit wordt als laatste uitgevoerd</span><span style="color:#B5695977">"</span><span style="color:#999999">)</span></span>
+<span class="line" data-line="4"></span></code></pre>
 <p><i class="fa-regular fa-hand-point-right"></i> <em>Conditie</em></p>
 <p>In een conditie worden opdrachten uitgevoerd als aan een voorwaarde is voldaan.
 Denk aan Als...Dan....</p>
 <p>Voorbeeld:</p>
-<pre><code class="language-py">    <span class="hljs-keyword">if</span> key_press == <span class="hljs-string">&quot;space&quot;</span>:
-        <span class="hljs-built_in">print</span>(<span class="hljs-string">&quot;Dit wordt uitgevoerd als de spatiebalk is ingedrukt&quot;</span>)
-    <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span> key_press == <span class="hljs-string">&quot;q&quot;</span>:
-        <span class="hljs-built_in">print</span>(<span class="hljs-string">&quot;Dit wordt uitgevoerd als de q-toets is ingedrukt&quot;</span>)
-    <span class="hljs-keyword">else</span>
-        <span class="hljs-built_in">print</span>(<span class="hljs-string">&quot;Dit wordt uitgevoerd in alle andere gevallen&quot;</span>)
-        <span class="hljs-built_in">print</span>(<span class="hljs-string">&quot;Dit wordt ook uitgevoerd in alle andere gevallen&quot;</span>)
-
-    <span class="hljs-built_in">print</span>(<span class="hljs-string">&quot;dit hoort niet bij de if en wordt altijd uitgevoerd&quot;</span>)
-</code></pre>
+<pre class="shiki vitesse-light" style="background-color:#ffffff;color:#393a34" tabindex="0"><code><span class="line" data-line="1"><span style="color:#1E754F">    if</span><span style="color:#393A34"> key_press </span><span style="color:#AB5959">==</span><span style="color:#B5695977"> "</span><span style="color:#B56959">space</span><span style="color:#B5695977">"</span><span style="color:#999999">:</span></span>
+<span class="line" data-line="2"><span style="color:#998418">        print</span><span style="color:#999999">(</span><span style="color:#B5695977">"</span><span style="color:#B56959">Dit wordt uitgevoerd als de spatiebalk is ingedrukt</span><span style="color:#B5695977">"</span><span style="color:#999999">)</span></span>
+<span class="line" data-line="3"><span style="color:#1E754F">    else</span><span style="color:#1E754F"> if</span><span style="color:#393A34"> key_press </span><span style="color:#AB5959">==</span><span style="color:#B5695977"> "</span><span style="color:#B56959">q</span><span style="color:#B5695977">"</span><span style="color:#999999">:</span></span>
+<span class="line" data-line="4"><span style="color:#998418">        print</span><span style="color:#999999">(</span><span style="color:#B5695977">"</span><span style="color:#B56959">Dit wordt uitgevoerd als de q-toets is ingedrukt</span><span style="color:#B5695977">"</span><span style="color:#999999">)</span></span>
+<span class="line" data-line="5"><span style="color:#1E754F">    else</span></span>
+<span class="line" data-line="6"><span style="color:#998418">        print</span><span style="color:#999999">(</span><span style="color:#B5695977">"</span><span style="color:#B56959">Dit wordt uitgevoerd in alle andere gevallen</span><span style="color:#B5695977">"</span><span style="color:#999999">)</span></span>
+<span class="line" data-line="7"><span style="color:#998418">        print</span><span style="color:#999999">(</span><span style="color:#B5695977">"</span><span style="color:#B56959">Dit wordt ook uitgevoerd in alle andere gevallen</span><span style="color:#B5695977">"</span><span style="color:#999999">)</span></span>
+<span class="line" data-line="8"></span>
+<span class="line" data-line="9"><span style="color:#998418">    print</span><span style="color:#999999">(</span><span style="color:#B5695977">"</span><span style="color:#B56959">dit hoort niet bij de if en wordt altijd uitgevoerd</span><span style="color:#B5695977">"</span><span style="color:#999999">)</span></span>
+<span class="line" data-line="10"></span></code></pre>
 <p>Het is belangrijk dat de computer weet welke opdrachten bij de condities horen
 en welke niet. Om aan te geven dat een opdracht bij een conditie hoort, moet je
 hem inspringen. Hiermee wordt bedoeld dat je met 4 spaties de regel naar rechts
@@ -437,11 +433,11 @@ verplaatst.</p>
 <p>Een iteratie is een lus waarmee opdrachten meerdere keren na elkaar kunnen
 worden uitgevoerd.</p>
 <p>Voorbeeld:</p>
-<pre><code class="language-py">    <span class="hljs-keyword">while</span> key_press == <span class="hljs-string">&quot;space&quot;</span>:
-        <span class="hljs-built_in">print</span>(<span class="hljs-string">&quot;Dit commando wordt herhaald zolang de spatiebalk is ingedrukt&quot;</span>)
-
-    <span class="hljs-built_in">print</span>(<span class="hljs-string">&quot;Dit wordt uitgevoerd nadat de lus is afgelopen&quot;</span>).
-</code></pre>
+<pre class="shiki vitesse-light" style="background-color:#ffffff;color:#393a34" tabindex="0"><code><span class="line" data-line="1"><span style="color:#1E754F">    while</span><span style="color:#393A34"> key_press </span><span style="color:#AB5959">==</span><span style="color:#B5695977"> "</span><span style="color:#B56959">space</span><span style="color:#B5695977">"</span><span style="color:#999999">:</span></span>
+<span class="line" data-line="2"><span style="color:#998418">        print</span><span style="color:#999999">(</span><span style="color:#B5695977">"</span><span style="color:#B56959">Dit commando wordt herhaald zolang de spatiebalk is ingedrukt</span><span style="color:#B5695977">"</span><span style="color:#999999">)</span></span>
+<span class="line" data-line="3"></span>
+<span class="line" data-line="4"><span style="color:#998418">    print</span><span style="color:#999999">(</span><span style="color:#B5695977">"</span><span style="color:#B56959">Dit wordt uitgevoerd nadat de lus is afgelopen</span><span style="color:#B5695977">"</span><span style="color:#999999">).</span></span>
+<span class="line" data-line="5"></span></code></pre>
 <div class="clear-float"></div></div><h2 id="inspringen" tabindex="-1">Inspringen</h2>
 <p><code>&lt;!-- @include: global-lib/explain-structure.md#indent --&gt;</code></p>
 <div class="read">
@@ -449,11 +445,11 @@ worden uitgevoerd.</p>
 <p>Door opdrachten in te springen weet de computer waar een opdracht bij hoort.
 Inspringen doe je door aan het begin van een regel spaties in te voeren.</p>
 <p>Bijvoorbeeld:</p>
-<pre><code class="language-py">    <span class="hljs-keyword">if</span> key_press == <span class="hljs-string">&quot;spatie&quot;</span>:
-        <span class="hljs-built_in">print</span>(<span class="hljs-string">&quot;Ik ben ingesprongen hoor dus bij de if&quot;</span>)
-
-    <span class="hljs-built_in">print</span>(<span class="hljs-string">&quot;Ik hoor niet bij de if&quot;</span>)
-</code></pre>
+<pre class="shiki vitesse-light" style="background-color:#ffffff;color:#393a34" tabindex="0"><code><span class="line" data-line="1"><span style="color:#1E754F">    if</span><span style="color:#393A34"> key_press </span><span style="color:#AB5959">==</span><span style="color:#B5695977"> "</span><span style="color:#B56959">spatie</span><span style="color:#B5695977">"</span><span style="color:#999999">:</span></span>
+<span class="line" data-line="2"><span style="color:#998418">        print</span><span style="color:#999999">(</span><span style="color:#B5695977">"</span><span style="color:#B56959">Ik ben ingesprongen hoor dus bij de if</span><span style="color:#B5695977">"</span><span style="color:#999999">)</span></span>
+<span class="line" data-line="3"></span>
+<span class="line" data-line="4"><span style="color:#998418">    print</span><span style="color:#999999">(</span><span style="color:#B5695977">"</span><span style="color:#B56959">Ik hoor niet bij de if</span><span style="color:#B5695977">"</span><span style="color:#999999">)</span></span>
+<span class="line" data-line="5"></span></code></pre>
 <div class="markdown-alert markdown-alert-belangrijk">
 <p class="markdown-alert-title">Belangrijk</p>
 <p>Het is belangrijk dat je bij het programmeren goed oplet op het inspringen. Als
@@ -543,7 +539,27 @@ je dit niet goed doet, werkt je programma niet.</p>
     </table>
 
     <div class="footer"></div>
-
     <script src="../template-assets/template-helpers.js"></script>
+    <script type="module">
+      import scratchblocks from '../template-assets/scratchblocks/scratchblocks.min.es.js'
+      import loadTranslations from '../template-assets/scratchblocks/translations-all-es.js'
+
+      loadTranslations(scratchblocks);
+      scratchblocks.renderMatching('pre.scratchblocks', {
+        style: 'scratch3',
+        inline: false,
+        languages: ['nl'],
+        scale: 1,
+      });
+
+      scratchblocks.renderMatching('code.scratch', {
+        style: 'scratch3',
+        inline: false,
+        languages: ['nl'],
+        scale: 0.6,
+        inline: true,
+      });
+
+    </script>
   </body>
 </html>

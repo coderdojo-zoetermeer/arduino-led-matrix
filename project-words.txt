@@ -8,7 +8,12 @@ katex
 mdit
 pagebreak
 scratchblocks
+shiki
+Shiki
+shikijs
+softbreak
 streamx
 Thonny
 Unported
+vitesse
 zoetermeer

@@ -106,13 +106,17 @@ de spatiebalk is ingedrukt, dat hij eerst weer is los gelaten.
 Pas de code van ![cat =12x](./assets/cat.svg) aan zoals hiernaast is in de
 rode rechthoek is weergegeven.
 
+*clear-float*
+
 Kijk goed naar de kleuren!
 
-- Het blok ![wacht =x15](./assets/wacht.svg) (donker oranje) vind je in de Besturen lijst
-- Het blok ![niet =x15](./assets/niet.svg) (groen) vind je in de Functies lijst
-- Het blok ![space =x15](./assets/toets-space.svg) (licht blauwe) vind je in de Waarnemen lijst
+Je moet de blokken in elkaar schuiven!
 
-Je moet de blokken dus in elkaar schuiven!
+- Het blok `wacht tot <>`{.scratch} vind je in de `Besturen` lijst
+- Het blok `niet <>`{.scratch} vind je in de `Functies` lijst
+- Het blok `toets [spatiebalk v] ingedrukt?`{.scratch} vind je in de `Waarnemen` lijst
+
+
 
 :::
 

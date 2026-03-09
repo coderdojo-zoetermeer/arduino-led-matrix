@@ -120,7 +120,11 @@ const watchTask = () => {
 watchTask.description =
   'Watch for changes in the opdrachten, templates, and global-lib folders and rebuild the documentation.';
 
-export const build = series(buildAssignments, copyTemplateAssets, copyAssignmentAssets);
+export const build = series(
+  buildAssignments,
+  copyTemplateAssets,
+  copyAssignmentAssets,
+);
 build.description =
   'Build the assignment documentation and copy assets to the docs folder.';
 

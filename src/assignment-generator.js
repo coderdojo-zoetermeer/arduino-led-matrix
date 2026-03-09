@@ -18,7 +18,7 @@ async function exists(f) {
 }
 
 export async function generateAssignment(v) {
-  const md = createMarkdownRenderer();
+  const md = await createMarkdownRenderer();
 
   var assignmentHandlebars = Handlebars.create();
 

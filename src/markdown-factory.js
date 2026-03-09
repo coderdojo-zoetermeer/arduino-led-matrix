@@ -1,11 +1,7 @@
 import MarkdownIt from 'markdown-it';
 import meta from 'markdown-it-meta';
-import hljs from 'highlight.js/lib/core';
-import cpp from 'highlight.js/lib/languages/cpp';
-import python from 'highlight.js/lib/languages/python';
-import plaintext from 'highlight.js/lib/languages/plaintext';
 import path from 'path';
-import markdownItAttrs from 'markdown-it-attrs';
+import { attrs } from '@mdit/plugin-attrs';
 import { snippet } from '@mdit/plugin-snippet';
 import { icon, fontawesomeRender } from '@mdit/plugin-icon';
 import { imgSize } from '@mdit/plugin-img-size';
@@ -20,59 +16,61 @@ import MarkdownItTOC from 'markdown-it-table-of-contents';
 import MarkdownItAnchor from 'markdown-it-anchor';
 import { inlineRule } from '@mdit/plugin-inline-rule';
 import { alert } from '@mdit/plugin-alert';
-import jsdom from 'jsdom';
-import { createRequire } from 'module';
+import { createHighlighter, bundledLanguages } from 'shiki';
+import {
+  transformerMetaHighlight,
+  transformerNotationHighlight,
+  transformerNotationErrorLevel,
+  transformerNotationDiff,
+} from '@shikijs/transformers';
 
-const require = createRequire(import.meta.url);
+const highlighter$ = createHighlighter({
+  themes: ['vitesse-light'],
+  langAlias: {
+    ino: 'cpp',
+    scratch: 'text',
+  },
+  langs: Object.keys(bundledLanguages),
+});
 
-const { JSDOM } = jsdom;
-const { window } = new JSDOM(`<!DOCTYPE html><p></p>`);
-globalThis.window = window;
-const scratchblocks =
-  require('scratchblocks/build/scratchblocks.min.es').default;
-const loadTranslations =
-  require('scratchblocks/build/translations-all-es').default;
-loadTranslations(scratchblocks);
+export async function createMarkdownRenderer() {
+  const highlighter = await highlighter$;
 
-hljs.registerLanguage('c', cpp);
-hljs.registerLanguage('cpp', cpp);
-hljs.registerLanguage('ino', cpp);
-hljs.registerLanguage('py', python);
-hljs.registerLanguage('scratch', plaintext);
-
-export function createMarkdownRenderer() {
   const md = MarkdownIt({
     html: true,
     inline: true,
-    highlight: (str, lang) => {
-      if (lang && hljs.getLanguage(lang)) {
-        try {
-          if (lang === 'scratch') {
-            const options = {
-              style: 'scratch3',
-              inline: false,
-              languages: ['nl'],
-              scale: 1,
-            };
-            const parsed = scratchblocks.parse(str, options);
-            const view = scratchblocks.newView(parsed, options);
-            const svg = view.render(options);
-            return `<svg width="${svg.viewBox.baseVal.width}" 
-                      height="${svg.viewBox.baseVal.height}" >
-                        ${svg.innerHTML}
-                    </svg>`;
-          } else {
-            return hljs.highlight(str, {
-              language: lang,
-              ignoreIllegals: false,
-            }).value;
-          }
-        } catch (ignoreErr) {
-          // intentionally blank
+    highlight: (str, lang, langAttrs) => {
+      if (lang == 'scratch') {
+        return `<pre class="scratchblocks">${str}</pre>`;
+      } else {
+        const aliases = {
+          ino: 'cpp',
+        };
+        const braceIndex = lang.indexOf('{');
+        if (braceIndex > 0) {
+          langAttrs = lang.slice(braceIndex);
+          lang = lang.slice(0, braceIndex);
         }
+        const result = highlighter.codeToHtml(str, {
+          theme: 'vitesse-light',
+          lang: aliases[lang] || lang,
+          meta: {
+            __raw: langAttrs,
+          },
+          transformers: [
+            transformerMetaHighlight(),
+            transformerNotationHighlight(),
+            transformerNotationErrorLevel(),
+            transformerNotationDiff(),
+            {
+              line(node, line) {
+                node.properties['data-line'] = line;
+              },
+            },
+          ],
+        });
+        return result;
       }
-
-      return '';
     },
   });
   md.use(snippet, {
@@ -101,7 +99,9 @@ export function createMarkdownRenderer() {
   md.use(meta);
   md.use(katex);
   md.use(imgSize);
-  md.use(markdownItAttrs);
+  md.use(attrs, {
+    rule: ['inline', 'table', 'list', 'hr', 'heading', 'softbreak', 'block'],
+  });
   md.use(icon, {
     render: fontawesomeRender,
   });

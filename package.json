@@ -23,6 +23,7 @@
   "dependencies": {
     "@eslint/js": "^10.0.1",
     "@mdit/plugin-alert": "^0.23.1",
+    "@mdit/plugin-attrs": "^0.25.1",
     "@mdit/plugin-container": "^0.22.3",
     "@mdit/plugin-demo": "^0.22.4",
     "@mdit/plugin-icon": "^0.23.1",
@@ -35,6 +36,8 @@
     "@mdit/plugin-stylize": "^0.22.4",
     "@mdit/plugin-tab": "^0.24.0",
     "@mdit/plugin-uml": "^0.23.1",
+    "@shikijs/markdown-it": "^4.0.1",
+    "@shikijs/transformers": "^4.0.1",
     "canvas": "^3.2.1",
     "chalk": "^5.6.2",
     "commander": "^14.0.3",

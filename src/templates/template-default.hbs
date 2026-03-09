@@ -1,14 +1,8 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.11.1/styles/arduino-light.min.css"
-    />
     <link rel="stylesheet" href="{{{templateAssetFolder}}}/fontawesome/css/all.css" />
     <link rel="stylesheet" href="{{{templateAssetFolder}}}/alert.css" />
-    <link rel="stylesheet" href="{{{templateAssetFolder}}}/scratch/style.css" />
-    <link rel="stylesheet" href="{{{templateAssetFolder}}}/default.css" />
     <link
       href="https://fonts.googleapis.com/css?family=Open+Sans"
       rel="stylesheet"
@@ -19,19 +13,21 @@
       rel="stylesheet"
       type="text/css"
     />
-
     <link
       rel="stylesheet"
       href="https://cdn.jsdelivr.net/npm/katex@0.16.28/dist/katex.min.css"
       integrity="sha384-Wsr4Nh3yrvMf2KCebJchRJoVo1gTU6kcP05uRSh5NV3sj9+a8IomuJoQzf3sMq4T"
       crossorigin="anonymous"
     />
+    <link rel="stylesheet" href="{{{templateAssetFolder}}}/default.css" />
+
     <script
       defer
       src="https://cdn.jsdelivr.net/npm/katex@0.16.28/dist/katex.min.js"
       integrity="sha384-+W9OcrYK2/bD7BmUAk+xeFAyKp0QjyRQUCxeU31dfyTt/FrPsUgaBTLLkVf33qWt"
       crossorigin="anonymous"
     ></script>
+
     <style>
       @media print {
         body {
@@ -85,7 +81,7 @@
     </style>
   </head>
 
-  <body>
+  <body class="line-numbers">
     {{#if meta.progLang}}
       <img
         src="{{{templateAssetFolder}}}/logo-{{{meta.progLang}}}.png"
@@ -225,8 +221,27 @@
     </table>
 
     <div class="footer"></div>
-
     <script src="{{{templateAssetFolder}}}/template-helpers.js"></script>
-    {{!-- <script src="{{{templateAssetFolder}}}/scratch/style.css.js"></script> --}}
+    <script type="module">
+      import scratchblocks from '{{{templateAssetFolder}}}/scratchblocks/scratchblocks.min.es.js'
+      import loadTranslations from '{{{templateAssetFolder}}}/scratchblocks/translations-all-es.js'
+
+      loadTranslations(scratchblocks);
+      scratchblocks.renderMatching('pre.scratchblocks', {
+        style: 'scratch3',
+        inline: false,
+        languages: ['nl'],
+        scale: 1,
+      });
+
+      scratchblocks.renderMatching('code.scratch', {
+        style: 'scratch3',
+        inline: false,
+        languages: ['nl'],
+        scale: 0.6,
+        inline: true,
+      });
+
+    </script>
   </body>
 </html>

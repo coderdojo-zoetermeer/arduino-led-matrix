@@ -180,7 +180,6 @@ table {
 .codeblock {
   border: 1px solid gray;
   box-shadow: 3px 3px;
-  padding: 20px;
   page-break-inside: avoid;
 }
 
@@ -274,11 +273,73 @@ hr.separator-hidden {
   border-radius: 3px;
 }
 
-:not(pre) > code {
+:not(pre) > code:not(.scratch) {
   border: 1px solid black;
   padding: 1px;
   background-color: #F8F8FF;
   font-family: 'Courier New', monospace;
   display:inline-block;
   border-radius: 3px;
+}
+
+code[class*=language-],pre[class*=language-] {
+    font-size: 10px;
+}
+
+pre[class*=language-] {
+  margin: 0px;
+}
+
+.highlighted {
+  background-color: Yellow;
+  display: inline-block;
+  width: 100%;
+  padding: 0px;
+  margin: 0px;
+}
+
+.highlighted.error {
+  background-color: Red;
+}
+
+.highlighted.warning {
+  background-color: orange;
+}
+
+.highlighted.info {
+  background-color: Green;
+}
+
+pre span.line:before {
+  content: attr(data-line, '0');
+  display: inline-block;
+  border-right: 1px solid #ddd;
+  /* padding-right: 20px; */
+  color: #888;
+  margin: 0;
+  width: 50px;
+}
+
+pre span.diff.remove:before {
+  content: '-';
+  display: inline-block;
+  border-right: 1px solid #ddd;
+  width: 50px;
+  color: #888;
+  margin: 0;
+  padding-right: 5px;
+  text-align: right;
+  font-weight: bold
+}
+
+pre span.diff.add:before {
+  content: '+';
+  display: inline-block;
+  border-right: 1px solid #ddd;
+  width: 50px;
+  color: #888;
+  margin: 0;
+  padding-right: 5px;
+  text-align: right;
+  font-weight: bold
 }

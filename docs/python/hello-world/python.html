@@ -1,14 +1,8 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.11.1/styles/arduino-light.min.css"
-    />
     <link rel="stylesheet" href="../../template-assets/fontawesome/css/all.css" />
     <link rel="stylesheet" href="../../template-assets/alert.css" />
-    <link rel="stylesheet" href="../../template-assets/scratch/style.css" />
-    <link rel="stylesheet" href="../../template-assets/default.css" />
     <link
       href="https://fonts.googleapis.com/css?family=Open+Sans"
       rel="stylesheet"
@@ -19,19 +13,21 @@
       rel="stylesheet"
       type="text/css"
     />
-
     <link
       rel="stylesheet"
       href="https://cdn.jsdelivr.net/npm/katex@0.16.28/dist/katex.min.css"
       integrity="sha384-Wsr4Nh3yrvMf2KCebJchRJoVo1gTU6kcP05uRSh5NV3sj9+a8IomuJoQzf3sMq4T"
       crossorigin="anonymous"
     />
+    <link rel="stylesheet" href="../../template-assets/default.css" />
+
     <script
       defer
       src="https://cdn.jsdelivr.net/npm/katex@0.16.28/dist/katex.min.js"
       integrity="sha384-+W9OcrYK2/bD7BmUAk+xeFAyKp0QjyRQUCxeU31dfyTt/FrPsUgaBTLLkVf33qWt"
       crossorigin="anonymous"
     ></script>
+
     <style>
       @media print {
         body {
@@ -85,7 +81,7 @@
     </style>
   </head>
 
-  <body>
+  <body class="line-numbers">
       <img
         src="../../template-assets/logo-python.png"
         class="language-logo"
@@ -150,7 +146,8 @@
 <div class="program">
 <p><em>Aanroepen van <strong>updateDisplay()</strong> functie</em></p>
 <div class="codeblock">
-<pre><code class="language-py"><span class="hljs-built_in">print</span>(<span class="hljs-string">&quot;Hello, World!&quot;</span>)</code></pre>
+<pre class="shiki vitesse-light" style="background-color:#ffffff;color:#393a34" tabindex="0"><code><span class="line" data-line="1"><span style="color:#998418">print</span><span style="color:#999999">(</span><span style="color:#B5695977">"</span><span style="color:#B56959">Hello, World!</span><span style="color:#B5695977">"</span><span style="color:#999999">)</span></span>
+<span class="line" data-line="2"></span></code></pre>
 <div class="clear-float"></div></div><div class="clear-float"></div></div><hr class="separator-hidden">
 <div class="challenge">
 <p><em>Uitdaging</em></p>
@@ -238,7 +235,27 @@
     </table>
 
     <div class="footer"></div>
-
     <script src="../../template-assets/template-helpers.js"></script>
+    <script type="module">
+      import scratchblocks from '../../template-assets/scratchblocks/scratchblocks.min.es.js'
+      import loadTranslations from '../../template-assets/scratchblocks/translations-all-es.js'
+
+      loadTranslations(scratchblocks);
+      scratchblocks.renderMatching('pre.scratchblocks', {
+        style: 'scratch3',
+        inline: false,
+        languages: ['nl'],
+        scale: 1,
+      });
+
+      scratchblocks.renderMatching('code.scratch', {
+        style: 'scratch3',
+        inline: false,
+        languages: ['nl'],
+        scale: 0.6,
+        inline: true,
+      });
+
+    </script>
   </body>
 </html>
