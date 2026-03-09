@@ -346,7 +346,6 @@ Zie ook: [transformers](https://shiki.style/packages/transformers#transformernot
 | `[!code ++]`                     | regel toegevoegd              |
 | `[!code ++:3]`                   | 3 regels toegevoegd           |
 | `[!code --:3]`                   | regels verwijderd             |
-| `[!code --:3]`                   | regels verwijderd             |
 | `[!code highlight]`              | highlight regel               |
 | `[!code info]`                   | info regel                    |
 | `[!code warn]`                   | waarschuwing regel            |
@@ -387,6 +386,8 @@ void loop() {
 # Scratchblocks
 
 Scratchblocks kunnen in code fences of inline worden toegevoegd.
+
+Zie ook [Block Plugin/Syntax](https://en.scratch-wiki.info/wiki/Block_Plugin/Syntax)
 
 ## Scratchblocks code fence
 
