@@ -3,8 +3,16 @@
 import { program, Option } from 'commander';
 import fs from 'fs';
 import Handlebars from 'handlebars';
-import { execSync } from 'child_process';
 import * as gulpfile from '../gulpfile.js';
+import logger from 'gulplog';
+
+logger.on('info', (message) => {
+  console.log(message);
+});
+
+logger.on('error', (message) => {
+  console.error(message);
+});
 
 program
   .name('cdz-gen')
@@ -15,9 +23,7 @@ program
   .command('build')
   .description('Builds the assignments')
   .action(async () => {
-    execSync('npx gulp -LLL build', {
-      stdio: 'inherit',
-    });
+    await gulpfile.build();
   });
 
 program
@@ -28,14 +34,8 @@ program
     'Builds the assignments and watches for changes and rebuilds assignments.' +
       ' Also starts a local server to serve the generated files.',
   )
-  .action(async (args) => {
+  .action(async (_args) => {
     await gulpfile.server();
-    // execSync(
-    //   `npx gulp -LLL server -p ${args.port} ${!args.browserOpen ? '-n' : ''}`,
-    //   {
-    //     stdio: 'inherit',
-    //   },
-    // );
   });
 
 program
