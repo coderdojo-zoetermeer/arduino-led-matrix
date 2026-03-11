@@ -6,6 +6,6 @@ dictionaryDefinitions:
     path: "./project-words.txt"
     addWords: true
 words: []
-ignoreWords: [a]
+ignoreWords: []
 import: []
 language: "nl,en"

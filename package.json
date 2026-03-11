@@ -11,7 +11,7 @@
     "url": "git+https://github.com/coderdojo-zoetermeer/arduino-led-matrix.git"
   },
   "license": "ISC",
-  "author": "",
+  "author": "Ben Mens",
   "type": "module",
   "main": "gulpfile.js",
   "bin": {
@@ -38,20 +38,15 @@
     "@mdit/plugin-uml": "^0.23.1",
     "@shikijs/markdown-it": "^4.0.1",
     "@shikijs/transformers": "^4.0.1",
-    "canvas": "^3.2.1",
     "chalk": "^5.6.2",
     "commander": "^14.0.3",
     "eslint": "^10.0.2",
     "eslint-config-prettier": "^10.1.8",
     "eslint-plugin-prettier": "^5.5.5",
-    "globals": "^17.4.0",
     "gulp": "^5.0.1",
     "gulp-cli": "^3.1.0",
     "handlebars": "^4.7.8",
-    "highlight.js": "^11.11.1",
-    "jsdom": "^28.1.0",
     "live-server": "^1.2.2",
-    "m": "^1.10.0",
     "markdown-it": "^14.1.0",
     "markdown-it-anchor": "^9.2.0",
     "markdown-it-attrs": "^4.3.1",
@@ -60,7 +55,6 @@
     "minimist": "^1.2.8",
     "prettier": "^3.8.1",
     "scratchblocks": "^3.6.4",
-    "stream-composer": "^1.0.2",
     "vinyl": "^3.0.1"
   }
 }

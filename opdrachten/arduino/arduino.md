@@ -62,7 +62,7 @@ Start het programma met de **Upload** button. De LED knippert nu.
 
 ::: codeblock
 
-<<<Blink/Blink.ino {5-10,13,17-20}
+<<<Blink/Blink.ino {25-29}
 
 :::
 ::::
