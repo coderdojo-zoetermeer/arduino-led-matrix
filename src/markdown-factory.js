@@ -22,8 +22,8 @@ import {
   transformerNotationHighlight,
   transformerNotationErrorLevel,
   transformerNotationDiff,
-  transformerRemoveLineBreak,
   transformerRemoveNotationEscape,
+  transformerRenderIndentGuides,
 } from '@shikijs/transformers';
 import { addCopyButton } from 'shiki-transformer-copy-button';
 
@@ -44,7 +44,7 @@ export async function createMarkdownRenderer() {
     inline: true,
     highlight: (str, lang, langAttrs) => {
       if (lang == 'scratch') {
-        return `<pre class="scratchblocks">${str}</pre>`;
+        return `<pre class="scratchblocks">${md.utils.escapeHtml(str)}</pre>`;
       } else {
         const aliases = {
           ino: 'cpp',
@@ -66,6 +66,7 @@ export async function createMarkdownRenderer() {
             transformerNotationHighlight({ matchAlgorithm: 'v1' }),
             transformerNotationErrorLevel({ matchAlgorithm: 'v1' }),
             transformerRemoveNotationEscape({ matchAlgorithm: 'v1' }),
+            transformerRenderIndentGuides(),
             addCopyButton({
               toggle: 2000,
               button: {

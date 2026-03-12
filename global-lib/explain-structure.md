@@ -74,13 +74,24 @@ Voorbeeld:
 Door opdrachten in te springen weet de computer waar een opdracht bij hoort.
 Inspringen doe je door aan het begin van een regel spaties in te voeren.
 
-Bijvoorbeeld:
+Voorbeeld in python:
 
 ```py
-    if key_press == "spatie":
-        print("Ik ben ingesprongen hoor dus bij de if")
+if key_press == "spatie":
+  print("Ik ben ingesprongen en hoor dus bij de if")
 
-    print("Ik hoor niet bij de if")
+print("Ik hoor niet bij de if")
+```
+
+Regel 2 is ingesprongen. Daardoor weet python dat deze regel bij de `if` hoort.
+Hieronder zie je hetzelfde programma in scratch. Ook daar is de tweede regel
+ingesprongen. Maar bij scratch ziet dat er iets anders uit.
+
+```scratch
+als <toets [spatiebalk v] ingedrukt?> dan 
+  zeg [Ik ben ingesprongen en hoor dus bij de als]
+end
+zeg [ik hoor niet bij als]
 ```
 
 >[!belangrijk]

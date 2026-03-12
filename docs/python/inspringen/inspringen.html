@@ -86,7 +86,7 @@
 
             pre button.copy-button {
               position: absolute;
-              right: 0px;
+              right: 10px;
               top: 0px;
               height: 20px;
               width: 20px;
@@ -171,20 +171,155 @@
               <div style="display: flex; flex-direction: row; gap: 0px 10px">
                   <div class="header-info-block">
                     <div class="header-info-title">Voorkennis</div>
-                    <p>geen</p>
+                    <p>Werken met Thonny</p>
 
                   </div>
                   <div class="header-info-block">
                     <div class="header-info-title">Leerdoelen</div>
                     <ul>
 <li>wat is inspringen</li>
-<li>werken met Thonny</li>
+<li>puzzelen met inspringen</li>
 </ul>
 
                   </div>
               </div>
 
-              
+              <hr class="separator-fat">
+<div class="read">
+<p><em>beschrijving van deze opdracht</em></p>
+<p>In deze oefening gaan we oefenen met inspringen in Python.</p>
+<div class="clear-float"></div></div><div class="read">
+<p><em>Uitleg inspringen</em></p>
+<p>Door opdrachten in te springen weet de computer waar een opdracht bij hoort.
+Inspringen doe je door aan het begin van een regel spaties in te voeren.</p>
+<p>Voorbeeld in python:</p>
+<pre class="shiki vitesse-light" style="background-color:#ffffff;color:#393a34" tabindex="0"><code><span class="line" data-line="1"><span style="color:#1E754F">if</span><span style="color:#393A34"> key_press </span><span style="color:#AB5959">==</span><span style="color:#B5695977"> "</span><span style="color:#B56959">spatie</span><span style="color:#B5695977">"</span><span style="color:#999999">:</span></span>
+<span class="line" data-line="2"><span class="indent">  </span><span style="color:#998418">print</span><span style="color:#999999">(</span><span style="color:#B5695977">"</span><span style="color:#B56959">Ik ben ingesprongen en hoor dus bij de if</span><span style="color:#B5695977">"</span><span style="color:#999999">)</span></span>
+<span class="line" data-line="3"></span>
+<span class="line" data-line="4"><span style="color:#998418">print</span><span style="color:#999999">(</span><span style="color:#B5695977">"</span><span style="color:#B56959">Ik hoor niet bij de if</span><span style="color:#B5695977">"</span><span style="color:#999999">)</span></span>
+<span class="line" data-line="5"></span></code><button class="copy-button" title="Copy" onclick="
+          navigator.clipboard.writeText(this.parentElement.innerText);
+          this.classList.add(&#x27;copied&#x27;);
+          setTimeout(() => this.classList.remove(&#x27;copied&#x27;), 2000)
+        "><span class="ready"></span><span class="success"></span></button></pre>
+<p>Regel 2 is ingesprongen. Daardoor weet python dat deze regel bij de <code>if</code> hoort.
+Hieronder zie je hetzelfde programma in scratch. Ook daar is de tweede regel
+ingesprongen. Maar bij scratch ziet dat er iets anders uit.</p>
+<pre class="scratchblocks">als &lt;toets [spatiebalk v] ingedrukt?&gt; dan 
+  zeg [Ik ben ingesprongen en hoor dus bij de als]
+end
+zeg [ik hoor niet bij als]
+</pre>
+<div class="markdown-alert markdown-alert-belangrijk">
+<p class="markdown-alert-title">Belangrijk</p>
+<p>Het is belangrijk dat je bij het programmeren goed oplet op het inspringen. Als
+je dit niet goed doet, werkt je programma niet.</p>
+</div>
+<div class="clear-float"></div></div><hr class="separator-fat">
+<div class="program">
+<p>Hieronder staat een programma die niet goed is ingesprongen en dus niet goed
+werkt.</p>
+<div class="codeblock">
+<pre class="shiki vitesse-light" style="background-color:#ffffff;color:#393a34" tabindex="0"><code><span class="line" data-line="1"><span style="color:#393A34">antwoord </span><span style="color:#999999">=</span><span style="color:#2F798A"> 42</span></span>
+<span class="line" data-line="2"></span>
+<span class="line" data-line="3"><span style="color:#998418">print</span><span style="color:#999999"> (</span><span style="color:#B5695977">"</span><span style="color:#B56959">Het programma begint</span><span style="color:#B5695977">"</span><span style="color:#999999">)</span></span>
+<span class="line" data-line="4"><span style="color:#998418">print</span><span style="color:#999999"> (</span><span style="color:#B5695977">"</span><span style="color:#B56959">De waarde van antwoord is </span><span style="color:#B5695977">"</span><span style="color:#AB5959"> +</span><span style="color:#998418"> str</span><span style="color:#999999">(</span><span style="color:#393A34">antwoord</span><span style="color:#999999">))</span></span>
+<span class="line" data-line="5"></span>
+<span class="line" data-line="6"><span style="color:#1E754F">if</span><span style="color:#393A34"> antwoord </span><span style="color:#AB5959">==</span><span style="color:#2F798A"> 41</span><span style="color:#999999">:</span></span>
+<span class="line" data-line="7"><span style="color:#998418">print</span><span style="color:#999999"> (</span><span style="color:#B5695977">"</span><span style="color:#B56959">Het antwoord gelijk is aan 41</span><span style="color:#B5695977">"</span><span style="color:#999999">)</span></span>
+<span class="line" data-line="8"><span style="color:#1E754F">else</span><span style="color:#999999">:</span></span>
+<span class="line" data-line="9"><span style="color:#998418">print</span><span style="color:#999999"> (</span><span style="color:#B5695977">"</span><span style="color:#B56959">Het antwoord NIET gelijk is aan 41</span><span style="color:#B5695977">"</span><span style="color:#999999">)</span></span>
+<span class="line" data-line="10"></span>
+<span class="line" data-line="11"><span style="color:#1E754F">if</span><span style="color:#393A34"> antwoord </span><span style="color:#AB5959">==</span><span style="color:#2F798A"> 42</span><span style="color:#999999">:</span></span>
+<span class="line" data-line="12"><span style="color:#998418">print</span><span style="color:#999999"> (</span><span style="color:#B5695977">"</span><span style="color:#B56959">Het antwoord gelijk is aan 42</span><span style="color:#B5695977">"</span><span style="color:#999999">)</span></span>
+<span class="line" data-line="13"></span>
+<span class="line" data-line="14"><span style="color:#998418">print</span><span style="color:#999999"> (</span><span style="color:#B5695977">"</span><span style="color:#B56959">Het antwoord gelijk is nog steeds 42</span><span style="color:#B5695977">"</span><span style="color:#999999">)</span></span>
+<span class="line" data-line="15"></span>
+<span class="line" data-line="16"><span style="color:#998418">print</span><span style="color:#999999"> (</span><span style="color:#B5695977">"</span><span style="color:#B56959">Het programma is klaar</span><span style="color:#B5695977">"</span><span style="color:#999999">)</span></span>
+<span class="line" data-line="17"></span></code><button class="copy-button" title="Copy" onclick="
+          navigator.clipboard.writeText(this.parentElement.innerText);
+          this.classList.add(&#x27;copied&#x27;);
+          setTimeout(() => this.classList.remove(&#x27;copied&#x27;), 2000)
+        "><span class="ready"></span><span class="success"></span></button></pre>
+<div class="clear-float"></div></div><p>Kopieer dit programma naar Thonny en probeer het uit. Je zal merken dat Python
+niets van het programma snapt en een foutmelding geeft.</p>
+<p>Probeer nu zelf om het programma te verbeteren zodat het resultaat als volgt is:</p>
+<pre class="shiki vitesse-light" style="background-color:#ffffff;color:#393a34" tabindex="0"><code><span class="line" data-line="1"><span>Het programma begint</span></span>
+<span class="line" data-line="2"><span>De waarde van antwoord is 42</span></span>
+<span class="line" data-line="3"><span>Het antwoord NIET gelijk is aan 41</span></span>
+<span class="line" data-line="4"><span>Het antwoord gelijk is aan 42</span></span>
+<span class="line" data-line="5"><span>Het antwoord gelijk is nog steeds 42</span></span>
+<span class="line" data-line="6"><span>Het programma is klaar</span></span>
+<span class="line" data-line="7"><span></span></span></code><button class="copy-button" title="Copy" onclick="
+          navigator.clipboard.writeText(this.parentElement.innerText);
+          this.classList.add(&#x27;copied&#x27;);
+          setTimeout(() => this.classList.remove(&#x27;copied&#x27;), 2000)
+        "><span class="ready"></span><span class="success"></span></button></pre>
+<div class="clear-float"></div></div><hr class="separator-hidden">
+<div class="program">
+<p>Maak nu de volgende aanpassing aan je code.</p>
+<div class="codeblock">
+<pre class="shiki vitesse-light has-diff" style="background-color:#ffffff;color:#393a34" tabindex="0"><code><span class="line diff remove" data-line="1"><span style="color:#393A34">antwoord </span><span style="color:#999999">=</span><span style="color:#2F798A"> 42</span></span>
+<span class="line diff add" data-line="2"><span style="color:#393A34">antwoord </span><span style="color:#999999">=</span><span style="color:#2F798A"> 41</span></span>
+<span class="line" data-line="3"></span></code><button class="copy-button" title="Copy" onclick="
+          navigator.clipboard.writeText(this.parentElement.innerText);
+          this.classList.add(&#x27;copied&#x27;);
+          setTimeout(() => this.classList.remove(&#x27;copied&#x27;), 2000)
+        "><span class="ready"></span><span class="success"></span></button></pre>
+<div class="clear-float"></div></div><p>Als je je programma nu test moet het resultaat als volgt zijn:</p>
+<pre class="shiki vitesse-light" style="background-color:#ffffff;color:#393a34" tabindex="0"><code><span class="line" data-line="1"><span>Het programma begint</span></span>
+<span class="line" data-line="2"><span>De waarde van antwoord is 41</span></span>
+<span class="line" data-line="3"><span>Het antwoord gelijk is aan 41</span></span>
+<span class="line" data-line="4"><span>Het programma is klaar</span></span>
+<span class="line" data-line="5"><span></span></span></code><button class="copy-button" title="Copy" onclick="
+          navigator.clipboard.writeText(this.parentElement.innerText);
+          this.classList.add(&#x27;copied&#x27;);
+          setTimeout(() => this.classList.remove(&#x27;copied&#x27;), 2000)
+        "><span class="ready"></span><span class="success"></span></button></pre>
+<p>Klopt je programma nog steeds? Zo niet, verbeter je programma dan.</p>
+<div class="clear-float"></div></div><hr class="separator-hidden">
+<div class="program">
+<p><em>meerdere niveaus</em></p>
+<p>Vaak is het nodig om meerdere keren in te springen. Hieronder een voorbeeld in
+scratch.</p>
+<pre class="scratchblocks">
+maak [x v] (150)
+
+wanneer groene vlag wordt aangeklikt
+als &lt;(x) &gt; (100)&gt; dan
+  als &lt;(x) &lt; (200)&gt; dan
+    zeg [x is groter dan 100 en kleiner dan 200]
+  anders
+    zeg [x is groter dan 100 en NIET kleiner dan 200]
+  end
+anders
+  zeg [x is iets anders]
+end
+</pre>
+<p>Kopieer de onderstaande code naar Thonny en verbeter het inspringen.</p>
+<div class="codeblock">
+<pre class="shiki vitesse-light" style="background-color:#ffffff;color:#393a34" tabindex="0"><code><span class="line" data-line="1"><span style="color:#393A34">x </span><span style="color:#999999">=</span><span style="color:#2F798A"> 150</span></span>
+<span class="line" data-line="2"></span>
+<span class="line" data-line="3"><span style="color:#1E754F">if</span><span style="color:#393A34"> x </span><span style="color:#AB5959">></span><span style="color:#2F798A"> 100</span><span style="color:#999999">:</span></span>
+<span class="line" data-line="4"><span style="color:#1E754F">if</span><span style="color:#393A34"> x </span><span style="color:#AB5959">&#x3C;</span><span style="color:#2F798A"> 200</span><span style="color:#999999">:</span></span>
+<span class="line" data-line="5"><span style="color:#998418">print</span><span style="color:#999999">(</span><span style="color:#B5695977">"</span><span style="color:#B56959">x is groter dan 100 en kleiner dan 200</span><span style="color:#B5695977">"</span><span style="color:#999999">)</span></span>
+<span class="line" data-line="6"><span style="color:#1E754F">else</span><span style="color:#999999">:</span></span>
+<span class="line" data-line="7"><span style="color:#998418">print</span><span style="color:#999999">(</span><span style="color:#B5695977">"</span><span style="color:#B56959">x is groter dan 100 en NIET kleiner dan 200</span><span style="color:#B5695977">"</span><span style="color:#999999">)</span></span>
+<span class="line" data-line="8"><span style="color:#1E754F">else</span><span style="color:#999999">:</span></span>
+<span class="line" data-line="9"><span style="color:#998418">print</span><span style="color:#999999">(</span><span style="color:#B5695977">"</span><span style="color:#B56959">x is iets anders</span><span style="color:#B5695977">"</span><span style="color:#999999">)</span></span>
+<span class="line" data-line="10"></span></code><button class="copy-button" title="Copy" onclick="
+          navigator.clipboard.writeText(this.parentElement.innerText);
+          this.classList.add(&#x27;copied&#x27;);
+          setTimeout(() => this.classList.remove(&#x27;copied&#x27;), 2000)
+        "><span class="ready"></span><span class="success"></span></button></pre>
+<p>Als het goed is geeft je programma nu het volgende resultaat:</p>
+<pre class="shiki vitesse-light" style="background-color:#ffffff;color:#393a34" tabindex="0"><code><span class="line" data-line="1"><span>x is groter dan 100 en kleiner dan 200</span></span>
+<span class="line" data-line="2"><span></span></span></code><button class="copy-button" title="Copy" onclick="
+          navigator.clipboard.writeText(this.parentElement.innerText);
+          this.classList.add(&#x27;copied&#x27;);
+          setTimeout(() => this.classList.remove(&#x27;copied&#x27;), 2000)
+        "><span class="ready"></span><span class="success"></span></button></pre>
+<div class="clear-float"></div></div><div class="clear-float"></div></div>
 
 
               <div class="license">
@@ -276,14 +411,14 @@
       scratchblocks.renderMatching('pre.scratchblocks', {
         style: 'scratch3',
         inline: false,
-        languages: ['nl'],
+        languages: ['nl', 'en'],
         scale: 1,
       });
 
       scratchblocks.renderMatching('code.scratch', {
         style: 'scratch3',
         inline: false,
-        languages: ['nl'],
+        languages: ['nl', 'en'],
         scale: 0.8,
         inline: true,
       });

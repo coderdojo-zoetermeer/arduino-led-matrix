@@ -86,7 +86,7 @@
 
             pre button.copy-button {
               position: absolute;
-              right: 0px;
+              right: 10px;
               top: 0px;
               height: 20px;
               width: 20px;
@@ -234,7 +234,7 @@ automatisch opgemaakt met syntax highlights.</p>
 <span class="line" data-line="5"><span style="color:#393A34">Tekst programmeerblok.</span></span>
 <span class="line" data-line="6"></span>
 <span class="line" data-line="7"><span style="color:#999999">```</span><span style="color:#393A34">py</span></span>
-<span class="line" data-line="8"><span style="color:#998418">  print</span><span style="color:#999999">(</span><span style="color:#B5695977">'</span><span style="color:#B56959">Hello world!</span><span style="color:#B5695977">'</span><span style="color:#999999">)</span></span>
+<span class="line" data-line="8"><span class="indent">  </span><span style="color:#998418">print</span><span style="color:#999999">(</span><span style="color:#B5695977">'</span><span style="color:#B56959">Hello world!</span><span style="color:#B5695977">'</span><span style="color:#999999">)</span></span>
 <span class="line" data-line="9"><span style="color:#999999">```</span></span>
 <span class="line" data-line="10"><span style="color:#393A34">:::</span></span>
 <span class="line" data-line="11"></span>
@@ -373,7 +373,7 @@ krijgt dan 3 snoepjes, en er blijft er dan 1 over.</p>
 <p>Dus <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>13</mn><mi mathvariant="normal">/</mi><mn>4</mn><mo>=</mo><mn>3</mn><mspace width="0.5em"/><mi>r</mi><mi>e</mi><mi>s</mi><mi>t</mi><mspace width="0.5em"/><mn>1</mn></mrow><annotation encoding="application/x-tex">13/4 = 3\enspace rest\enspace 1</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord">13/4</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:0.6444em;"></span><span class="mord">3</span><span class="mspace" style="margin-right:0.5em;"></span><span class="mord mathnormal">res</span><span class="mord mathnormal">t</span><span class="mspace" style="margin-right:0.5em;"></span><span class="mord">1</span></span></span></span></p>
 <p>Bij arduino schrijf je de modulo functie als een <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi mathvariant="normal">%</mi></mrow><annotation encoding="application/x-tex">\%</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8056em;vertical-align:-0.0556em;"></span><span class="mord">%</span></span></span></span>-teken.</p>
 <p>Voorbeeld:</p>
-<pre class="shiki vitesse-light" style="background-color:#ffffff;color:#393a34" tabindex="0"><code><span class="line" data-line="1"><span style="color:#393A34">    integer rest </span><span style="color:#999999">=</span><span style="color:#2F798A"> 13</span><span style="color:#AB5959"> %</span><span style="color:#2F798A"> 4</span><span style="color:#999999">;</span><span style="color:#A0ADA0"> // De waarde van rest wordt 1</span></span>
+<pre class="shiki vitesse-light" style="background-color:#ffffff;color:#393a34" tabindex="0"><code><span class="line" data-line="1"><span class="indent">  </span><span class="indent">  </span><span style="color:#393A34">integer rest </span><span style="color:#999999">=</span><span style="color:#2F798A"> 13</span><span style="color:#AB5959"> %</span><span style="color:#2F798A"> 4</span><span style="color:#999999">;</span><span style="color:#A0ADA0"> // De waarde van rest wordt 1</span></span>
 <span class="line" data-line="2"></span></code><button class="copy-button" title="Copy" onclick="
           navigator.clipboard.writeText(this.parentElement.innerText);
           this.classList.add(&#x27;copied&#x27;);
@@ -488,7 +488,7 @@ ranges accentueren.</p>
 <span class="line" data-line="4"><span style="color:#393A34">}</span></span>
 <span class="line" data-line="5"></span>
 <span class="line" data-line="6"><span style="color:#393A34">void loop() {</span></span>
-<span class="line" data-line="7"><span style="color:#393A34">  // Voeg hier je code toe</span></span>
+<span class="line" data-line="7"><span class="indent">  </span><span style="color:#393A34">// Voeg hier je code toe</span></span>
 <span class="line" data-line="8"><span style="color:#393A34">}</span></span>
 <span class="line" data-line="9"><span style="color:#999999">```</span></span>
 <span class="line" data-line="10"></span></code><button class="copy-button" title="Copy" onclick="
@@ -502,7 +502,7 @@ ranges accentueren.</p>
 <span class="line highlighted" data-line="3"><span style="color:#999999">}</span></span>
 <span class="line" data-line="4"></span>
 <span class="line" data-line="5"><span style="color:#AB5959">void</span><span style="color:#59873A"> loop</span><span style="color:#999999">()</span><span style="color:#999999"> {</span></span>
-<span class="line highlighted" data-line="6"><span style="color:#A0ADA0">  // Voeg hier je code toe</span></span>
+<span class="line highlighted" data-line="6"><span class="indent">  </span><span style="color:#A0ADA0">// Voeg hier je code toe</span></span>
 <span class="line" data-line="7"><span style="color:#999999">}</span></span>
 <span class="line" data-line="8"></span></code><button class="copy-button" title="Copy" onclick="
           navigator.clipboard.writeText(this.parentElement.innerText);
@@ -564,7 +564,7 @@ tags zet je dan in het commentaar van de code.</p>
 <span class="line" data-line="2"><span style="color:#393A34">int answer = 42; // [!code info]</span></span>
 <span class="line" data-line="3"></span>
 <span class="line" data-line="4"><span style="color:#393A34">void setup() {</span></span>
-<span class="line" data-line="5"><span style="color:#393A34">  // De code hier wordt 1 keer uitgevoerd [!code highlight]</span></span>
+<span class="line" data-line="5"><span class="indent">  </span><span style="color:#393A34">// De code hier wordt 1 keer uitgevoerd [!code highlight]</span></span>
 <span class="line" data-line="6"><span style="color:#393A34">}</span></span>
 <span class="line" data-line="7"></span>
 <span class="line" data-line="8"><span style="color:#393A34">// [!code ++:4]</span></span>
@@ -581,7 +581,7 @@ tags zet je dan in het commentaar van de code.</p>
 <pre class="shiki vitesse-light has-diff has-highlighted" style="background-color:#ffffff;color:#393a34" tabindex="0"><code><span class="line highlighted info" data-line="1"><span style="color:#AB5959">int</span><span style="color:#393A34"> answer </span><span style="color:#999999">=</span><span style="color:#2F798A"> 42</span><span style="color:#999999">;</span></span>
 <span class="line" data-line="2"></span>
 <span class="line" data-line="3"><span style="color:#AB5959">void</span><span style="color:#59873A"> setup</span><span style="color:#999999">()</span><span style="color:#999999"> {</span></span>
-<span class="line highlighted" data-line="4"><span style="color:#A0ADA0">  // De code hier wordt 1 keer uitgevoerd</span></span>
+<span class="line highlighted" data-line="4"><span class="indent">  </span><span style="color:#A0ADA0">// De code hier wordt 1 keer uitgevoerd</span></span>
 <span class="line" data-line="5"><span style="color:#999999">}</span></span>
 <span class="line" data-line="6"></span>
 <span class="line diff add" data-line="7"><span style="color:#AB5959">void</span><span style="color:#59873A"> loop</span><span style="color:#999999">()</span><span style="color:#999999"> {</span></span>
@@ -709,14 +709,14 @@ nemen.</p>
       scratchblocks.renderMatching('pre.scratchblocks', {
         style: 'scratch3',
         inline: false,
-        languages: ['nl'],
+        languages: ['nl', 'en'],
         scale: 1,
       });
 
       scratchblocks.renderMatching('code.scratch', {
         style: 'scratch3',
         inline: false,
-        languages: ['nl'],
+        languages: ['nl', 'en'],
         scale: 0.8,
         inline: true,
       });
