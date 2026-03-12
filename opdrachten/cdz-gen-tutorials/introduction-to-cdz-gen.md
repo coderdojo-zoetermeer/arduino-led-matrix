@@ -355,13 +355,13 @@ Voorbeeld:
 
 ````md
 ```ino
-int answer = 42; // [!code info]
+int answer = 42; // [\!code info]
 
 void setup() {
-  // De code hier wordt 1 keer uitgevoerd [!code highlight]
+  // De code hier wordt 1 keer uitgevoerd [\!code highlight]
 }
 
-// [!code ++:4]
+// [\!code ++:4]
 void loop() {
 
 }

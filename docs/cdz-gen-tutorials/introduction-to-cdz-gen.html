@@ -78,6 +78,51 @@
               margin-bottom: 5px;
               clear: both;
             }
+
+
+            pre:has(code) {
+              position: relative;
+            }
+
+            pre button.copy-button {
+              position: absolute;
+              right: 0px;
+              top: 0px;
+              height: 20px;
+              width: 20px;
+              padding: 2px;
+              border: 1px solid lightgray;
+              background-color: transparent;
+              border-radius: 2px;
+
+              & span {
+                width: 100%;
+                aspect-ratio: 1 / 1;
+                background-repeat: no-repeat;
+                background-position: center;
+                background-size: contain;
+              }
+
+              & .ready {
+                background-image: url("../template-assets/clipboard.svg");
+              }
+
+              & .success {
+                display: none;
+                background-image: url("../template-assets/clipboard-checked.svg");
+              }
+
+              &.copied {
+                & .success {
+                  display: block;
+                }
+
+                & .ready {
+                  display: none;
+                }
+              }
+            }
+
     </style>
   </head>
 
@@ -161,7 +206,20 @@ van een opdracht worden een page-break binnen een blok automatisch vermeden.</p>
 deze blokjes klein te houden en begin elk blokje met een kopje waaruit
 duidelijk wordt wat er wordt uitgelegd, zodat de leerling kan bepalen of
 leerling het blokje moet lezen of hen het wil lezen.</p>
-<pre class="shiki vitesse-light" style="background-color:#ffffff;color:#393a34" tabindex="0"><code><span class="line" data-line="1"></span><span class="line" data-line="2"><span style="color:#393A34">::: read</span></span><span class="line" data-line="3"></span><span class="line" data-line="4"><span style="color:#999999;font-style:italic">*</span><span style="color:#393A34;font-style:italic">Titel read blok</span><span style="color:#999999;font-style:italic">*</span></span><span class="line" data-line="5"></span><span class="line" data-line="6"><span style="color:#393A34">Tekst Read blok.</span></span><span class="line" data-line="7"></span><span class="line" data-line="8"><span style="color:#393A34">:::</span></span><span class="line" data-line="9"></span><span class="line" data-line="10"></span></code></pre>
+<pre class="shiki vitesse-light" style="background-color:#ffffff;color:#393a34" tabindex="0"><code><span class="line" data-line="1"></span>
+<span class="line" data-line="2"><span style="color:#393A34">::: read</span></span>
+<span class="line" data-line="3"></span>
+<span class="line" data-line="4"><span style="color:#999999;font-style:italic">*</span><span style="color:#393A34;font-style:italic">Titel read blok</span><span style="color:#999999;font-style:italic">*</span></span>
+<span class="line" data-line="5"></span>
+<span class="line" data-line="6"><span style="color:#393A34">Tekst Read blok.</span></span>
+<span class="line" data-line="7"></span>
+<span class="line" data-line="8"><span style="color:#393A34">:::</span></span>
+<span class="line" data-line="9"></span>
+<span class="line" data-line="10"></span></code><button class="copy-button" title="Copy" onclick="
+          navigator.clipboard.writeText(this.parentElement.innerText);
+          this.classList.add(&#x27;copied&#x27;);
+          setTimeout(() => this.classList.remove(&#x27;copied&#x27;), 2000)
+        "><span class="ready"></span><span class="success"></span></button></pre>
 <div class="read">
 <p><em>Titel read blok</em></p>
 <p>Tekst Read blok.</p>
@@ -169,22 +227,65 @@ leerling het blokje moet lezen of hen het wil lezen.</p>
 <p>Een programmeer-blok wordt gebruik om aan te duiden dat de leerling iets moet
 programmeren. In programmeerblokken kan je stukjes code toevoegen. Deze worden
 automatisch opgemaakt met syntax highlights.</p>
-<pre class="shiki vitesse-light" style="background-color:#ffffff;color:#393a34" tabindex="0"><code><span class="line" data-line="1"><span style="color:#393A34">::: program</span></span><span class="line" data-line="2"></span><span class="line" data-line="3"><span style="color:#999999;font-style:italic">*</span><span style="color:#393A34;font-style:italic">Titel programmeer blok</span><span style="color:#999999;font-style:italic">*</span></span><span class="line" data-line="4"></span><span class="line" data-line="5"><span style="color:#393A34">Tekst programmeerblok.</span></span><span class="line" data-line="6"></span><span class="line" data-line="7"><span style="color:#999999">```</span><span style="color:#393A34">py</span></span><span class="line" data-line="8"><span style="color:#998418">  print</span><span style="color:#999999">(</span><span style="color:#B5695977">'</span><span style="color:#B56959">Hello world!</span><span style="color:#B5695977">'</span><span style="color:#999999">)</span></span><span class="line" data-line="9"><span style="color:#999999">```</span></span><span class="line" data-line="10"><span style="color:#393A34">:::</span></span><span class="line" data-line="11"></span><span class="line" data-line="12"></span></code></pre>
+<pre class="shiki vitesse-light" style="background-color:#ffffff;color:#393a34" tabindex="0"><code><span class="line" data-line="1"><span style="color:#393A34">::: program</span></span>
+<span class="line" data-line="2"></span>
+<span class="line" data-line="3"><span style="color:#999999;font-style:italic">*</span><span style="color:#393A34;font-style:italic">Titel programmeer blok</span><span style="color:#999999;font-style:italic">*</span></span>
+<span class="line" data-line="4"></span>
+<span class="line" data-line="5"><span style="color:#393A34">Tekst programmeerblok.</span></span>
+<span class="line" data-line="6"></span>
+<span class="line" data-line="7"><span style="color:#999999">```</span><span style="color:#393A34">py</span></span>
+<span class="line" data-line="8"><span style="color:#998418">  print</span><span style="color:#999999">(</span><span style="color:#B5695977">'</span><span style="color:#B56959">Hello world!</span><span style="color:#B5695977">'</span><span style="color:#999999">)</span></span>
+<span class="line" data-line="9"><span style="color:#999999">```</span></span>
+<span class="line" data-line="10"><span style="color:#393A34">:::</span></span>
+<span class="line" data-line="11"></span>
+<span class="line" data-line="12"></span></code><button class="copy-button" title="Copy" onclick="
+          navigator.clipboard.writeText(this.parentElement.innerText);
+          this.classList.add(&#x27;copied&#x27;);
+          setTimeout(() => this.classList.remove(&#x27;copied&#x27;), 2000)
+        "><span class="ready"></span><span class="success"></span></button></pre>
 <div class="program">
 <p><em>Titel programmeer blok</em></p>
 <p>Tekst programmeerblok.</p>
-<pre class="shiki vitesse-light" style="background-color:#ffffff;color:#393a34" tabindex="0"><code><span class="line" data-line="1"><span style="color:#998418">print</span><span style="color:#999999">(</span><span style="color:#B5695977">'</span><span style="color:#B56959">Hello world!</span><span style="color:#B5695977">'</span><span style="color:#999999">)</span></span><span class="line" data-line="2"></span><span class="line" data-line="3"></span></code></pre>
+<pre class="shiki vitesse-light" style="background-color:#ffffff;color:#393a34" tabindex="0"><code><span class="line" data-line="1"><span style="color:#998418">print</span><span style="color:#999999">(</span><span style="color:#B5695977">'</span><span style="color:#B56959">Hello world!</span><span style="color:#B5695977">'</span><span style="color:#999999">)</span></span>
+<span class="line" data-line="2"></span>
+<span class="line" data-line="3"></span></code><button class="copy-button" title="Copy" onclick="
+          navigator.clipboard.writeText(this.parentElement.innerText);
+          this.classList.add(&#x27;copied&#x27;);
+          setTimeout(() => this.classList.remove(&#x27;copied&#x27;), 2000)
+        "><span class="ready"></span><span class="success"></span></button></pre>
 <div class="clear-float"></div></div><h2 id="build-blok" tabindex="-1">build-blok</h2>
 <p>Een build wordt gebruikt om aan te duiden dat de leering iets moet doen. Dit
 is met name van toepassing voor Arduino opdrachten. bijvoorbeeld voor het
 bouwen van een elektronische schakeling.</p>
-<pre class="shiki vitesse-light" style="background-color:#ffffff;color:#393a34" tabindex="0"><code><span class="line" data-line="1"><span style="color:#393A34">::: build</span></span><span class="line" data-line="2"></span><span class="line" data-line="3"><span style="color:#999999;font-style:italic">*</span><span style="color:#393A34;font-style:italic">Titel build blok</span><span style="color:#999999;font-style:italic">*</span></span><span class="line" data-line="4"></span><span class="line" data-line="5"><span style="color:#393A34">Tekst build-blok.</span></span><span class="line" data-line="6"></span><span class="line" data-line="7"><span style="color:#393A34">:::</span></span><span class="line" data-line="8"></span></code></pre>
+<pre class="shiki vitesse-light" style="background-color:#ffffff;color:#393a34" tabindex="0"><code><span class="line" data-line="1"><span style="color:#393A34">::: build</span></span>
+<span class="line" data-line="2"></span>
+<span class="line" data-line="3"><span style="color:#999999;font-style:italic">*</span><span style="color:#393A34;font-style:italic">Titel build blok</span><span style="color:#999999;font-style:italic">*</span></span>
+<span class="line" data-line="4"></span>
+<span class="line" data-line="5"><span style="color:#393A34">Tekst build-blok.</span></span>
+<span class="line" data-line="6"></span>
+<span class="line" data-line="7"><span style="color:#393A34">:::</span></span>
+<span class="line" data-line="8"></span></code><button class="copy-button" title="Copy" onclick="
+          navigator.clipboard.writeText(this.parentElement.innerText);
+          this.classList.add(&#x27;copied&#x27;);
+          setTimeout(() => this.classList.remove(&#x27;copied&#x27;), 2000)
+        "><span class="ready"></span><span class="success"></span></button></pre>
 <div class="build">
 <p><em>Titel build blok</em></p>
 <p>Tekst build-blok.</p>
 <div class="clear-float"></div></div><h2 id="uitdaging-blok" tabindex="-1">uitdaging-blok</h2>
 <p>Een uitdaging-blok wordt gebuikt om de Ninja een extra uitdaging te geven.</p>
-<pre class="shiki vitesse-light" style="background-color:#ffffff;color:#393a34" tabindex="0"><code><span class="line" data-line="1"><span style="color:#393A34">::: challenge</span></span><span class="line" data-line="2"></span><span class="line" data-line="3"><span style="color:#999999;font-style:italic">*</span><span style="color:#393A34;font-style:italic">Titel uitdaging blok</span><span style="color:#999999;font-style:italic">*</span></span><span class="line" data-line="4"></span><span class="line" data-line="5"><span style="color:#393A34">Tekst uitdaging-blok.</span></span><span class="line" data-line="6"></span><span class="line" data-line="7"><span style="color:#393A34">:::</span></span><span class="line" data-line="8"></span></code></pre>
+<pre class="shiki vitesse-light" style="background-color:#ffffff;color:#393a34" tabindex="0"><code><span class="line" data-line="1"><span style="color:#393A34">::: challenge</span></span>
+<span class="line" data-line="2"></span>
+<span class="line" data-line="3"><span style="color:#999999;font-style:italic">*</span><span style="color:#393A34;font-style:italic">Titel uitdaging blok</span><span style="color:#999999;font-style:italic">*</span></span>
+<span class="line" data-line="4"></span>
+<span class="line" data-line="5"><span style="color:#393A34">Tekst uitdaging-blok.</span></span>
+<span class="line" data-line="6"></span>
+<span class="line" data-line="7"><span style="color:#393A34">:::</span></span>
+<span class="line" data-line="8"></span></code><button class="copy-button" title="Copy" onclick="
+          navigator.clipboard.writeText(this.parentElement.innerText);
+          this.classList.add(&#x27;copied&#x27;);
+          setTimeout(() => this.classList.remove(&#x27;copied&#x27;), 2000)
+        "><span class="ready"></span><span class="success"></span></button></pre>
 <div class="challenge">
 <p><em>Titel uitdaging blok</em></p>
 <p>Tekst uitdaging-blok.</p>
@@ -197,7 +298,26 @@ de opdracht plaatsen. Linken naar plaatjes die online staan is ook mogelijk.</p>
 onder het plaatje wordt weergegeven en dus niet ernaast.
 (Zie ook: <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Properties/clear">CSS</a>)</p>
 <details><summary>Plaatjes demo</summary>
-<pre class="shiki vitesse-light" style="background-color:#ffffff;color:#393a34" tabindex="0"><code><span class="line" data-line="1"><span style="color:#999999">![</span><span style="color:#B56959">Arduino</span><span style="color:#999999">](</span><span style="color:#393A3490;text-decoration:underline">assets/schema.svg</span><span style="color:#999999">)</span><span style="color:#393A34">{.float-right}</span></span><span class="line" data-line="2"><span style="color:#393A34">Het plaatje hiernaast wordt met de style float-right weergegeven.</span></span><span class="line" data-line="3"></span><span class="line" data-line="4"><span style="color:#999999;font-style:italic">*</span><span style="color:#393A34;font-style:italic">clear-float</span><span style="color:#999999;font-style:italic">*</span></span><span class="line" data-line="5"></span><span class="line" data-line="6"><span style="color:#999999">![</span><span style="color:#B56959">Arduino</span><span style="color:#999999">](</span><span style="color:#393A3490;text-decoration:underline">assets/schema.svg</span><span style="color:#999999">)</span><span style="color:#393A34">{.float-left}</span></span><span class="line" data-line="7"><span style="color:#393A34">Het plaatje hiernaast wordt met de style float-left weergegeven.</span></span><span class="line" data-line="8"></span><span class="line" data-line="9"><span style="color:#999999;font-style:italic">*</span><span style="color:#393A34;font-style:italic">clear-float</span><span style="color:#999999;font-style:italic">*</span></span><span class="line" data-line="10"></span><span class="line" data-line="11"><span style="color:#393A34">Het plaatje hieronder wordt zonder float weergegeven.</span></span><span class="line" data-line="12"></span><span class="line" data-line="13"><span style="color:#999999">![</span><span style="color:#B56959">Arduino</span><span style="color:#999999">](</span><span style="color:#393A3490;text-decoration:underline">assets/schema.svg</span><span style="color:#999999">)</span></span><span class="line" data-line="14"></span><span class="line" data-line="15"><span style="color:#999999;font-style:italic">*</span><span style="color:#393A34;font-style:italic">clear-float</span><span style="color:#999999;font-style:italic">*</span></span><span class="line" data-line="16"></span></code></pre>
+<pre class="shiki vitesse-light" style="background-color:#ffffff;color:#393a34" tabindex="0"><code><span class="line" data-line="1"><span style="color:#999999">![</span><span style="color:#B56959">Arduino</span><span style="color:#999999">](</span><span style="color:#393A3490;text-decoration:underline">assets/schema.svg</span><span style="color:#999999">)</span><span style="color:#393A34">{.float-right}</span></span>
+<span class="line" data-line="2"><span style="color:#393A34">Het plaatje hiernaast wordt met de style float-right weergegeven.</span></span>
+<span class="line" data-line="3"></span>
+<span class="line" data-line="4"><span style="color:#999999;font-style:italic">*</span><span style="color:#393A34;font-style:italic">clear-float</span><span style="color:#999999;font-style:italic">*</span></span>
+<span class="line" data-line="5"></span>
+<span class="line" data-line="6"><span style="color:#999999">![</span><span style="color:#B56959">Arduino</span><span style="color:#999999">](</span><span style="color:#393A3490;text-decoration:underline">assets/schema.svg</span><span style="color:#999999">)</span><span style="color:#393A34">{.float-left}</span></span>
+<span class="line" data-line="7"><span style="color:#393A34">Het plaatje hiernaast wordt met de style float-left weergegeven.</span></span>
+<span class="line" data-line="8"></span>
+<span class="line" data-line="9"><span style="color:#999999;font-style:italic">*</span><span style="color:#393A34;font-style:italic">clear-float</span><span style="color:#999999;font-style:italic">*</span></span>
+<span class="line" data-line="10"></span>
+<span class="line" data-line="11"><span style="color:#393A34">Het plaatje hieronder wordt zonder float weergegeven.</span></span>
+<span class="line" data-line="12"></span>
+<span class="line" data-line="13"><span style="color:#999999">![</span><span style="color:#B56959">Arduino</span><span style="color:#999999">](</span><span style="color:#393A3490;text-decoration:underline">assets/schema.svg</span><span style="color:#999999">)</span></span>
+<span class="line" data-line="14"></span>
+<span class="line" data-line="15"><span style="color:#999999;font-style:italic">*</span><span style="color:#393A34;font-style:italic">clear-float</span><span style="color:#999999;font-style:italic">*</span></span>
+<span class="line" data-line="16"></span></code><button class="copy-button" title="Copy" onclick="
+          navigator.clipboard.writeText(this.parentElement.innerText);
+          this.classList.add(&#x27;copied&#x27;);
+          setTimeout(() => this.classList.remove(&#x27;copied&#x27;), 2000)
+        "><span class="ready"></span><span class="success"></span></button></pre>
 <div class="demo-content">
 <p><img src="assets/schema.svg" alt="" class="float-right">
 Het plaatje hiernaast wordt met de style float-right weergegeven.</p>
@@ -216,7 +336,12 @@ Het plaatje hiernaast wordt met de style float-left weergegeven.</p>
 eenvoudig kunnen worden hergebruikt. Hieronder een voorbeeld van het gebruik
 van het standaard element voor de uitleg van de modulo functie. Hier kan zelfs
 worden aangegeven in welke programmeertaal de uitleg moet worden gegeven.</p>
-<pre class="shiki vitesse-light" style="background-color:#ffffff;color:#393a34" tabindex="0"><code><span class="line" data-line="1"><span style="color:#A0ADA0"> &#x3C;!-- @include: global-lib/explain-mod.md#scratch --></span></span><span class="line" data-line="2"></span></code></pre>
+<pre class="shiki vitesse-light" style="background-color:#ffffff;color:#393a34" tabindex="0"><code><span class="line" data-line="1"><span style="color:#A0ADA0"> &#x3C;!-- @include: global-lib/explain-mod.md#scratch --></span></span>
+<span class="line" data-line="2"></span></code><button class="copy-button" title="Copy" onclick="
+          navigator.clipboard.writeText(this.parentElement.innerText);
+          this.classList.add(&#x27;copied&#x27;);
+          setTimeout(() => this.classList.remove(&#x27;copied&#x27;), 2000)
+        "><span class="ready"></span><span class="success"></span></button></pre>
 <p>wordt in Scratch:</p>
 <div class="read">
 <p><em>Uitleg modulo functie</em></p>
@@ -233,7 +358,12 @@ maak [rest v] ((13) modulo (4))
 </pre>
 <p>De variabele met de naam <em>rest</em> heeft nu de waarde 1.</p>
 <div class="clear-float"></div></div><p>voor arduino:</p>
-<pre class="shiki vitesse-light" style="background-color:#ffffff;color:#393a34" tabindex="0"><code><span class="line" data-line="1"><span style="color:#A0ADA0"> &#x3C;!-- @include: global-lib/explain-mod.md#arduino --></span></span><span class="line" data-line="2"></span></code></pre>
+<pre class="shiki vitesse-light" style="background-color:#ffffff;color:#393a34" tabindex="0"><code><span class="line" data-line="1"><span style="color:#A0ADA0"> &#x3C;!-- @include: global-lib/explain-mod.md#arduino --></span></span>
+<span class="line" data-line="2"></span></code><button class="copy-button" title="Copy" onclick="
+          navigator.clipboard.writeText(this.parentElement.innerText);
+          this.classList.add(&#x27;copied&#x27;);
+          setTimeout(() => this.classList.remove(&#x27;copied&#x27;), 2000)
+        "><span class="ready"></span><span class="success"></span></button></pre>
 <div class="read">
 <p><em>Uitleg modulo functie</em></p>
 <p>De modulo functie geeft de restwaarde van een <em>gedeeld door</em> som met gehele
@@ -243,7 +373,12 @@ krijgt dan 3 snoepjes, en er blijft er dan 1 over.</p>
 <p>Dus <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>13</mn><mi mathvariant="normal">/</mi><mn>4</mn><mo>=</mo><mn>3</mn><mspace width="0.5em"/><mi>r</mi><mi>e</mi><mi>s</mi><mi>t</mi><mspace width="0.5em"/><mn>1</mn></mrow><annotation encoding="application/x-tex">13/4 = 3\enspace rest\enspace 1</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord">13/4</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:0.6444em;"></span><span class="mord">3</span><span class="mspace" style="margin-right:0.5em;"></span><span class="mord mathnormal">res</span><span class="mord mathnormal">t</span><span class="mspace" style="margin-right:0.5em;"></span><span class="mord">1</span></span></span></span></p>
 <p>Bij arduino schrijf je de modulo functie als een <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi mathvariant="normal">%</mi></mrow><annotation encoding="application/x-tex">\%</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8056em;vertical-align:-0.0556em;"></span><span class="mord">%</span></span></span></span>-teken.</p>
 <p>Voorbeeld:</p>
-<pre class="shiki vitesse-light" style="background-color:#ffffff;color:#393a34" tabindex="0"><code><span class="line" data-line="1"><span style="color:#393A34">    integer rest </span><span style="color:#999999">=</span><span style="color:#2F798A"> 13</span><span style="color:#AB5959"> %</span><span style="color:#2F798A"> 4</span><span style="color:#999999">;</span><span style="color:#A0ADA0"> // De waarde van rest wordt 1</span></span><span class="line" data-line="2"></span></code></pre>
+<pre class="shiki vitesse-light" style="background-color:#ffffff;color:#393a34" tabindex="0"><code><span class="line" data-line="1"><span style="color:#393A34">    integer rest </span><span style="color:#999999">=</span><span style="color:#2F798A"> 13</span><span style="color:#AB5959"> %</span><span style="color:#2F798A"> 4</span><span style="color:#999999">;</span><span style="color:#A0ADA0"> // De waarde van rest wordt 1</span></span>
+<span class="line" data-line="2"></span></code><button class="copy-button" title="Copy" onclick="
+          navigator.clipboard.writeText(this.parentElement.innerText);
+          this.classList.add(&#x27;copied&#x27;);
+          setTimeout(() => this.classList.remove(&#x27;copied&#x27;), 2000)
+        "><span class="ready"></span><span class="success"></span></button></pre>
 <div class="clear-float"></div></div><h1 id="fontawesome-iconen" tabindex="-1">Fontawesome iconen</h1>
 <p>Het is mogelijk om iconen uit de fontawesome bibliotheek toe te voegen.</p>
 <p>De link <a href="https://fontawesome.com/search?ic=free-collection" target="_blank">font awesome</a>
@@ -285,27 +420,57 @@ zijn beschikbaar. De PRO iconen dus niet.</p>
 </table>
 <h1 id="signaaltekst" tabindex="-1">Signaaltekst</h1>
 <p>Je kan teksten als volg accentueren.</p>
-<pre class="shiki vitesse-light" style="background-color:#ffffff;color:#393a34" tabindex="0"><code><span class="line" data-line="1"><span style="color:#999999">>[</span><span style="color:#B56959">!belangrijk</span><span style="color:#999999">]</span></span><span class="line" data-line="2"><span style="color:#999999">></span><span style="color:#2E808F">Belangrijk ....</span></span><span class="line" data-line="3"></span></code></pre>
+<pre class="shiki vitesse-light" style="background-color:#ffffff;color:#393a34" tabindex="0"><code><span class="line" data-line="1"><span style="color:#999999">>[</span><span style="color:#B56959">!belangrijk</span><span style="color:#999999">]</span></span>
+<span class="line" data-line="2"><span style="color:#999999">></span><span style="color:#2E808F">Belangrijk ....</span></span>
+<span class="line" data-line="3"></span></code><button class="copy-button" title="Copy" onclick="
+          navigator.clipboard.writeText(this.parentElement.innerText);
+          this.classList.add(&#x27;copied&#x27;);
+          setTimeout(() => this.classList.remove(&#x27;copied&#x27;), 2000)
+        "><span class="ready"></span><span class="success"></span></button></pre>
 <div class="markdown-alert markdown-alert-belangrijk">
 <p class="markdown-alert-title">Belangrijk</p>
 <p>Belangrijk ....</p>
 </div>
-<pre class="shiki vitesse-light" style="background-color:#ffffff;color:#393a34" tabindex="0"><code><span class="line" data-line="1"><span style="color:#999999">>[</span><span style="color:#B56959">!notitie</span><span style="color:#999999">]</span></span><span class="line" data-line="2"><span style="color:#999999">></span><span style="color:#2E808F">Notitie ...</span></span><span class="line" data-line="3"></span></code></pre>
+<pre class="shiki vitesse-light" style="background-color:#ffffff;color:#393a34" tabindex="0"><code><span class="line" data-line="1"><span style="color:#999999">>[</span><span style="color:#B56959">!notitie</span><span style="color:#999999">]</span></span>
+<span class="line" data-line="2"><span style="color:#999999">></span><span style="color:#2E808F">Notitie ...</span></span>
+<span class="line" data-line="3"></span></code><button class="copy-button" title="Copy" onclick="
+          navigator.clipboard.writeText(this.parentElement.innerText);
+          this.classList.add(&#x27;copied&#x27;);
+          setTimeout(() => this.classList.remove(&#x27;copied&#x27;), 2000)
+        "><span class="ready"></span><span class="success"></span></button></pre>
 <div class="markdown-alert markdown-alert-notitie">
 <p class="markdown-alert-title">Notitie</p>
 <p>Notitie ...</p>
 </div>
-<pre class="shiki vitesse-light" style="background-color:#ffffff;color:#393a34" tabindex="0"><code><span class="line" data-line="1"><span style="color:#999999">>[</span><span style="color:#B56959">!tip</span><span style="color:#999999">]</span></span><span class="line" data-line="2"><span style="color:#999999">></span><span style="color:#2E808F">Tip ...</span></span><span class="line" data-line="3"></span></code></pre>
+<pre class="shiki vitesse-light" style="background-color:#ffffff;color:#393a34" tabindex="0"><code><span class="line" data-line="1"><span style="color:#999999">>[</span><span style="color:#B56959">!tip</span><span style="color:#999999">]</span></span>
+<span class="line" data-line="2"><span style="color:#999999">></span><span style="color:#2E808F">Tip ...</span></span>
+<span class="line" data-line="3"></span></code><button class="copy-button" title="Copy" onclick="
+          navigator.clipboard.writeText(this.parentElement.innerText);
+          this.classList.add(&#x27;copied&#x27;);
+          setTimeout(() => this.classList.remove(&#x27;copied&#x27;), 2000)
+        "><span class="ready"></span><span class="success"></span></button></pre>
 <div class="markdown-alert markdown-alert-tip">
 <p class="markdown-alert-title">Tip</p>
 <p>Tip ...</p>
 </div>
-<pre class="shiki vitesse-light" style="background-color:#ffffff;color:#393a34" tabindex="0"><code><span class="line" data-line="1"><span style="color:#999999">>[</span><span style="color:#B56959">!waarschuwing</span><span style="color:#999999">]</span></span><span class="line" data-line="2"><span style="color:#999999">></span><span style="color:#2E808F">Waarschuwing ...</span></span><span class="line" data-line="3"></span></code></pre>
+<pre class="shiki vitesse-light" style="background-color:#ffffff;color:#393a34" tabindex="0"><code><span class="line" data-line="1"><span style="color:#999999">>[</span><span style="color:#B56959">!waarschuwing</span><span style="color:#999999">]</span></span>
+<span class="line" data-line="2"><span style="color:#999999">></span><span style="color:#2E808F">Waarschuwing ...</span></span>
+<span class="line" data-line="3"></span></code><button class="copy-button" title="Copy" onclick="
+          navigator.clipboard.writeText(this.parentElement.innerText);
+          this.classList.add(&#x27;copied&#x27;);
+          setTimeout(() => this.classList.remove(&#x27;copied&#x27;), 2000)
+        "><span class="ready"></span><span class="success"></span></button></pre>
 <div class="markdown-alert markdown-alert-waarschuwing">
 <p class="markdown-alert-title">Waarschuwing</p>
 <p>Waarschuwing ...</p>
 </div>
-<pre class="shiki vitesse-light" style="background-color:#ffffff;color:#393a34" tabindex="0"><code><span class="line" data-line="1"><span style="color:#999999">>[</span><span style="color:#B56959">!voorzichtig</span><span style="color:#999999">]</span></span><span class="line" data-line="2"><span style="color:#999999">></span><span style="color:#2E808F">Voorzichtig ...</span></span><span class="line" data-line="3"></span></code></pre>
+<pre class="shiki vitesse-light" style="background-color:#ffffff;color:#393a34" tabindex="0"><code><span class="line" data-line="1"><span style="color:#999999">>[</span><span style="color:#B56959">!voorzichtig</span><span style="color:#999999">]</span></span>
+<span class="line" data-line="2"><span style="color:#999999">></span><span style="color:#2E808F">Voorzichtig ...</span></span>
+<span class="line" data-line="3"></span></code><button class="copy-button" title="Copy" onclick="
+          navigator.clipboard.writeText(this.parentElement.innerText);
+          this.classList.add(&#x27;copied&#x27;);
+          setTimeout(() => this.classList.remove(&#x27;copied&#x27;), 2000)
+        "><span class="ready"></span><span class="success"></span></button></pre>
 <div class="markdown-alert markdown-alert-voorzichtig">
 <p class="markdown-alert-title">Voorzichtig</p>
 <p>Voorzichtig ...</p>
@@ -317,9 +482,33 @@ zijn beschikbaar. De PRO iconen dus niet.</p>
 ranges accentueren.</p>
 <p>Voorbeeld:</p>
 <p>Accentueer regels 1-3 en regel 6.</p>
-<pre class="shiki vitesse-light" style="background-color:#ffffff;color:#393a34" tabindex="0"><code><span class="line" data-line="1"><span style="color:#999999">```</span><span style="color:#393A34">ino {1-3,6}</span></span><span class="line" data-line="2"><span style="color:#393A34">void setup() {</span></span><span class="line" data-line="3"></span><span class="line" data-line="4"><span style="color:#393A34">}</span></span><span class="line" data-line="5"></span><span class="line" data-line="6"><span style="color:#393A34">void loop() {</span></span><span class="line" data-line="7"><span style="color:#393A34">  // Voeg hier je code toe</span></span><span class="line" data-line="8"><span style="color:#393A34">}</span></span><span class="line" data-line="9"><span style="color:#999999">```</span></span><span class="line" data-line="10"></span></code></pre>
+<pre class="shiki vitesse-light" style="background-color:#ffffff;color:#393a34" tabindex="0"><code><span class="line" data-line="1"><span style="color:#999999">```</span><span style="color:#393A34">ino {1-3,6}</span></span>
+<span class="line" data-line="2"><span style="color:#393A34">void setup() {</span></span>
+<span class="line" data-line="3"></span>
+<span class="line" data-line="4"><span style="color:#393A34">}</span></span>
+<span class="line" data-line="5"></span>
+<span class="line" data-line="6"><span style="color:#393A34">void loop() {</span></span>
+<span class="line" data-line="7"><span style="color:#393A34">  // Voeg hier je code toe</span></span>
+<span class="line" data-line="8"><span style="color:#393A34">}</span></span>
+<span class="line" data-line="9"><span style="color:#999999">```</span></span>
+<span class="line" data-line="10"></span></code><button class="copy-button" title="Copy" onclick="
+          navigator.clipboard.writeText(this.parentElement.innerText);
+          this.classList.add(&#x27;copied&#x27;);
+          setTimeout(() => this.classList.remove(&#x27;copied&#x27;), 2000)
+        "><span class="ready"></span><span class="success"></span></button></pre>
 <p>Resultaat:</p>
-<pre class="shiki vitesse-light" style="background-color:#ffffff;color:#393a34" tabindex="0"><code><span class="line highlighted" data-line="1"><span style="color:#AB5959">void</span><span style="color:#59873A"> setup</span><span style="color:#999999">()</span><span style="color:#999999"> {</span></span><span class="line highlighted" data-line="2"></span><span class="line highlighted" data-line="3"><span style="color:#999999">}</span></span><span class="line" data-line="4"></span><span class="line" data-line="5"><span style="color:#AB5959">void</span><span style="color:#59873A"> loop</span><span style="color:#999999">()</span><span style="color:#999999"> {</span></span><span class="line highlighted" data-line="6"><span style="color:#A0ADA0">  // Voeg hier je code toe</span></span><span class="line" data-line="7"><span style="color:#999999">}</span></span><span class="line" data-line="8"></span></code></pre>
+<pre class="shiki vitesse-light" style="background-color:#ffffff;color:#393a34" tabindex="0"><code><span class="line highlighted" data-line="1"><span style="color:#AB5959">void</span><span style="color:#59873A"> setup</span><span style="color:#999999">()</span><span style="color:#999999"> {</span></span>
+<span class="line highlighted" data-line="2"></span>
+<span class="line highlighted" data-line="3"><span style="color:#999999">}</span></span>
+<span class="line" data-line="4"></span>
+<span class="line" data-line="5"><span style="color:#AB5959">void</span><span style="color:#59873A"> loop</span><span style="color:#999999">()</span><span style="color:#999999"> {</span></span>
+<span class="line highlighted" data-line="6"><span style="color:#A0ADA0">  // Voeg hier je code toe</span></span>
+<span class="line" data-line="7"><span style="color:#999999">}</span></span>
+<span class="line" data-line="8"></span></code><button class="copy-button" title="Copy" onclick="
+          navigator.clipboard.writeText(this.parentElement.innerText);
+          this.classList.add(&#x27;copied&#x27;);
+          setTimeout(() => this.classList.remove(&#x27;copied&#x27;), 2000)
+        "><span class="ready"></span><span class="success"></span></button></pre>
 <h2 id="inline-markup-tags" tabindex="-1">Inline markup tags</h2>
 <p>Je kan ook binnen de code tags toevoegen waarmee code wordt gemarkeerd. Deze
 tags zet je dan in het commentaar van de code.</p>
@@ -371,15 +560,52 @@ tags zet je dan in het commentaar van de code.</p>
 </tbody>
 </table>
 <p>Voorbeeld:</p>
-<pre class="shiki vitesse-light" style="background-color:#ffffff;color:#393a34" tabindex="0"><code><span class="line" data-line="1"><span style="color:#999999">```</span><span style="color:#393A34">ino</span></span><span class="line" data-line="2"><span style="color:#393A34">int answer = 42; // [!code info]</span></span><span class="line" data-line="3"></span><span class="line" data-line="4"><span style="color:#393A34">void setup() {</span></span><span class="line" data-line="5"><span style="color:#393A34">  // De code hier wordt 1 keer uitgevoerd [!code highlight]</span></span><span class="line" data-line="6"><span style="color:#393A34">}</span></span><span class="line" data-line="7"></span><span class="line" data-line="8"><span style="color:#393A34">// [!code ++:4]</span></span><span class="line" data-line="9"><span style="color:#393A34">void loop() {</span></span><span class="line" data-line="10"></span><span class="line" data-line="11"><span style="color:#393A34">}</span></span><span class="line" data-line="12"><span style="color:#999999">```</span></span><span class="line" data-line="13"></span></code></pre>
+<pre class="shiki vitesse-light" style="background-color:#ffffff;color:#393a34" tabindex="0"><code><span class="line" data-line="1"><span style="color:#999999">```</span><span style="color:#393A34">ino</span></span>
+<span class="line" data-line="2"><span style="color:#393A34">int answer = 42; // [!code info]</span></span>
+<span class="line" data-line="3"></span>
+<span class="line" data-line="4"><span style="color:#393A34">void setup() {</span></span>
+<span class="line" data-line="5"><span style="color:#393A34">  // De code hier wordt 1 keer uitgevoerd [!code highlight]</span></span>
+<span class="line" data-line="6"><span style="color:#393A34">}</span></span>
+<span class="line" data-line="7"></span>
+<span class="line" data-line="8"><span style="color:#393A34">// [!code ++:4]</span></span>
+<span class="line" data-line="9"><span style="color:#393A34">void loop() {</span></span>
+<span class="line" data-line="10"></span>
+<span class="line" data-line="11"><span style="color:#393A34">}</span></span>
+<span class="line" data-line="12"><span style="color:#999999">```</span></span>
+<span class="line" data-line="13"></span></code><button class="copy-button" title="Copy" onclick="
+          navigator.clipboard.writeText(this.parentElement.innerText);
+          this.classList.add(&#x27;copied&#x27;);
+          setTimeout(() => this.classList.remove(&#x27;copied&#x27;), 2000)
+        "><span class="ready"></span><span class="success"></span></button></pre>
 <p>Resultaat:</p>
-<pre class="shiki vitesse-light has-diff has-highlighted" style="background-color:#ffffff;color:#393a34" tabindex="0"><code><span class="line highlighted info" data-line="1"><span style="color:#AB5959">int</span><span style="color:#393A34"> answer </span><span style="color:#999999">=</span><span style="color:#2F798A"> 42</span><span style="color:#999999">;</span></span><span class="line" data-line="2"></span><span class="line" data-line="3"><span style="color:#AB5959">void</span><span style="color:#59873A"> setup</span><span style="color:#999999">()</span><span style="color:#999999"> {</span></span><span class="line highlighted" data-line="4"><span style="color:#A0ADA0">  // De code hier wordt 1 keer uitgevoerd</span></span><span class="line" data-line="5"><span style="color:#999999">}</span></span><span class="line" data-line="6"></span><span class="line diff add" data-line="8"><span style="color:#AB5959">void</span><span style="color:#59873A"> loop</span><span style="color:#999999">()</span><span style="color:#999999"> {</span></span><span class="line diff add" data-line="9"></span><span class="line diff add" data-line="10"><span style="color:#999999">}</span></span><span class="line" data-line="11"></span></code></pre>
+<pre class="shiki vitesse-light has-diff has-highlighted" style="background-color:#ffffff;color:#393a34" tabindex="0"><code><span class="line highlighted info" data-line="1"><span style="color:#AB5959">int</span><span style="color:#393A34"> answer </span><span style="color:#999999">=</span><span style="color:#2F798A"> 42</span><span style="color:#999999">;</span></span>
+<span class="line" data-line="2"></span>
+<span class="line" data-line="3"><span style="color:#AB5959">void</span><span style="color:#59873A"> setup</span><span style="color:#999999">()</span><span style="color:#999999"> {</span></span>
+<span class="line highlighted" data-line="4"><span style="color:#A0ADA0">  // De code hier wordt 1 keer uitgevoerd</span></span>
+<span class="line" data-line="5"><span style="color:#999999">}</span></span>
+<span class="line" data-line="6"></span>
+<span class="line diff add" data-line="7"><span style="color:#AB5959">void</span><span style="color:#59873A"> loop</span><span style="color:#999999">()</span><span style="color:#999999"> {</span></span>
+<span class="line diff add" data-line="8"></span>
+<span class="line diff add" data-line="9"><span style="color:#999999">}</span></span>
+<span class="line" data-line="10"></span></code><button class="copy-button" title="Copy" onclick="
+          navigator.clipboard.writeText(this.parentElement.innerText);
+          this.classList.add(&#x27;copied&#x27;);
+          setTimeout(() => this.classList.remove(&#x27;copied&#x27;), 2000)
+        "><span class="ready"></span><span class="success"></span></button></pre>
 <h1 id="scratchblocks" tabindex="-1">Scratchblocks</h1>
 <p>Scratchblocks kunnen in code fences of inline worden toegevoegd.</p>
 <p>Zie ook <a href="https://en.scratch-wiki.info/wiki/Block_Plugin/Syntax">Block Plugin/Syntax</a></p>
 <h2 id="scratchblocks-code-fence" tabindex="-1">Scratchblocks code fence</h2>
 <p>Markdown:</p>
-<pre class="shiki vitesse-light" style="background-color:#ffffff;color:#393a34" tabindex="0"><code><span class="line" data-line="1"><span style="color:#999999">```</span><span style="color:#393A34">scratch</span></span><span class="line" data-line="2"><span style="color:#393A34">Wanneer groene vlag wordt aangeklikt</span></span><span class="line" data-line="3"><span style="color:#393A34">neem (10) stappen</span></span><span class="line" data-line="4"><span style="color:#999999">```</span></span><span class="line" data-line="5"></span></code></pre>
+<pre class="shiki vitesse-light" style="background-color:#ffffff;color:#393a34" tabindex="0"><code><span class="line" data-line="1"><span style="color:#999999">```</span><span style="color:#393A34">scratch</span></span>
+<span class="line" data-line="2"><span style="color:#393A34">Wanneer groene vlag wordt aangeklikt</span></span>
+<span class="line" data-line="3"><span style="color:#393A34">neem (10) stappen</span></span>
+<span class="line" data-line="4"><span style="color:#999999">```</span></span>
+<span class="line" data-line="5"></span></code><button class="copy-button" title="Copy" onclick="
+          navigator.clipboard.writeText(this.parentElement.innerText);
+          this.classList.add(&#x27;copied&#x27;);
+          setTimeout(() => this.classList.remove(&#x27;copied&#x27;), 2000)
+        "><span class="ready"></span><span class="success"></span></button></pre>
 <p>Resultaat:</p>
 <pre class="scratchblocks">Wanneer groene vlag wordt aangeklikt
 neem (10) stappen

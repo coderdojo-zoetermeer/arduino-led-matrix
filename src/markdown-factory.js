@@ -23,7 +23,9 @@ import {
   transformerNotationErrorLevel,
   transformerNotationDiff,
   transformerRemoveLineBreak,
+  transformerRemoveNotationEscape,
 } from '@shikijs/transformers';
+import { addCopyButton } from 'shiki-transformer-copy-button';
 
 const highlighter$ = createHighlighter({
   themes: ['vitesse-light'],
@@ -63,10 +65,22 @@ export async function createMarkdownRenderer() {
             transformerMetaHighlight({ matchAlgorithm: 'v1' }),
             transformerNotationHighlight({ matchAlgorithm: 'v1' }),
             transformerNotationErrorLevel({ matchAlgorithm: 'v1' }),
-            transformerRemoveLineBreak({ matchAlgorithm: 'v1' }),
+            transformerRemoveNotationEscape({ matchAlgorithm: 'v1' }),
+            addCopyButton({
+              toggle: 2000,
+              button: {
+                class: 'copy-button',
+                title: 'Copy',
+              },
+            }),
             {
-              line(node, line) {
-                node.properties['data-line'] = line;
+              code(node) {
+                let lineNo = 1;
+                for (const line in node.children) {
+                  if (node.children[line].tagName === 'span') {
+                    node.children[line].properties['data-line'] = lineNo++;
+                  }
+                }
               },
             },
           ],

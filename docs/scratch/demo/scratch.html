@@ -78,6 +78,51 @@
               margin-bottom: 5px;
               clear: both;
             }
+
+
+            pre:has(code) {
+              position: relative;
+            }
+
+            pre button.copy-button {
+              position: absolute;
+              right: 0px;
+              top: 0px;
+              height: 20px;
+              width: 20px;
+              padding: 2px;
+              border: 1px solid lightgray;
+              background-color: transparent;
+              border-radius: 2px;
+
+              & span {
+                width: 100%;
+                aspect-ratio: 1 / 1;
+                background-repeat: no-repeat;
+                background-position: center;
+                background-size: contain;
+              }
+
+              & .ready {
+                background-image: url("../../template-assets/clipboard.svg");
+              }
+
+              & .success {
+                display: none;
+                background-image: url("../../template-assets/clipboard-checked.svg");
+              }
+
+              &.copied {
+                & .success {
+                  display: block;
+                }
+
+                & .ready {
+                  display: none;
+                }
+              }
+            }
+
     </style>
   </head>
 

@@ -39,6 +39,10 @@
     position-area: top;
     z-index: 1;
   }
+
+  button.copy-button {
+    display: none;
+  }
 }
 
 @media screen {
@@ -70,6 +74,11 @@
     --width-a: 100vw;
     zoom: calc(var(--width-a) / 793px);
   }
+
+  button.copy-button {
+    display: flex;
+  }
+
 }
 
 body,
@@ -316,7 +325,7 @@ pre[class*='language-'] {
 }
 
 pre span.line {
-  display: block;
+  display: inline-block;
 }
 
 pre span.line:before {
@@ -368,3 +377,4 @@ pre span.diff.add:before {
   margin-right: 10px;
   text-align: right;
 }
+

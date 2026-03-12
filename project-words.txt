@@ -8,6 +8,7 @@ katex
 mdit
 pagebreak
 scratchblocks
+selemondev
 shiki
 Shiki
 shikijs
