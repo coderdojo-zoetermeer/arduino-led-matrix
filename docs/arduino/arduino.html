@@ -31,98 +31,51 @@
     <style>
       @media print {
         body {
-        background-image:
-          url("../template-assets/arduino/left.svg"),
-              url("../template-assets/arduino/right.svg");
-              background-size: 15px, 15px;
-              background-repeat: repeat-y, repeat-y;
-              background-position: left, right;
-              margin: 0px;
-            }
-          }
+          background-image:
+            url("../template-assets/arduino/left.svg"),
+            url("../template-assets/arduino/right.svg");
+          background-size: 15px, 15px;
+          background-repeat: repeat-y, repeat-y;
+          background-position: left, right;
+          margin: 0px;
+        }
+      }
 
-          @media screen {
-            body {
-            background-image:
-              url("../template-assets/arduino/left.svg"),
-              url("../template-assets/arduino/right.svg");
-              background-size: 15px 100%, 15px 100%;
-              background-repeat: no-repeat, no-repeat;
-              background-position: left, right;
-              margin: 0px;
-            }
-          }
-
-            .header {
-              background-image: url("../template-assets/arduino/top.svg");
-              background-size: 100% 15px;
-              background-repeat: no-repeat;
-              width: 100%;
-              min-height: 15px;
-            }
-
-            .footer {
-              background-image: url("../template-assets/arduino/bottom.svg");
-              background-size: 100% 15px;
-              background-repeat: no-repeat;
-              width: 100%;
-              min-height: 15px;
-            }
-            .separator-fat {
-              display: block;
-              background-image: url("../template-assets/arduino/separator.svg");
-              background-size: 100% 10px;
-              background-repeat: no-repeat;
-              height: 10px;
-              margin-top: 5px;
-              margin-bottom: 5px;
-              clear: both;
-            }
-
-
-            pre:has(code) {
-              position: relative;
-            }
-
-            pre button.copy-button {
-              position: absolute;
-              right: 10px;
-              top: 0px;
-              height: 20px;
-              width: 20px;
-              padding: 2px;
-              border: 1px solid lightgray;
-              background-color: transparent;
-              border-radius: 2px;
-
-              & span {
-                width: 100%;
-                aspect-ratio: 1 / 1;
-                background-repeat: no-repeat;
-                background-position: center;
-                background-size: contain;
-              }
-
-              & .ready {
-                background-image: url("../template-assets/clipboard.svg");
-              }
-
-              & .success {
-                display: none;
-                background-image: url("../template-assets/clipboard-checked.svg");
-              }
-
-              &.copied {
-                & .success {
-                  display: block;
-                }
-
-                & .ready {
-                  display: none;
-                }
-              }
-            }
-
+      @media screen {
+        body {
+          background-image:
+            url("../template-assets/arduino/left.svg"),
+            url("../template-assets/arduino/right.svg");
+          background-size: 15px 100%, 15px 100%;
+          background-repeat: no-repeat, no-repeat;
+          background-position: left, right;
+          margin: 0px;
+        }
+      }
+      .header {
+        background-image: url("../template-assets/arduino/top.svg");
+        background-size: 100% 15px;
+        background-repeat: no-repeat;
+        width: 100%;
+        min-height: 15px;
+      }
+      .footer {
+        background-image: url("../template-assets/arduino/bottom.svg");
+        background-size: 100% 15px;
+        background-repeat: no-repeat;
+        width: 100%;
+        min-height: 15px;
+      }
+      .separator-fat {
+        display: block;
+        background-image: url("../template-assets/arduino/separator.svg");
+        background-size: 100% 10px;
+        background-repeat: no-repeat;
+        height: 10px;
+        margin-top: 5px;
+        margin-bottom: 5px;
+        clear: both;
+      }
     </style>
   </head>
 
@@ -267,8 +220,8 @@ code eruit ziet.</p>
                 />
                 <div class="license">
 
-                  <p><b>[NL] Licentie Informatie</b></p>
-                  <p>
+                  <p><em>[NL] Licentie Informatie</em></p>
+                  <p style="padding-left: 20px">
                     Voor al het materiaal in document geldt de licentie:
                     Creative Commons Naamsvermelding-NietCommercieel-GelijkDelen
                     3.0
@@ -277,7 +230,7 @@ code eruit ziet.</p>
                     >https://creativecommons.org/licenses/by-nc-sa/3.0/</a>.
 
                   </p>
-                  <p>
+                  <p style="padding-left: 20px">
                     Indien u toegang wilt tot de raw bewerkbare files om het
                     materiaal naar uw eigen doel aan te passen, ons te helpen
                     het materiaal te verbeteren, of het materiaal te vertalen,
@@ -290,8 +243,8 @@ code eruit ziet.</p>
                 </div>
 
                 <div class="license">
-                  <p><b>[EN] License Information</b></p>
-                  <p>
+                  <p><em>[EN] License Information</em></p>
+                  <p style="padding-left: 20px">
                     All work in this document are licensed under the Creative
                     Commons Attribution-NonCommercial-ShareAlike 3.0
                     <a
@@ -299,7 +252,7 @@ code eruit ziet.</p>
                     >https://creativecommons.org/licenses/by-nc-sa/3.0/</a>.
 
                   </p>
-                  <p>
+                  <p style="padding-left: 20px">
                     If you wish to gain access to the raw editable files in
                     order to adapt our content to your own purposes, help us
                     improve the content, or translate it, then please contact
@@ -310,17 +263,18 @@ code eruit ziet.</p>
                     .
                   </p>
                 </div>
+                <div>
+                  This document was created by CoderDojo Zoetermeer. The
+                  template design was inspired by the CoderDojo branding and
+                  visual identity, and incorporates elements from both
+                  organizations. We would like to thank CoderDojo Nederland
+                  for their their ongoing support of the CoderDojo
+                  community.
+                </div>
                 <div class="acknowledgements">
-                  <em>Acknowledgements:</em>
+                  <em>Acknowledgements</em>
                   <div style="padding-left: 20px;">
                       <p>author(s): Ben Mens</p>
-
-                    <p>This document was created by CoderDojo Zoetermeer. The
-                      template design was inspired by the CoderDojo branding and
-                      visual identity, and incorporates elements from both
-                      organizations. We would like to thank CoderDojo Nederland
-                      for their their ongoing support of the CoderDojo
-                      community.</p>
                   </div>
                 </div>
               </div>

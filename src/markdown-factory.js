@@ -12,6 +12,7 @@ import { stylize } from '@mdit/plugin-stylize';
 import { include } from '@mdit/plugin-include';
 import { katex } from '@mdit/plugin-katex';
 import { tab } from '@mdit/plugin-tab';
+import { layout } from "@mdit/plugin-layout";
 import MarkdownItTOC from 'markdown-it-table-of-contents';
 import MarkdownItAnchor from 'markdown-it-anchor';
 import { inlineRule } from '@mdit/plugin-inline-rule';
@@ -116,6 +117,7 @@ export async function createMarkdownRenderer() {
   md.use(meta);
   md.use(katex);
   md.use(imgSize);
+  md.use(layout);
   md.use(attrs, {
     rule: ['inline', 'table', 'list', 'hr', 'heading', 'softbreak', 'block'],
   });

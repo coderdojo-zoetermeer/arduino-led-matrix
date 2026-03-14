@@ -31,98 +31,51 @@
     <style>
       @media print {
         body {
-        background-image:
-          url("../../template-assets/scratch/left.svg"),
-              url("../../template-assets/scratch/right.svg");
-              background-size: 15px, 15px;
-              background-repeat: repeat-y, repeat-y;
-              background-position: left, right;
-              margin: 0px;
-            }
-          }
+          background-image:
+            url("../../template-assets/scratch/left.svg"),
+            url("../../template-assets/scratch/right.svg");
+          background-size: 15px, 15px;
+          background-repeat: repeat-y, repeat-y;
+          background-position: left, right;
+          margin: 0px;
+        }
+      }
 
-          @media screen {
-            body {
-            background-image:
-              url("../../template-assets/scratch/left.svg"),
-              url("../../template-assets/scratch/right.svg");
-              background-size: 15px 100%, 15px 100%;
-              background-repeat: no-repeat, no-repeat;
-              background-position: left, right;
-              margin: 0px;
-            }
-          }
-
-            .header {
-              background-image: url("../../template-assets/scratch/top.svg");
-              background-size: 100% 15px;
-              background-repeat: no-repeat;
-              width: 100%;
-              min-height: 15px;
-            }
-
-            .footer {
-              background-image: url("../../template-assets/scratch/bottom.svg");
-              background-size: 100% 15px;
-              background-repeat: no-repeat;
-              width: 100%;
-              min-height: 15px;
-            }
-            .separator-fat {
-              display: block;
-              background-image: url("../../template-assets/scratch/separator.svg");
-              background-size: 100% 10px;
-              background-repeat: no-repeat;
-              height: 10px;
-              margin-top: 5px;
-              margin-bottom: 5px;
-              clear: both;
-            }
-
-
-            pre:has(code) {
-              position: relative;
-            }
-
-            pre button.copy-button {
-              position: absolute;
-              right: 10px;
-              top: 0px;
-              height: 20px;
-              width: 20px;
-              padding: 2px;
-              border: 1px solid lightgray;
-              background-color: transparent;
-              border-radius: 2px;
-
-              & span {
-                width: 100%;
-                aspect-ratio: 1 / 1;
-                background-repeat: no-repeat;
-                background-position: center;
-                background-size: contain;
-              }
-
-              & .ready {
-                background-image: url("../../template-assets/clipboard.svg");
-              }
-
-              & .success {
-                display: none;
-                background-image: url("../../template-assets/clipboard-checked.svg");
-              }
-
-              &.copied {
-                & .success {
-                  display: block;
-                }
-
-                & .ready {
-                  display: none;
-                }
-              }
-            }
-
+      @media screen {
+        body {
+          background-image:
+            url("../../template-assets/scratch/left.svg"),
+            url("../../template-assets/scratch/right.svg");
+          background-size: 15px 100%, 15px 100%;
+          background-repeat: no-repeat, no-repeat;
+          background-position: left, right;
+          margin: 0px;
+        }
+      }
+      .header {
+        background-image: url("../../template-assets/scratch/top.svg");
+        background-size: 100% 15px;
+        background-repeat: no-repeat;
+        width: 100%;
+        min-height: 15px;
+      }
+      .footer {
+        background-image: url("../../template-assets/scratch/bottom.svg");
+        background-size: 100% 15px;
+        background-repeat: no-repeat;
+        width: 100%;
+        min-height: 15px;
+      }
+      .separator-fat {
+        display: block;
+        background-image: url("../../template-assets/scratch/separator.svg");
+        background-size: 100% 10px;
+        background-repeat: no-repeat;
+        height: 10px;
+        margin-top: 5px;
+        margin-bottom: 5px;
+        clear: both;
+      }
     </style>
   </head>
 
@@ -240,15 +193,23 @@ Probeer het uit:</p>
 <em>Uitleg gebeurtenissen</em></p>
 <p>Een gebeurtenis is iets dat door de computer wordt herkend en waarmee je een
 blok in je programma kan starten.</p>
-<p>De gebeurtenis <code class="scratch">wanneer groene vlag wordt aangeklikt</code>
-wordt door de computer herkend als je met je muis op de groene vlag klikt.
-De acties onder het blok <code class="scratch">wanneer groene vlag wordt aangeklikt</code> worden
-dan uitgevoerd.</p>
-<p>De gebeurtenis <code class="scratch">wanneer [spatiebalk v] is ingedrukt</code> wordt herkend
-als de spatiebalk wordt ingedrukt. De acties onder deze gebeurtenis worden
-dan uitgevoerd.</p>
-<p>Er zijn nog meer gebeurtenissen die je kan gebruiken. Deze vind bij
-gebeurtenissen in de balk links.</p>
+<div style="display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:1px" class="grid-border">
+<div>
+<p><code class="scratch">wanneer groene vlag wordt aangeklikt</code></p>
+</div>
+<div>
+<p><code class="scratch">wanneer [spatiebalk v] is ingedrukt</code></p>
+</div>
+<div>
+<p>De acties onder dit blok worden uitgevoerd als op
+<img src="./global-lib-assets/flag.svg" alt="" width="12"> wordt gedrukt.</p>
+</div>
+<div>
+<p>De acties onder dit blok worden uitgevoerd als op de <code>spatiebalk</code> wordt gedrukt.</p>
+</div>
+</div>
+<p>Er zijn nog meer gebeurtenissen die je kan gebruiken. Deze vindt je bij
+gebeurtenissen zoals je in het plaatje hiernaast kunt zien.</p>
 <div class="clear-float"></div></div><hr class="separator-hidden">
 <div class="program">
 <p><img src="./assets/cat.svg" alt="" width="50" class="float-right">
@@ -295,7 +256,7 @@ bewaren. Bijvoorbeeld de score of de uitkomst van een som.</p>
 op maak variabele te klikken.</p>
 <p><img src="./global-lib-assets/maak-variabele.svg" alt="" width="200"></p>
 <p>Je krijgt nu een formulier waarin je de variabele een naam kan geven. In dit
-voorbeeld score.</p>
+voorbeeld <code>score</code>.</p>
 <p><img src="./global-lib-assets/maak-variabele1.svg" alt="" width="200"></p>
 <p><em>Gebruiken van een variabele</em></p>
 <p>Je krijgt nu een nieuwe bouwsteen die je kan gebruiken in je programma.</p>
@@ -446,8 +407,8 @@ te laten lopen?</li>
                 />
                 <div class="license">
 
-                  <p><b>[NL] Licentie Informatie</b></p>
-                  <p>
+                  <p><em>[NL] Licentie Informatie</em></p>
+                  <p style="padding-left: 20px">
                     Voor al het materiaal in document geldt de licentie:
                     Creative Commons Naamsvermelding-NietCommercieel-GelijkDelen
                     3.0
@@ -456,7 +417,7 @@ te laten lopen?</li>
                     >https://creativecommons.org/licenses/by-nc-sa/3.0/</a>.
 
                   </p>
-                  <p>
+                  <p style="padding-left: 20px">
                     Indien u toegang wilt tot de raw bewerkbare files om het
                     materiaal naar uw eigen doel aan te passen, ons te helpen
                     het materiaal te verbeteren, of het materiaal te vertalen,
@@ -469,8 +430,8 @@ te laten lopen?</li>
                 </div>
 
                 <div class="license">
-                  <p><b>[EN] License Information</b></p>
-                  <p>
+                  <p><em>[EN] License Information</em></p>
+                  <p style="padding-left: 20px">
                     All work in this document are licensed under the Creative
                     Commons Attribution-NonCommercial-ShareAlike 3.0
                     <a
@@ -478,7 +439,7 @@ te laten lopen?</li>
                     >https://creativecommons.org/licenses/by-nc-sa/3.0/</a>.
 
                   </p>
-                  <p>
+                  <p style="padding-left: 20px">
                     If you wish to gain access to the raw editable files in
                     order to adapt our content to your own purposes, help us
                     improve the content, or translate it, then please contact
@@ -489,16 +450,17 @@ te laten lopen?</li>
                     .
                   </p>
                 </div>
+                <div>
+                  This document was created by CoderDojo Zoetermeer. The
+                  template design was inspired by the CoderDojo branding and
+                  visual identity, and incorporates elements from both
+                  organizations. We would like to thank CoderDojo Nederland
+                  for their their ongoing support of the CoderDojo
+                  community.
+                </div>
                 <div class="acknowledgements">
-                  <em>Acknowledgements:</em>
+                  <em>Acknowledgements</em>
                   <div style="padding-left: 20px;">
-
-                    <p>This document was created by CoderDojo Zoetermeer. The
-                      template design was inspired by the CoderDojo branding and
-                      visual identity, and incorporates elements from both
-                      organizations. We would like to thank CoderDojo Nederland
-                      for their their ongoing support of the CoderDojo
-                      community.</p>
                   </div>
                 </div>
               </div>

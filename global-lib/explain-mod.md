@@ -5,7 +5,7 @@ getallen.
 Bijvoorbeeld: Stel dat je 13 snoepjes wil verdelen over 4 vrienden. Iedereen
 krijgt dan 3 snoepjes, en er blijft er dan 1 over.
 
-Dus $13/4 = 3\enspace rest\enspace 1$
+Dus: $13/4 = 3\enspace rest\enspace 1$
 <!-- #endregion uitleg -->
 
 ________________________________________________________________________________

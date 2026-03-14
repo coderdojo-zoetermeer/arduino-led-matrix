@@ -31,98 +31,51 @@
     <style>
       @media print {
         body {
-        background-image:
-          url("../template-assets/generic/left.svg"),
-              url("../template-assets/generic/right.svg");
-              background-size: 15px, 15px;
-              background-repeat: repeat-y, repeat-y;
-              background-position: left, right;
-              margin: 0px;
-            }
-          }
+          background-image:
+            url("../template-assets/generic/left.svg"),
+            url("../template-assets/generic/right.svg");
+          background-size: 15px, 15px;
+          background-repeat: repeat-y, repeat-y;
+          background-position: left, right;
+          margin: 0px;
+        }
+      }
 
-          @media screen {
-            body {
-            background-image:
-              url("../template-assets/generic/left.svg"),
-              url("../template-assets/generic/right.svg");
-              background-size: 15px 100%, 15px 100%;
-              background-repeat: no-repeat, no-repeat;
-              background-position: left, right;
-              margin: 0px;
-            }
-          }
-
-            .header {
-              background-image: url("../template-assets/generic/top.svg");
-              background-size: 100% 15px;
-              background-repeat: no-repeat;
-              width: 100%;
-              min-height: 15px;
-            }
-
-            .footer {
-              background-image: url("../template-assets/generic/bottom.svg");
-              background-size: 100% 15px;
-              background-repeat: no-repeat;
-              width: 100%;
-              min-height: 15px;
-            }
-            .separator-fat {
-              display: block;
-              background-image: url("../template-assets/generic/separator.svg");
-              background-size: 100% 10px;
-              background-repeat: no-repeat;
-              height: 10px;
-              margin-top: 5px;
-              margin-bottom: 5px;
-              clear: both;
-            }
-
-
-            pre:has(code) {
-              position: relative;
-            }
-
-            pre button.copy-button {
-              position: absolute;
-              right: 10px;
-              top: 0px;
-              height: 20px;
-              width: 20px;
-              padding: 2px;
-              border: 1px solid lightgray;
-              background-color: transparent;
-              border-radius: 2px;
-
-              & span {
-                width: 100%;
-                aspect-ratio: 1 / 1;
-                background-repeat: no-repeat;
-                background-position: center;
-                background-size: contain;
-              }
-
-              & .ready {
-                background-image: url("../template-assets/clipboard.svg");
-              }
-
-              & .success {
-                display: none;
-                background-image: url("../template-assets/clipboard-checked.svg");
-              }
-
-              &.copied {
-                & .success {
-                  display: block;
-                }
-
-                & .ready {
-                  display: none;
-                }
-              }
-            }
-
+      @media screen {
+        body {
+          background-image:
+            url("../template-assets/generic/left.svg"),
+            url("../template-assets/generic/right.svg");
+          background-size: 15px 100%, 15px 100%;
+          background-repeat: no-repeat, no-repeat;
+          background-position: left, right;
+          margin: 0px;
+        }
+      }
+      .header {
+        background-image: url("../template-assets/generic/top.svg");
+        background-size: 100% 15px;
+        background-repeat: no-repeat;
+        width: 100%;
+        min-height: 15px;
+      }
+      .footer {
+        background-image: url("../template-assets/generic/bottom.svg");
+        background-size: 100% 15px;
+        background-repeat: no-repeat;
+        width: 100%;
+        min-height: 15px;
+      }
+      .separator-fat {
+        display: block;
+        background-image: url("../template-assets/generic/separator.svg");
+        background-size: 100% 10px;
+        background-repeat: no-repeat;
+        height: 10px;
+        margin-top: 5px;
+        margin-bottom: 5px;
+        clear: both;
+      }
     </style>
   </head>
 
@@ -349,7 +302,7 @@ worden aangegeven in welke programmeertaal de uitleg moet worden gegeven.</p>
 getallen.</p>
 <p>Bijvoorbeeld: Stel dat je 13 snoepjes wil verdelen over 4 vrienden. Iedereen
 krijgt dan 3 snoepjes, en er blijft er dan 1 over.</p>
-<p>Dus <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>13</mn><mi mathvariant="normal">/</mi><mn>4</mn><mo>=</mo><mn>3</mn><mspace width="0.5em"/><mi>r</mi><mi>e</mi><mi>s</mi><mi>t</mi><mspace width="0.5em"/><mn>1</mn></mrow><annotation encoding="application/x-tex">13/4 = 3\enspace rest\enspace 1</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord">13/4</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:0.6444em;"></span><span class="mord">3</span><span class="mspace" style="margin-right:0.5em;"></span><span class="mord mathnormal">res</span><span class="mord mathnormal">t</span><span class="mspace" style="margin-right:0.5em;"></span><span class="mord">1</span></span></span></span></p>
+<p>Dus: <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>13</mn><mi mathvariant="normal">/</mi><mn>4</mn><mo>=</mo><mn>3</mn><mspace width="0.5em"/><mi>r</mi><mi>e</mi><mi>s</mi><mi>t</mi><mspace width="0.5em"/><mn>1</mn></mrow><annotation encoding="application/x-tex">13/4 = 3\enspace rest\enspace 1</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord">13/4</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:0.6444em;"></span><span class="mord">3</span><span class="mspace" style="margin-right:0.5em;"></span><span class="mord mathnormal">res</span><span class="mord mathnormal">t</span><span class="mspace" style="margin-right:0.5em;"></span><span class="mord">1</span></span></span></span></p>
 <p>Voorbeeld:</p>
 <pre class="scratchblocks">
 wanneer groene vlag wordt aangeklikt
@@ -370,7 +323,7 @@ maak [rest v] ((13) modulo (4))
 getallen.</p>
 <p>Bijvoorbeeld: Stel dat je 13 snoepjes wil verdelen over 4 vrienden. Iedereen
 krijgt dan 3 snoepjes, en er blijft er dan 1 over.</p>
-<p>Dus <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>13</mn><mi mathvariant="normal">/</mi><mn>4</mn><mo>=</mo><mn>3</mn><mspace width="0.5em"/><mi>r</mi><mi>e</mi><mi>s</mi><mi>t</mi><mspace width="0.5em"/><mn>1</mn></mrow><annotation encoding="application/x-tex">13/4 = 3\enspace rest\enspace 1</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord">13/4</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:0.6444em;"></span><span class="mord">3</span><span class="mspace" style="margin-right:0.5em;"></span><span class="mord mathnormal">res</span><span class="mord mathnormal">t</span><span class="mspace" style="margin-right:0.5em;"></span><span class="mord">1</span></span></span></span></p>
+<p>Dus: <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>13</mn><mi mathvariant="normal">/</mi><mn>4</mn><mo>=</mo><mn>3</mn><mspace width="0.5em"/><mi>r</mi><mi>e</mi><mi>s</mi><mi>t</mi><mspace width="0.5em"/><mn>1</mn></mrow><annotation encoding="application/x-tex">13/4 = 3\enspace rest\enspace 1</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord">13/4</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:0.6444em;"></span><span class="mord">3</span><span class="mspace" style="margin-right:0.5em;"></span><span class="mord mathnormal">res</span><span class="mord mathnormal">t</span><span class="mspace" style="margin-right:0.5em;"></span><span class="mord">1</span></span></span></span></p>
 <p>Bij arduino schrijf je de modulo functie als een <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi mathvariant="normal">%</mi></mrow><annotation encoding="application/x-tex">\%</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8056em;vertical-align:-0.0556em;"></span><span class="mord">%</span></span></span></span>-teken.</p>
 <p>Voorbeeld:</p>
 <pre class="shiki vitesse-light" style="background-color:#ffffff;color:#393a34" tabindex="0"><code><span class="line" data-line="1"><span class="indent">  </span><span class="indent">  </span><span style="color:#393A34">integer rest </span><span style="color:#999999">=</span><span style="color:#2F798A"> 13</span><span style="color:#AB5959"> %</span><span style="color:#2F798A"> 4</span><span style="color:#999999">;</span><span style="color:#A0ADA0"> // De waarde van rest wordt 1</span></span>
@@ -628,8 +581,8 @@ nemen.</p>
                 />
                 <div class="license">
 
-                  <p><b>[NL] Licentie Informatie</b></p>
-                  <p>
+                  <p><em>[NL] Licentie Informatie</em></p>
+                  <p style="padding-left: 20px">
                     Voor al het materiaal in document geldt de licentie:
                     Creative Commons Naamsvermelding-NietCommercieel-GelijkDelen
                     3.0
@@ -638,7 +591,7 @@ nemen.</p>
                     >https://creativecommons.org/licenses/by-nc-sa/3.0/</a>.
 
                   </p>
-                  <p>
+                  <p style="padding-left: 20px">
                     Indien u toegang wilt tot de raw bewerkbare files om het
                     materiaal naar uw eigen doel aan te passen, ons te helpen
                     het materiaal te verbeteren, of het materiaal te vertalen,
@@ -651,8 +604,8 @@ nemen.</p>
                 </div>
 
                 <div class="license">
-                  <p><b>[EN] License Information</b></p>
-                  <p>
+                  <p><em>[EN] License Information</em></p>
+                  <p style="padding-left: 20px">
                     All work in this document are licensed under the Creative
                     Commons Attribution-NonCommercial-ShareAlike 3.0
                     <a
@@ -660,7 +613,7 @@ nemen.</p>
                     >https://creativecommons.org/licenses/by-nc-sa/3.0/</a>.
 
                   </p>
-                  <p>
+                  <p style="padding-left: 20px">
                     If you wish to gain access to the raw editable files in
                     order to adapt our content to your own purposes, help us
                     improve the content, or translate it, then please contact
@@ -671,17 +624,18 @@ nemen.</p>
                     .
                   </p>
                 </div>
+                <div>
+                  This document was created by CoderDojo Zoetermeer. The
+                  template design was inspired by the CoderDojo branding and
+                  visual identity, and incorporates elements from both
+                  organizations. We would like to thank CoderDojo Nederland
+                  for their their ongoing support of the CoderDojo
+                  community.
+                </div>
                 <div class="acknowledgements">
-                  <em>Acknowledgements:</em>
+                  <em>Acknowledgements</em>
                   <div style="padding-left: 20px;">
                       <p>author(s): Ben Mens</p>
-
-                    <p>This document was created by CoderDojo Zoetermeer. The
-                      template design was inspired by the CoderDojo branding and
-                      visual identity, and incorporates elements from both
-                      organizations. We would like to thank CoderDojo Nederland
-                      for their their ongoing support of the CoderDojo
-                      community.</p>
                   </div>
                 </div>
               </div>

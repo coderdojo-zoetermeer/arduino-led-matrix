@@ -1,7 +1,7 @@
 ---
 title: Overzicht van herbruikbare opdrachtblokken
 acknowledgements:
-  author(s): Ben Mens
+  Author(s): Ben Mens
 level: 
 template: default
 theme: generic
@@ -181,3 +181,41 @@ infoBlocks:
 <!-- @include: global-lib/explain-structure.md#indent -->
 
 ********************************************************************************
+
+# Python cheat sheet
+
+## python: comment
+
+`<!-- @include: global-lib/cheat-sheet-python.md#comment -->`
+
+<!-- @include: global-lib/cheat-sheet-python.md#comment -->
+
+## python: variables
+
+`<!-- @include: global-lib/cheat-sheet-python.md#variables -->`
+
+<!-- @include: global-lib/cheat-sheet-python.md#variables -->
+
+## python: print
+
+`<!-- @include: global-lib/cheat-sheet-python.md#print -->`
+
+<!-- @include: global-lib/cheat-sheet-python.md#print -->
+
+## python: if else
+
+`<!-- @include: global-lib/cheat-sheet-python.md#if_else -->`
+
+<!-- @include: global-lib/cheat-sheet-python.md#if_else -->
+
+## python: while
+
+`<!-- @include: global-lib/cheat-sheet-python.md#while -->`
+
+<!-- @include: global-lib/cheat-sheet-python.md#while -->
+
+## python: break
+
+`<!-- @include: global-lib/cheat-sheet-python.md#break -->`
+
+<!-- @include: global-lib/cheat-sheet-python.md#break -->

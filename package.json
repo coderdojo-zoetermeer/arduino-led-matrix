@@ -31,14 +31,13 @@
     "@mdit/plugin-include": "^0.22.4",
     "@mdit/plugin-inline-rule": "^0.23.1",
     "@mdit/plugin-katex": "^0.24.2",
+    "@mdit/plugin-layout": "^0.2.1",
     "@mdit/plugin-mark": "^0.22.2",
     "@mdit/plugin-snippet": "^0.22.5",
     "@mdit/plugin-stylize": "^0.22.4",
     "@mdit/plugin-tab": "^0.24.0",
     "@mdit/plugin-uml": "^0.23.1",
-    "shiki": "^4.0.2",
     "@shikijs/transformers": "^4.0.1",
-    "shiki-transformer-copy-button": "^0.0.6",
     "chalk": "^5.6.2",
     "commander": "^14.0.3",
     "eslint": "^10.0.2",
@@ -56,6 +55,8 @@
     "minimist": "^1.2.8",
     "prettier": "^3.8.1",
     "scratchblocks": "^3.6.4",
+    "shiki": "^4.0.2",
+    "shiki-transformer-copy-button": "^0.0.6",
     "vinyl": "^3.0.1"
   }
 }

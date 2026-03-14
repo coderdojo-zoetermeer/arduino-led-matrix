@@ -31,98 +31,51 @@
     <style>
       @media print {
         body {
-        background-image:
-          url("../template-assets/generic/left.svg"),
-              url("../template-assets/generic/right.svg");
-              background-size: 15px, 15px;
-              background-repeat: repeat-y, repeat-y;
-              background-position: left, right;
-              margin: 0px;
-            }
-          }
+          background-image:
+            url("../template-assets/generic/left.svg"),
+            url("../template-assets/generic/right.svg");
+          background-size: 15px, 15px;
+          background-repeat: repeat-y, repeat-y;
+          background-position: left, right;
+          margin: 0px;
+        }
+      }
 
-          @media screen {
-            body {
-            background-image:
-              url("../template-assets/generic/left.svg"),
-              url("../template-assets/generic/right.svg");
-              background-size: 15px 100%, 15px 100%;
-              background-repeat: no-repeat, no-repeat;
-              background-position: left, right;
-              margin: 0px;
-            }
-          }
-
-            .header {
-              background-image: url("../template-assets/generic/top.svg");
-              background-size: 100% 15px;
-              background-repeat: no-repeat;
-              width: 100%;
-              min-height: 15px;
-            }
-
-            .footer {
-              background-image: url("../template-assets/generic/bottom.svg");
-              background-size: 100% 15px;
-              background-repeat: no-repeat;
-              width: 100%;
-              min-height: 15px;
-            }
-            .separator-fat {
-              display: block;
-              background-image: url("../template-assets/generic/separator.svg");
-              background-size: 100% 10px;
-              background-repeat: no-repeat;
-              height: 10px;
-              margin-top: 5px;
-              margin-bottom: 5px;
-              clear: both;
-            }
-
-
-            pre:has(code) {
-              position: relative;
-            }
-
-            pre button.copy-button {
-              position: absolute;
-              right: 10px;
-              top: 0px;
-              height: 20px;
-              width: 20px;
-              padding: 2px;
-              border: 1px solid lightgray;
-              background-color: transparent;
-              border-radius: 2px;
-
-              & span {
-                width: 100%;
-                aspect-ratio: 1 / 1;
-                background-repeat: no-repeat;
-                background-position: center;
-                background-size: contain;
-              }
-
-              & .ready {
-                background-image: url("../template-assets/clipboard.svg");
-              }
-
-              & .success {
-                display: none;
-                background-image: url("../template-assets/clipboard-checked.svg");
-              }
-
-              &.copied {
-                & .success {
-                  display: block;
-                }
-
-                & .ready {
-                  display: none;
-                }
-              }
-            }
-
+      @media screen {
+        body {
+          background-image:
+            url("../template-assets/generic/left.svg"),
+            url("../template-assets/generic/right.svg");
+          background-size: 15px 100%, 15px 100%;
+          background-repeat: no-repeat, no-repeat;
+          background-position: left, right;
+          margin: 0px;
+        }
+      }
+      .header {
+        background-image: url("../template-assets/generic/top.svg");
+        background-size: 100% 15px;
+        background-repeat: no-repeat;
+        width: 100%;
+        min-height: 15px;
+      }
+      .footer {
+        background-image: url("../template-assets/generic/bottom.svg");
+        background-size: 100% 15px;
+        background-repeat: no-repeat;
+        width: 100%;
+        min-height: 15px;
+      }
+      .separator-fat {
+        display: block;
+        background-image: url("../template-assets/generic/separator.svg");
+        background-size: 100% 10px;
+        background-repeat: no-repeat;
+        height: 10px;
+        margin-top: 5px;
+        margin-bottom: 5px;
+        clear: both;
+      }
     </style>
   </head>
 
@@ -165,7 +118,7 @@
 
               <hr class="separator-fat">
 <h1 id="index" tabindex="-1">Index</h1>
-<div class="table-of-contents"><ul><li><a href="#index">Index</a></li><li><a href="#functies">Functies</a><ul><li><a href="#algemeen">Algemeen</a></li><li><a href="#voorbeelden-voor-het-maken-van-een-functie">Voorbeelden voor het maken van een functie</a></li></ul></li><li><a href="#x-as">X-as</a></li><li><a href="#y-as">Y-as</a></li><li><a href="#variabelen">Variabelen</a></li><li><a href="#events">Events</a></li><li><a href="#modulo-functie">Modulo functie</a></li><li><a href="#programmastructuur">Programmastructuur</a><ul><li><a href="#programmastructuur-algemeen">Programmastructuur Algemeen</a></li><li><a href="#inspringen">Inspringen</a></li></ul></li></ul></div>
+<div class="table-of-contents"><ul><li><a href="#index">Index</a></li><li><a href="#functies">Functies</a><ul><li><a href="#algemeen">Algemeen</a></li><li><a href="#voorbeelden-voor-het-maken-van-een-functie">Voorbeelden voor het maken van een functie</a></li></ul></li><li><a href="#x-as">X-as</a></li><li><a href="#y-as">Y-as</a></li><li><a href="#variabelen">Variabelen</a></li><li><a href="#events">Events</a></li><li><a href="#modulo-functie">Modulo functie</a></li><li><a href="#programmastructuur">Programmastructuur</a><ul><li><a href="#programmastructuur-algemeen">Programmastructuur Algemeen</a></li><li><a href="#inspringen">Inspringen</a></li></ul></li><li><a href="#python-cheat-sheet">Python cheat sheet</a><ul><li><a href="#python%3A-comment">python: comment</a></li><li><a href="#python%3A-variables">python: variables</a></li><li><a href="#python%3A-print">python: print</a></li><li><a href="#python%3A-if-else">python: if else</a></li><li><a href="#python%3A-while">python: while</a></li><li><a href="#python%3A-break">python: break</a></li></ul></li></ul></div>
 <hr class="separator-fat">
 <h1 id="functies" tabindex="-1">Functies</h1>
 <h2 id="algemeen" tabindex="-1">Algemeen</h2>
@@ -362,7 +315,7 @@ bewaren. Bijvoorbeeld de score of de uitkomst van een som.</p>
 op maak variabele te klikken.</p>
 <p><img src="./global-lib-assets/maak-variabele.svg" alt="" width="200"></p>
 <p>Je krijgt nu een formulier waarin je de variabele een naam kan geven. In dit
-voorbeeld score.</p>
+voorbeeld <code>score</code>.</p>
 <p><img src="./global-lib-assets/maak-variabele1.svg" alt="" width="200"></p>
 <p><em>Gebruiken van een variabele</em></p>
 <p>Je krijgt nu een nieuwe bouwsteen die je kan gebruiken in je programma.</p>
@@ -393,15 +346,23 @@ voorbeeld score.</p>
 <em>Uitleg gebeurtenissen</em></p>
 <p>Een gebeurtenis is iets dat door de computer wordt herkend en waarmee je een
 blok in je programma kan starten.</p>
-<p>De gebeurtenis <code class="scratch">wanneer groene vlag wordt aangeklikt</code>
-wordt door de computer herkend als je met je muis op de groene vlag klikt.
-De acties onder het blok <code class="scratch">wanneer groene vlag wordt aangeklikt</code> worden
-dan uitgevoerd.</p>
-<p>De gebeurtenis <code class="scratch">wanneer [spatiebalk v] is ingedrukt</code> wordt herkend
-als de spatiebalk wordt ingedrukt. De acties onder deze gebeurtenis worden
-dan uitgevoerd.</p>
-<p>Er zijn nog meer gebeurtenissen die je kan gebruiken. Deze vind bij
-gebeurtenissen in de balk links.</p>
+<div style="display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:1px" class="grid-border">
+<div>
+<p><code class="scratch">wanneer groene vlag wordt aangeklikt</code></p>
+</div>
+<div>
+<p><code class="scratch">wanneer [spatiebalk v] is ingedrukt</code></p>
+</div>
+<div>
+<p>De acties onder dit blok worden uitgevoerd als op
+<img src="./global-lib-assets/flag.svg" alt="" width="12"> wordt gedrukt.</p>
+</div>
+<div>
+<p>De acties onder dit blok worden uitgevoerd als op de <code>spatiebalk</code> wordt gedrukt.</p>
+</div>
+</div>
+<p>Er zijn nog meer gebeurtenissen die je kan gebruiken. Deze vindt je bij
+gebeurtenissen zoals je in het plaatje hiernaast kunt zien.</p>
 <div class="clear-float"></div></div></div>
 <div class="tabs-tab-content" data-index="1" data-id="arduino">
 <p><mark>ToDo</mark></p>
@@ -428,7 +389,7 @@ gebeurtenissen in de balk links.</p>
 getallen.</p>
 <p>Bijvoorbeeld: Stel dat je 13 snoepjes wil verdelen over 4 vrienden. Iedereen
 krijgt dan 3 snoepjes, en er blijft er dan 1 over.</p>
-<p>Dus <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>13</mn><mi mathvariant="normal">/</mi><mn>4</mn><mo>=</mo><mn>3</mn><mspace width="0.5em"/><mi>r</mi><mi>e</mi><mi>s</mi><mi>t</mi><mspace width="0.5em"/><mn>1</mn></mrow><annotation encoding="application/x-tex">13/4 = 3\enspace rest\enspace 1</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord">13/4</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:0.6444em;"></span><span class="mord">3</span><span class="mspace" style="margin-right:0.5em;"></span><span class="mord mathnormal">res</span><span class="mord mathnormal">t</span><span class="mspace" style="margin-right:0.5em;"></span><span class="mord">1</span></span></span></span></p>
+<p>Dus: <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>13</mn><mi mathvariant="normal">/</mi><mn>4</mn><mo>=</mo><mn>3</mn><mspace width="0.5em"/><mi>r</mi><mi>e</mi><mi>s</mi><mi>t</mi><mspace width="0.5em"/><mn>1</mn></mrow><annotation encoding="application/x-tex">13/4 = 3\enspace rest\enspace 1</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord">13/4</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:0.6444em;"></span><span class="mord">3</span><span class="mspace" style="margin-right:0.5em;"></span><span class="mord mathnormal">res</span><span class="mord mathnormal">t</span><span class="mspace" style="margin-right:0.5em;"></span><span class="mord">1</span></span></span></span></p>
 <p>Voorbeeld:</p>
 <pre class="scratchblocks">
 wanneer groene vlag wordt aangeklikt
@@ -445,7 +406,7 @@ maak [rest v] ((13) modulo (4))
 getallen.</p>
 <p>Bijvoorbeeld: Stel dat je 13 snoepjes wil verdelen over 4 vrienden. Iedereen
 krijgt dan 3 snoepjes, en er blijft er dan 1 over.</p>
-<p>Dus <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>13</mn><mi mathvariant="normal">/</mi><mn>4</mn><mo>=</mo><mn>3</mn><mspace width="0.5em"/><mi>r</mi><mi>e</mi><mi>s</mi><mi>t</mi><mspace width="0.5em"/><mn>1</mn></mrow><annotation encoding="application/x-tex">13/4 = 3\enspace rest\enspace 1</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord">13/4</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:0.6444em;"></span><span class="mord">3</span><span class="mspace" style="margin-right:0.5em;"></span><span class="mord mathnormal">res</span><span class="mord mathnormal">t</span><span class="mspace" style="margin-right:0.5em;"></span><span class="mord">1</span></span></span></span></p>
+<p>Dus: <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>13</mn><mi mathvariant="normal">/</mi><mn>4</mn><mo>=</mo><mn>3</mn><mspace width="0.5em"/><mi>r</mi><mi>e</mi><mi>s</mi><mi>t</mi><mspace width="0.5em"/><mn>1</mn></mrow><annotation encoding="application/x-tex">13/4 = 3\enspace rest\enspace 1</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord">13/4</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:0.6444em;"></span><span class="mord">3</span><span class="mspace" style="margin-right:0.5em;"></span><span class="mord mathnormal">res</span><span class="mord mathnormal">t</span><span class="mspace" style="margin-right:0.5em;"></span><span class="mord">1</span></span></span></span></p>
 <p>Bij arduino schrijf je de modulo functie als een <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi mathvariant="normal">%</mi></mrow><annotation encoding="application/x-tex">\%</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8056em;vertical-align:-0.0556em;"></span><span class="mord">%</span></span></span></span>-teken.</p>
 <p>Voorbeeld:</p>
 <pre class="shiki vitesse-light" style="background-color:#ffffff;color:#393a34" tabindex="0"><code><span class="line" data-line="1"><span class="indent">  </span><span class="indent">  </span><span style="color:#393A34">integer rest </span><span style="color:#999999">=</span><span style="color:#2F798A"> 13</span><span style="color:#AB5959"> %</span><span style="color:#2F798A"> 4</span><span style="color:#999999">;</span><span style="color:#A0ADA0"> // De waarde van rest wordt 1</span></span>
@@ -463,7 +424,7 @@ krijgt dan 3 snoepjes, en er blijft er dan 1 over.</p>
 getallen.</p>
 <p>Bijvoorbeeld: Stel dat je 13 snoepjes wil verdelen over 4 vrienden. Iedereen
 krijgt dan 3 snoepjes, en er blijft er dan 1 over.</p>
-<p>Dus <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>13</mn><mi mathvariant="normal">/</mi><mn>4</mn><mo>=</mo><mn>3</mn><mspace width="0.5em"/><mi>r</mi><mi>e</mi><mi>s</mi><mi>t</mi><mspace width="0.5em"/><mn>1</mn></mrow><annotation encoding="application/x-tex">13/4 = 3\enspace rest\enspace 1</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord">13/4</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:0.6444em;"></span><span class="mord">3</span><span class="mspace" style="margin-right:0.5em;"></span><span class="mord mathnormal">res</span><span class="mord mathnormal">t</span><span class="mspace" style="margin-right:0.5em;"></span><span class="mord">1</span></span></span></span></p>
+<p>Dus: <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>13</mn><mi mathvariant="normal">/</mi><mn>4</mn><mo>=</mo><mn>3</mn><mspace width="0.5em"/><mi>r</mi><mi>e</mi><mi>s</mi><mi>t</mi><mspace width="0.5em"/><mn>1</mn></mrow><annotation encoding="application/x-tex">13/4 = 3\enspace rest\enspace 1</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord">13/4</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:0.6444em;"></span><span class="mord">3</span><span class="mspace" style="margin-right:0.5em;"></span><span class="mord mathnormal">res</span><span class="mord mathnormal">t</span><span class="mspace" style="margin-right:0.5em;"></span><span class="mord">1</span></span></span></span></p>
 <p>In python schrijf je de modulo functie als een <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi mathvariant="normal">%</mi></mrow><annotation encoding="application/x-tex">\%</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8056em;vertical-align:-0.0556em;"></span><span class="mord">%</span></span></span></span>-teken.</p>
 <p>Voorbeeld:</p>
 <pre class="shiki vitesse-light" style="background-color:#ffffff;color:#393a34" tabindex="0"><code><span class="line" data-line="1"><span class="indent">  </span><span class="indent">  </span><span style="color:#393A34">rest </span><span style="color:#999999">=</span><span style="color:#2F798A"> 13</span><span style="color:#AB5959"> %</span><span style="color:#2F798A"> 4</span><span style="color:#A0ADA0"> # De waarde van rest wordt 1</span></span>
@@ -557,7 +518,162 @@ end
 zeg [ik hoor niet bij als]
 </pre>
 <div class="clear-float"></div></div><hr class="separator-fat">
+<h1 id="python-cheat-sheet" tabindex="-1">Python cheat sheet</h1>
+<h2 id="python%3A-comment" tabindex="-1">python: comment</h2>
+<p><code>&lt;!-- @include: global-lib/cheat-sheet-python.md#comment --&gt;</code></p>
+<hr class="separator-hidden">
+<div class="read">
+<p><em>Voorbeeld commentaar</em></p>
+<div style="display:grid;gap:1px;grid-template-columns:repeat(2,minmax(0,1fr))" class="grid-border">
+<div>
+<pre class="shiki vitesse-light" style="background-color:#ffffff;color:#393a34" tabindex="0"><code><span class="line" data-line="1"><span style="color:#A0ADA0"># Deze regels worden niet door </span></span>
+<span class="line" data-line="2"><span style="color:#A0ADA0"># de computer gelezen omdat </span></span>
+<span class="line" data-line="3"><span style="color:#A0ADA0"># ze met een hekje beginnen.</span></span>
+<span class="line" data-line="4"></span></code><button class="copy-button" title="Copy" onclick="
+          navigator.clipboard.writeText(this.parentElement.innerText);
+          this.classList.add(&#x27;copied&#x27;);
+          setTimeout(() => this.classList.remove(&#x27;copied&#x27;), 2000)
+        "><span class="ready"></span><span class="success"></span></button></pre>
+</div>
+<div>
+<p>Commentaar – de computer negeert regels die met een <code>#</code>
+beginnen.</p>
+</div>
+</div>
+<div class="clear-float"></div></div><h2 id="python%3A-variables" tabindex="-1">python: variables</h2>
+<p><code>&lt;!-- @include: global-lib/cheat-sheet-python.md#variables --&gt;</code></p>
+<hr class="separator-hidden">
+<div class="read">
+<p><em>Voorbeeld variabelen</em></p>
+<div style="display:grid;gap:1px;grid-template-columns:repeat(2,minmax(0,1fr))" class="grid-border">
+<div>
+<pre class="shiki vitesse-light" style="background-color:#ffffff;color:#393a34" tabindex="0"><code><span class="line" data-line="1"><span style="color:#393A34">mijn_variabele </span><span style="color:#999999">=</span><span style="color:#2F798A"> 100</span></span>
+<span class="line" data-line="2"></span></code><button class="copy-button" title="Copy" onclick="
+          navigator.clipboard.writeText(this.parentElement.innerText);
+          this.classList.add(&#x27;copied&#x27;);
+          setTimeout(() => this.classList.remove(&#x27;copied&#x27;), 2000)
+        "><span class="ready"></span><span class="success"></span></button></pre>
+</div>
+<div>
+<p>Geef de variabele met de naam <code>mijn_variabele</code> de waarde 100.</p>
+<pre class="scratchblocks">maak [mijn_variabele v] (100)
+</pre>
+</div>
+</div>
+<div class="clear-float"></div></div><h2 id="python%3A-print" tabindex="-1">python: print</h2>
+<p><code>&lt;!-- @include: global-lib/cheat-sheet-python.md#print --&gt;</code></p>
+<hr class="separator-hidden">
+<div class="read">
+<p><em>Voorbeeld print</em></p>
+<div style="display:grid;gap:1px;grid-template-columns:repeat(2,minmax(0,1fr))" class="grid-border">
+<div>
+<pre class="shiki vitesse-light" style="background-color:#ffffff;color:#393a34" tabindex="0"><code><span class="line" data-line="1"><span style="color:#998418">print</span><span style="color:#999999">(</span><span style="color:#B5695977">"</span><span style="color:#B56959">hallo</span><span style="color:#B5695977">"</span><span style="color:#999999">)</span></span>
+<span class="line" data-line="2"><span style="color:#998418">print</span><span style="color:#999999">(</span><span style="color:#2F798A">42</span><span style="color:#999999">)</span></span>
+<span class="line" data-line="3"><span style="color:#998418">print</span><span style="color:#999999">(</span><span style="color:#393A34">mijn_variabele</span><span style="color:#999999">)</span></span>
+<span class="line" data-line="4"></span></code><button class="copy-button" title="Copy" onclick="
+          navigator.clipboard.writeText(this.parentElement.innerText);
+          this.classList.add(&#x27;copied&#x27;);
+          setTimeout(() => this.classList.remove(&#x27;copied&#x27;), 2000)
+        "><span class="ready"></span><span class="success"></span></button></pre>
+</div>
+<div>
+<p>Met print kan je iets op het scherm afdrukken. Dit lijkt op het scratch-blok
+<code>zeg</code>.</p>
+<pre class="scratchblocks">zeg [hallo]
+zeg (42)
+zeg (mijn_variabele)
+</pre>
+</div>
+</div>
+<div class="clear-float"></div></div><h2 id="python%3A-if-else" tabindex="-1">python: if else</h2>
+<p><code>&lt;!-- @include: global-lib/cheat-sheet-python.md#if_else --&gt;</code></p>
+<hr class="separator-hidden">
+<div class="read">
+<p><em>Voorbeeld if ... else ...</em></p>
+<div style="display:grid;gap:1px;grid-template-columns:repeat(2,minmax(0,1fr))" class="grid-border">
+<div>
+<pre class="shiki vitesse-light" style="background-color:#ffffff;color:#393a34" tabindex="0"><code><span class="line" data-line="1"><span style="color:#1E754F">if</span><span style="color:#393A34"> mijn_variabele </span><span style="color:#AB5959">==</span><span style="color:#2F798A"> 42</span><span style="color:#999999">:</span></span>
+<span class="line" data-line="2"><span class="indent">  </span><span style="color:#998418">print</span><span style="color:#999999"> (</span><span style="color:#B5695977">"</span><span style="color:#B56959">mijn_variabele is 42</span><span style="color:#B5695977">"</span><span style="color:#999999">)</span></span>
+<span class="line" data-line="3"><span style="color:#1E754F">else</span><span style="color:#999999">:</span></span>
+<span class="line" data-line="4"><span class="indent">  </span><span style="color:#998418">print</span><span style="color:#999999"> (</span><span style="color:#B5695977">"</span><span style="color:#B56959">mijn_variabele is NIET 42</span><span style="color:#B5695977">"</span><span style="color:#999999">)</span></span>
+<span class="line" data-line="5"></span></code><button class="copy-button" title="Copy" onclick="
+          navigator.clipboard.writeText(this.parentElement.innerText);
+          this.classList.add(&#x27;copied&#x27;);
+          setTimeout(() => this.classList.remove(&#x27;copied&#x27;), 2000)
+        "><span class="ready"></span><span class="success"></span></button></pre>
+</div>
+<div>
+<p>Met <code>if</code> kan je ervoor zorgen dat commando's alleen worden uitgevoerd als aan een
+voorwaarde is voldaan. In dit voorbeeld is de voorwaarde
+<code>mijn_variabele == 42</code>.</p>
+<p>De commando's onder <code>else</code> worden uitgevoerd als NIET aan de voorwaarde is
+voldaan.</p>
+<pre class="scratchblocks">als &lt;(mijn_variabele) = (42)&gt; dan
+  zeg [mijn_variabele is 42]
+anders
+  zeg [mijn_variabele is NIET 42]
+end
 
+</pre>
+</div>
+</div>
+<div class="clear-float"></div></div><h2 id="python%3A-while" tabindex="-1">python: while</h2>
+<p><code>&lt;!-- @include: global-lib/cheat-sheet-python.md#while --&gt;</code></p>
+<hr class="separator-hidden">
+<div class="read">
+<p><em>Voorbeeld while</em></p>
+<div style="display:grid;gap:1px;grid-template-columns:repeat(2,minmax(0,1fr))" class="grid-border">
+<div>
+<pre class="shiki vitesse-light" style="background-color:#ffffff;color:#393a34" tabindex="0"><code><span class="line" data-line="1"></span>
+<span class="line" data-line="2"><span style="color:#1E754F">while</span><span style="color:#393A34"> mijn_variabele </span><span style="color:#AB5959">==</span><span style="color:#2F798A"> 100</span><span style="color:#999999">:</span></span>
+<span class="line" data-line="3"><span class="indent">  </span><span style="color:#998418">print</span><span style="color:#999999">(</span><span style="color:#B5695977">"</span><span style="color:#B56959">mijn variabele is 100</span><span style="color:#B5695977">"</span><span style="color:#999999">)</span></span>
+<span class="line" data-line="4"></span></code><button class="copy-button" title="Copy" onclick="
+          navigator.clipboard.writeText(this.parentElement.innerText);
+          this.classList.add(&#x27;copied&#x27;);
+          setTimeout(() => this.classList.remove(&#x27;copied&#x27;), 2000)
+        "><span class="ready"></span><span class="success"></span></button></pre>
+</div>
+<div>
+<p>Lus (herhaal) zolang de voorwaarde <code>mijn_variabele == 100</code> klopt.</p>
+<p>Dit lijkt op een herhaal-blok in scratch. Het verschil is dat je in scratch
+de voorwaarde moet opgeven waarmee de herhaling wordt gestopt. In Python geef
+je de voorwaarde om door te gaan met herhalen.</p>
+<pre class="scratchblocks">herhaal tot &lt;niet &lt;(mijn_variabele) = (100)&gt;&gt;
+  say [mijn variabele is 100]
+
+</pre>
+</div>
+</div>
+<div class="clear-float"></div></div><h2 id="python%3A-break" tabindex="-1">python: break</h2>
+<p><code>&lt;!-- @include: global-lib/cheat-sheet-python.md#break --&gt;</code></p>
+<hr class="separator-hidden">
+<div class="read">
+<p><em>Voorbeeld break</em></p>
+<div style="display:grid;gap:1px;grid-template-columns:repeat(2,minmax(0,1fr))" class="grid-border">
+<div>
+<pre class="shiki vitesse-light" style="background-color:#ffffff;color:#393a34" tabindex="0"><code><span class="line" data-line="1"></span>
+<span class="line" data-line="2"><span style="color:#393A34">toets_ingedrukt </span><span style="color:#999999">=</span><span style="color:#B5695977"> '</span><span style="color:#B56959">a</span><span style="color:#B5695977">'</span></span>
+<span class="line" data-line="3"></span>
+<span class="line" data-line="4"><span style="color:#1E754F">while</span><span style="color:#1E754F"> True</span><span style="color:#999999">:</span></span>
+<span class="line" data-line="5"><span class="indent">  </span><span style="color:#1E754F">if</span><span style="color:#393A34"> toets_ingedrukt </span><span style="color:#AB5959">==</span><span style="color:#B5695977"> '</span><span style="color:#B56959">a</span><span style="color:#B5695977">'</span><span style="color:#999999">:</span></span>
+<span class="line" data-line="6"><span class="indent">  </span><span class="indent">  </span><span style="color:#998418">print</span><span style="color:#999999">(</span><span style="color:#B5695977">"</span><span style="color:#B56959">toets a is ingedrukt</span><span style="color:#B5695977">"</span><span style="color:#999999">)</span></span>
+<span class="line" data-line="7"><span class="indent">  </span><span class="indent">  </span><span style="color:#998418">print</span><span style="color:#999999">(</span><span style="color:#B5695977">"</span><span style="color:#B56959">ik stop de lus met break</span><span style="color:#B5695977">"</span><span style="color:#999999">)</span></span>
+<span class="line" data-line="8"><span class="indent">  </span><span class="indent">  </span><span style="color:#1E754F">break</span></span>
+<span class="line" data-line="9"><span class="indent">  </span><span style="color:#1E754F">else</span><span style="color:#999999">:</span></span>
+<span class="line" data-line="10"><span class="indent">  </span><span class="indent">  </span><span style="color:#998418">print</span><span style="color:#999999">(</span><span style="color:#B5695977">"</span><span style="color:#B56959">ik wacht op de toets a</span><span style="color:#B5695977">"</span><span style="color:#999999">)</span></span>
+<span class="line" data-line="11"></span>
+<span class="line" data-line="12"><span style="color:#998418">print</span><span style="color:#999999">(</span><span style="color:#B5695977">"</span><span style="color:#B56959">De lus is afgebroken</span><span style="color:#B5695977">"</span><span style="color:#999999">)</span></span>
+<span class="line" data-line="13"></span></code><button class="copy-button" title="Copy" onclick="
+          navigator.clipboard.writeText(this.parentElement.innerText);
+          this.classList.add(&#x27;copied&#x27;);
+          setTimeout(() => this.classList.remove(&#x27;copied&#x27;), 2000)
+        "><span class="ready"></span><span class="success"></span></button></pre>
+</div>
+<div>
+<p>Met <code>break</code> kan je een lus stoppen.</p>
+</div>
+</div>
+<div class="clear-float"></div></div>
 
 
               <div class="license">
@@ -568,8 +684,8 @@ zeg [ik hoor niet bij als]
                 />
                 <div class="license">
 
-                  <p><b>[NL] Licentie Informatie</b></p>
-                  <p>
+                  <p><em>[NL] Licentie Informatie</em></p>
+                  <p style="padding-left: 20px">
                     Voor al het materiaal in document geldt de licentie:
                     Creative Commons Naamsvermelding-NietCommercieel-GelijkDelen
                     3.0
@@ -578,7 +694,7 @@ zeg [ik hoor niet bij als]
                     >https://creativecommons.org/licenses/by-nc-sa/3.0/</a>.
 
                   </p>
-                  <p>
+                  <p style="padding-left: 20px">
                     Indien u toegang wilt tot de raw bewerkbare files om het
                     materiaal naar uw eigen doel aan te passen, ons te helpen
                     het materiaal te verbeteren, of het materiaal te vertalen,
@@ -591,8 +707,8 @@ zeg [ik hoor niet bij als]
                 </div>
 
                 <div class="license">
-                  <p><b>[EN] License Information</b></p>
-                  <p>
+                  <p><em>[EN] License Information</em></p>
+                  <p style="padding-left: 20px">
                     All work in this document are licensed under the Creative
                     Commons Attribution-NonCommercial-ShareAlike 3.0
                     <a
@@ -600,7 +716,7 @@ zeg [ik hoor niet bij als]
                     >https://creativecommons.org/licenses/by-nc-sa/3.0/</a>.
 
                   </p>
-                  <p>
+                  <p style="padding-left: 20px">
                     If you wish to gain access to the raw editable files in
                     order to adapt our content to your own purposes, help us
                     improve the content, or translate it, then please contact
@@ -611,17 +727,18 @@ zeg [ik hoor niet bij als]
                     .
                   </p>
                 </div>
+                <div>
+                  This document was created by CoderDojo Zoetermeer. The
+                  template design was inspired by the CoderDojo branding and
+                  visual identity, and incorporates elements from both
+                  organizations. We would like to thank CoderDojo Nederland
+                  for their their ongoing support of the CoderDojo
+                  community.
+                </div>
                 <div class="acknowledgements">
-                  <em>Acknowledgements:</em>
+                  <em>Acknowledgements</em>
                   <div style="padding-left: 20px;">
-                      <p>author(s): Ben Mens</p>
-
-                    <p>This document was created by CoderDojo Zoetermeer. The
-                      template design was inspired by the CoderDojo branding and
-                      visual identity, and incorporates elements from both
-                      organizations. We would like to thank CoderDojo Nederland
-                      for their their ongoing support of the CoderDojo
-                      community.</p>
+                      <p>Author(s): Ben Mens</p>
                   </div>
                 </div>
               </div>

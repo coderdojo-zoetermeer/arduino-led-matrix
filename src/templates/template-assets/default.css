@@ -78,7 +78,6 @@
   button.copy-button {
     display: flex;
   }
-
 }
 
 body,
@@ -224,13 +223,13 @@ hr.separator-hidden {
 }
 
 .license {
-  margin-top: 20px;
-  font-size: 12px;
+  margin-top: 10px;
+  font-size: 8px;
 }
 
 .acknowledgements {
-  margin-top: 20px;
-  font-size: 12px;
+  margin-top: 10px;
+  font-size: 8px;
 }
 
 .tabs-tab-content {
@@ -281,6 +280,10 @@ hr.separator-hidden {
   display: inline-block;
   border-radius: 3px;
 }
+
+/* 
+ * Code blocks
+ */
 
 :not(pre) > code:not(.scratch) {
   border: 1px solid black;
@@ -396,4 +399,70 @@ pre.shiki .indent::before {
   width: 1px;
   height: 100%;
   background-color: currentColor;
+}
+
+/* 
+ * Grid classes
+ */
+
+.grid-border {
+  background-color: black;
+  border: 1px solid black;
+}
+
+.grid-border > .grid-header {
+  background-color: lightgrey;
+  font-weight: bold;
+  padding-left: 10px;
+}
+
+.grid-border div:not(.grid-header) {
+  background-color: white;
+  padding-left: 10px;
+}
+
+/* 
+ * Copy button
+ */
+pre:has(code) {
+  position: relative;
+}
+
+pre button.copy-button {
+  position: absolute;
+  right: 10px;
+  top: 0px;
+  height: 20px;
+  width: 20px;
+  padding: 2px;
+  border: 1px solid lightGray;
+  background-color: transparent;
+  border-radius: 2px;
+
+  & span {
+    width: 100%;
+    aspect-ratio: 1 / 1;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+  }
+
+  & .ready {
+    background-image: url('./clipboard.svg');
+  }
+
+  & .success {
+    display: none;
+    background-image: url('./clipboard-checked.svg');
+  }
+
+  &.copied {
+    & .success {
+      display: block;
+    }
+
+    & .ready {
+      display: none;
+    }
+  }
 }

@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <link rel="stylesheet" href="{{{templateAssetFolder}}}/fontawesome/css/all.css" />
-    <link rel="stylesheet" href="{{{templateAssetFolder}}}/alert.css" />
+    <link rel="stylesheet" href="../template-assets/fontawesome/css/all.css" />
+    <link rel="stylesheet" href="../template-assets/alert.css" />
     <link
       href="https://fonts.googleapis.com/css?family=Open+Sans"
       rel="stylesheet"
@@ -19,7 +19,7 @@
       integrity="sha384-Wsr4Nh3yrvMf2KCebJchRJoVo1gTU6kcP05uRSh5NV3sj9+a8IomuJoQzf3sMq4T"
       crossorigin="anonymous"
     />
-    <link rel="stylesheet" href="{{{templateAssetFolder}}}/default.css" />
+    <link rel="stylesheet" href="../template-assets/default.css" />
 
     <script
       defer
@@ -32,8 +32,8 @@
       @media print {
         body {
           background-image:
-            url("{{{templateAssetFolder}}}/{{{meta.theme}}}/left.svg"),
-            url("{{{templateAssetFolder}}}/{{{meta.theme}}}/right.svg");
+            url("../template-assets/generic/left.svg"),
+            url("../template-assets/generic/right.svg");
           background-size: 15px, 15px;
           background-repeat: repeat-y, repeat-y;
           background-position: left, right;
@@ -44,8 +44,8 @@
       @media screen {
         body {
           background-image:
-            url("{{{templateAssetFolder}}}/{{{meta.theme}}}/left.svg"),
-            url("{{{templateAssetFolder}}}/{{{meta.theme}}}/right.svg");
+            url("../template-assets/generic/left.svg"),
+            url("../template-assets/generic/right.svg");
           background-size: 15px 100%, 15px 100%;
           background-repeat: no-repeat, no-repeat;
           background-position: left, right;
@@ -53,14 +53,14 @@
         }
       }
       .header {
-        background-image: url("{{{templateAssetFolder}}}/{{{meta.theme}}}/top.svg");
+        background-image: url("../template-assets/generic/top.svg");
         background-size: 100% 15px;
         background-repeat: no-repeat;
         width: 100%;
         min-height: 15px;
       }
       .footer {
-        background-image: url("{{{templateAssetFolder}}}/{{{meta.theme}}}/bottom.svg");
+        background-image: url("../template-assets/generic/bottom.svg");
         background-size: 100% 15px;
         background-repeat: no-repeat;
         width: 100%;
@@ -68,7 +68,7 @@
       }
       .separator-fat {
         display: block;
-        background-image: url("{{{templateAssetFolder}}}/{{{meta.theme}}}/separator.svg");
+        background-image: url("../template-assets/generic/separator.svg");
         background-size: 100% 10px;
         background-repeat: no-repeat;
         height: 10px;
@@ -80,21 +80,15 @@
   </head>
 
   <body class="line-numbers">
-    {{#if meta.progLang}}
-      <img
-        src="{{{templateAssetFolder}}}/logo-{{{meta.progLang}}}.png"
-        class="language-logo"
-      />
-    {{/if}}
     <div class="header">
       <div class="header-content">
         <div style="padding-top: 20px; padding-left: 30px; max-height: 50px">
           <img
-            src="{{{templateAssetFolder}}}/logo-coderdojo-nl.png"
+            src="../template-assets/logo-coderdojo-nl.png"
             style="width: 250px; position: relative"
           />
           <img
-            src="{{{templateAssetFolder}}}/logo-zoetermeer.png"
+            src="../template-assets/logo-zoetermeer.png"
             style="width: 250px; position: relative; right: 30px; float: right"
           />
         </div>
@@ -117,30 +111,42 @@
         <tr>
           <td>
             <div class="assignment-content">
-              {{#if meta.level}}
-                <img
-                  src="{{{templateAssetFolder}}}/level{{meta.level}}.svg"
-                  style="width: 200px; float: right; margin-right: 0px"
-                />
-              {{/if}}
-              <p class="assignment-title">{{{meta.title}}}</p>
+              <p class="assignment-title">grid test</p>
 
               <div style="display: flex; flex-direction: row; gap: 0px 10px">
-                {{#each meta.infoBlocks}}
-                  <div class="header-info-block">
-                    <div class="header-info-title">{{{title}}}</div>
-                    {{{renderMarkdown content}}}
-                  </div>
-                {{/each}}
               </div>
 
-              {{{content}}}
+              <hr class="separator-fat">
+<div style="display:grid;gap:1px;grid-template-columns:repeat(4,minmax(0,1fr))" class="grid-border">
+<div>
+<p>a</p>
+</div>
+<div>
+<p>b</p>
+</div>
+<div>
+<p>c</p>
+</div>
+<div>
+<p><img src="./assets/banaan.svg" alt=""></p>
+</div>
+<div>
+<p>e</p>
+</div>
+<div>
+<p>f</p>
+</div>
+<div>
+<p>g</p>
+</div>
+</div>
+
 
 
               <div class="license">
                 <hr />
                 <img
-                  src="{{{templateAssetFolder}}}/by-nc-sa.png"
+                  src="../template-assets/by-nc-sa.png"
                   style="width: 117px; height: 41px; float: right"
                 />
                 <div class="license">
@@ -199,9 +205,7 @@
                 <div class="acknowledgements">
                   <em>Acknowledgements</em>
                   <div style="padding-left: 20px;">
-                    {{#each meta.acknowledgements}}
-                      <p>{{@key}}: {{{this}}}</p>
-                    {{/each}}
+                      <p>author(s): Ben Mens</p>
                   </div>
                 </div>
               </div>
@@ -220,10 +224,10 @@
     </table>
 
     <div class="footer"></div>
-    <script src="{{{templateAssetFolder}}}/template-helpers.js"></script>
+    <script src="../template-assets/template-helpers.js"></script>
     <script type="module">
-      import scratchblocks from '{{{templateAssetFolder}}}/scratchblocks/scratchblocks.min.es.js'
-      import loadTranslations from '{{{templateAssetFolder}}}/scratchblocks/translations-all-es.js'
+      import scratchblocks from '../template-assets/scratchblocks/scratchblocks.min.es.js'
+      import loadTranslations from '../template-assets/scratchblocks/translations-all-es.js'
 
       loadTranslations(scratchblocks);
       scratchblocks.renderMatching('pre.scratchblocks', {
