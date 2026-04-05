@@ -3,7 +3,7 @@ import { readFile } from 'node:fs/promises';
 import Handlebars from 'handlebars';
 import path from 'path';
 import { generateAssignment } from './src/assignment-generator.js';
-import liveServer from 'live-server';
+import liveServer from '@compodoc/live-server';
 import minimist from 'minimist';
 import Vinyl from 'vinyl';
 import { Duplex } from 'streamx';

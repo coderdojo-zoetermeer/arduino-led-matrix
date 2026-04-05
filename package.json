@@ -2,13 +2,13 @@
   "name": "cdz-assignment-generator",
   "version": "1.0.0",
   "description": "Generates HTML files for coderdojo Zoetermeer assignments based on markdown files.",
-  "homepage": "https://github.com/coderdojo-zoetermeer/arduino-led-matrix#readme",
+  "homepage": "https://github.com/coderdojo-zoetermeer/cdz-assignment-generator#readme",
   "bugs": {
-    "url": "https://github.com/coderdojo-zoetermeer/arduino-led-matrix/issues"
+    "url": "https://github.com/coderdojo-zoetermeer/cdz-assignment-generator/issues"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/coderdojo-zoetermeer/arduino-led-matrix.git"
+    "url": "https://github.com/coderdojo-zoetermeer/cdz-assignment-generator.git"
   },
   "license": "ISC",
   "author": "Ben Mens",
@@ -18,9 +18,11 @@
     "cdz-gen": "src/cdz-gen.js"
   },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "lint": "eslint src/ --ext .js"
   },
   "dependencies": {
+    "@compodoc/live-server": "^1.2.3",
     "@eslint/js": "^10.0.1",
     "@mdit/plugin-alert": "^0.23.1",
     "@mdit/plugin-attrs": "^0.25.1",
@@ -43,10 +45,11 @@
     "eslint": "^10.0.2",
     "eslint-config-prettier": "^10.1.8",
     "eslint-plugin-prettier": "^5.5.5",
+    "globals": "^17.4.0",
     "gulp": "^5.0.1",
     "gulp-cli": "^3.1.0",
+    "gulplog": "^2.2.0",
     "handlebars": "^4.7.8",
-    "live-server": "^1.2.2",
     "markdown-it": "^14.1.0",
     "markdown-it-anchor": "^9.2.0",
     "markdown-it-attrs": "^4.3.1",
@@ -57,6 +60,7 @@
     "scratchblocks": "^3.6.4",
     "shiki": "^4.0.2",
     "shiki-transformer-copy-button": "^0.0.6",
+    "streamx": "^2.25.0",
     "vinyl": "^3.0.1"
   }
 }
